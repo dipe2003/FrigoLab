@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{B58F7494-7233-4CA8-859B-7AD5CC3C6229}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FrigLab</RootNamespace>
+    <AssemblyName>FrigLab</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\dperez\AppData\Roaming\ICSharpCode\SharpDevelop5\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>True</Prefer32Bit>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>FrigLab.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.11\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.11\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Dominio\Clases\Ensayos\Analisis.cs" />
+    <Compile Include="Model\Dominio\Clases\Ensayos\Deteccion.cs" />
+    <Compile Include="Model\Dominio\Clases\Ensayos\Ensayo.cs" />
+    <Compile Include="Model\Dominio\Clases\Ensayos\Laboratorio.cs" />
+    <Compile Include="Model\Dominio\Clases\Ensayos\Recuento.cs" />
+    <Compile Include="Model\Dominio\Clases\Ensayos\Resultado.cs" />
+    <Compile Include="Model\Dominio\Clases\Muestreos\Individual.cs" />
+    <Compile Include="Model\Dominio\Clases\Muestreos\Muestreo.cs" />
+    <Compile Include="Model\Dominio\Clases\Muestreos\Pool.cs" />
+    <Compile Include="Model\Dominio\Clases\Requisitos\Inaceptable.cs" />
+    <Compile Include="Model\Dominio\Clases\Requisitos\Busqueda.cs" />
+    <Compile Include="Model\Dominio\Clases\Requisitos\Limite.cs" />
+    <Compile Include="Model\Dominio\Clases\Requisitos\Marginal.cs" />
+    <Compile Include="Model\Dominio\Clases\Requisitos\Requisito.cs" />
+    <Compile Include="Model\Dominio\Clases\Usuarios\Credencial.cs" />
+    <Compile Include="Model\Dominio\Clases\Usuarios\Usuario.cs" />
+    <Compile Include="Model\Dominio\Enumeraciones\Ensayos\EnumInterpretacionResultado.cs" />
+    <Compile Include="Model\Dominio\Enumeraciones\Ensayos\EnumTipoAnalisis.cs" />
+    <Compile Include="Model\Dominio\Enumeraciones\Ensayos\EnumMotivoAnalisis.cs" />
+    <Compile Include="Model\Dominio\Enumeraciones\Ensayos\EnumTipoLaboratorio.cs" />
+    <Compile Include="Model\Dominio\Enumeraciones\Muestras\EnumClaseMuestra.cs" />
+    <Compile Include="Model\Dominio\Enumeraciones\Muestras\EnumHorario.cs" />
+    <Compile Include="Model\Dominio\Enumeraciones\Muestreos\EnumAlmacenamientoMuestreo.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Dominio\Clases\Muestras\Ambiente.cs" />
+    <Compile Include="Model\Dominio\Clases\Muestras\Area.cs" />
+    <Compile Include="Model\Dominio\Clases\Muestras\EspecificacionDeMuestra.cs" />
+    <Compile Include="Model\Dominio\Clases\Muestras\Muestra.cs" />
+    <Compile Include="Model\Dominio\Clases\Muestras\Operario.cs" />
+    <Compile Include="Model\Dominio\Clases\Muestras\Otra.cs" />
+    <Compile Include="Model\Dominio\Clases\Muestras\Producto.cs" />
+    <Compile Include="Model\Dominio\Clases\Muestras\Superficie.cs" />
+    <Compile Include="Model\Dominio\Enumeraciones\Muestreos\EnumTipoMuestreo.cs" />
+    <Compile Include="Model\Dominio\Enumeraciones\Requisitos\EnumValorDeteccion.cs" />
+    <Compile Include="Model\Dominio\Enumeraciones\Usuarios\EnumPermisoUsuario.cs" />
+    <Compile Include="Model\Logica\Ensayos\ControladorEnsayos.cs" />
+    <Compile Include="Model\Logica\Muestras\ControladorAreas.cs" />
+    <Compile Include="Model\Logica\Muestras\ControladorMuestras.cs" />
+    <Compile Include="Model\Logica\Muestreos\ControladorMuestreos.cs" />
+    <Compile Include="Model\Logica\Muestreos\ControladorPooles.cs" />
+    <Compile Include="Model\Logica\Requisitos\ControladorRequisitos.cs" />
+    <Compile Include="Model\Logica\Usuarios\ControladorCredenciales.cs" />
+    <Compile Include="Model\Logica\Usuarios\ControladorUsuarios.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\AreaConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\CredencialConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\EnsayoConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\AnalisisConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\EspecificacionesMuestrasConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\LaboratorioConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\LimiteConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\MuestraAmbienteConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\MuestraConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\MuestraOperarioConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\MuestraOtraConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\MuestraProductoConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\MuestraSuperficieConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\MuestreoConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\RequisitoConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\ResultadoConfiguration.cs" />
+    <Compile Include="Model\Persistencia\Configuraciones\UsuarioConfiguration.cs" />
+    <Compile Include="Model\Persistencia\ManejadorPersistencia.cs" />
+    <Compile Include="Model\Persistencia\FrigLabContext.cs" />
+    <Compile Include="Model\Sesion\SesionDeUsuario.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Areas\EditarArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Areas\EditarArea.Designer.cs">
+      <DependentUpon>EditarArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Areas\ListarAreas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Areas\ListarAreas.Designer.cs">
+      <DependentUpon>ListarAreas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Areas\NuevaArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Areas\NuevaArea.Designer.cs">
+      <DependentUpon>NuevaArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ensayos\EditarEnsayo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Ensayos\EditarEnsayo.Designer.cs">
+      <DependentUpon>EditarEnsayo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ensayos\EditarLaboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Ensayos\EditarLaboratorio.Designer.cs">
+      <DependentUpon>EditarLaboratorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ensayos\ListarEnsayos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Ensayos\ListarEnsayos.Designer.cs">
+      <DependentUpon>ListarEnsayos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ensayos\ListarLaboratorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Ensayos\ListarLaboratorios.Designer.cs">
+      <DependentUpon>ListarLaboratorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ensayos\NuevoEnsayo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Ensayos\NuevoEnsayo.Designer.cs">
+      <DependentUpon>NuevoEnsayo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ensayos\NuevoLaboratorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Ensayos\NuevoLaboratorio.Designer.cs">
+      <DependentUpon>NuevoLaboratorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ICerrar.cs" />
+    <Compile Include="View\IListaPublica.cs" />
+    <Compile Include="View\Muestras\EditarMuestra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Muestras\EditarMuestra.Designer.cs">
+      <DependentUpon>EditarMuestra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Muestras\ListarMuestras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Muestras\ListarMuestras.Designer.cs">
+      <DependentUpon>ListarMuestras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Muestras\NuevaMuestra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Muestras\NuevaMuestra.Designer.cs">
+      <DependentUpon>NuevaMuestra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Muestreos\EditarMuestreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Muestreos\EditarMuestreo.Designer.cs">
+      <DependentUpon>EditarMuestreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Muestreos\EditarPool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Muestreos\EditarPool.Designer.cs">
+      <DependentUpon>EditarPool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Muestreos\ListarOtrosMuestreos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Muestreos\ListarOtrosMuestreos.Designer.cs">
+      <DependentUpon>ListarOtrosMuestreos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Muestreos\ListarMuestreosAmbientales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Muestreos\ListarMuestreosAmbientales.Designer.cs">
+      <DependentUpon>ListarMuestreosAmbientales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Muestreos\ListarMuestreosProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Muestreos\ListarMuestreosProducto.Designer.cs">
+      <DependentUpon>ListarMuestreosProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Muestreos\NuevoMuestreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Muestreos\NuevoMuestreo.Designer.cs">
+      <DependentUpon>NuevoMuestreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Muestreos\NuevoPool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Muestreos\NuevoPool.Designer.cs">
+      <DependentUpon>NuevoPool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Muestreos\VistaMuestreo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Muestreos\VistaMuestreo.Designer.cs">
+      <DependentUpon>VistaMuestreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Requisitos\EditarRequisito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Requisitos\EditarRequisito.Designer.cs">
+      <DependentUpon>EditarRequisito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Requisitos\ListarRequisitos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Requisitos\ListarRequisitos.Designer.cs">
+      <DependentUpon>ListarRequisitos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Requisitos\NuevoLimite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Requisitos\NuevoLimite.Designer.cs">
+      <DependentUpon>NuevoLimite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Requisitos\NuevoRequisito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Requisitos\NuevoRequisito.Designer.cs">
+      <DependentUpon>NuevoRequisito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Resultados\NuevoResultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Resultados\NuevoResultado.Designer.cs">
+      <DependentUpon>NuevoResultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Resultados\Resultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Resultados\Resultados.Designer.cs">
+      <DependentUpon>Resultados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Resultados\SepararPool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Resultados\SepararPool.Designer.cs">
+      <DependentUpon>SepararPool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuarios\CambiarCredencial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuarios\CambiarCredencial.Designer.cs">
+      <DependentUpon>CambiarCredencial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuarios\EditarUsuarioAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuarios\EditarUsuarioAdmin.Designer.cs">
+      <DependentUpon>EditarUsuarioAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuarios\EditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuarios\EditarUsuario.Designer.cs">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuarios\ListarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuarios\ListarUsuarios.Designer.cs">
+      <DependentUpon>ListarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuarios\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuarios\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Usuarios\NuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Usuarios\NuevoUsuario.Designer.cs">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Areas\EditarArea.resx">
+      <DependentUpon>EditarArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Areas\ListarAreas.resx">
+      <DependentUpon>ListarAreas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Areas\NuevaArea.resx">
+      <DependentUpon>NuevaArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ensayos\EditarEnsayo.resx">
+      <DependentUpon>EditarEnsayo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ensayos\EditarLaboratorio.resx">
+      <DependentUpon>EditarLaboratorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ensayos\ListarEnsayos.resx">
+      <DependentUpon>ListarEnsayos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ensayos\ListarLaboratorios.resx">
+      <DependentUpon>ListarLaboratorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ensayos\NuevoEnsayo.resx">
+      <DependentUpon>NuevoEnsayo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Ensayos\NuevoLaboratorio.resx">
+      <DependentUpon>NuevoLaboratorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Muestras\EditarMuestra.resx">
+      <DependentUpon>EditarMuestra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Muestras\ListarMuestras.resx">
+      <DependentUpon>ListarMuestras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Muestras\NuevaMuestra.resx">
+      <DependentUpon>NuevaMuestra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Muestreos\EditarMuestreo.resx">
+      <DependentUpon>EditarMuestreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Muestreos\EditarPool.resx">
+      <DependentUpon>EditarPool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Muestreos\ListarOtrosMuestreos.resx">
+      <DependentUpon>ListarOtrosMuestreos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Muestreos\ListarMuestreosAmbientales.resx">
+      <DependentUpon>ListarMuestreosAmbientales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Muestreos\ListarMuestreosProducto.resx">
+      <DependentUpon>ListarMuestreosProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Muestreos\NuevoMuestreo.resx">
+      <DependentUpon>NuevoMuestreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Muestreos\NuevoPool.resx">
+      <DependentUpon>NuevoPool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Muestreos\VistaMuestreo.resx">
+      <DependentUpon>VistaMuestreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Requisitos\EditarRequisito.resx">
+      <DependentUpon>EditarRequisito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Requisitos\ListarRequisitos.resx">
+      <DependentUpon>ListarRequisitos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Requisitos\NuevoLimite.resx">
+      <DependentUpon>NuevoLimite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Requisitos\NuevoRequisito.resx">
+      <DependentUpon>NuevoRequisito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Resultados\NuevoResultado.resx">
+      <DependentUpon>NuevoResultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Resultados\Resultados.resx">
+      <DependentUpon>Resultados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Resultados\SepararPool.resx">
+      <DependentUpon>SepararPool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuarios\CambiarCredencial.resx">
+      <DependentUpon>CambiarCredencial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuarios\EditarUsuarioAdmin.resx">
+      <DependentUpon>EditarUsuarioAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuarios\EditarUsuario.resx">
+      <DependentUpon>EditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuarios\ListarUsuarios.resx">
+      <DependentUpon>ListarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuarios\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Usuarios\NuevoUsuario.resx">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_nuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_quitar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_resultados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_ver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_no_verificar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_verificar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_no_disponible.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_matraz.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
