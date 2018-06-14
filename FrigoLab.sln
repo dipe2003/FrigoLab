@@ -5,6 +5,24 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrigoLab", "FrigoLab\FrigoLab.csproj", "{B58F7494-7233-4CA8-859B-7AD5CC3C6229}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentacion", "Documentacion", "{151450C5-CB29-49F6-ADB0-FF1FB3FB4A2C}"
+	ProjectSection(SolutionItems) = preProject
+		E:\Desarrollos\Laboratorio\Documentacion\Listado de Acciones por Permiso.ods = E:\Desarrollos\Laboratorio\Documentacion\Listado de Acciones por Permiso.ods
+		E:\Desarrollos\Laboratorio\Documentacion\Listado Errores y Funcionalidades.ods = E:\Desarrollos\Laboratorio\Documentacion\Listado Errores y Funcionalidades.ods
+		E:\Desarrollos\Laboratorio\Documentacion\SRS.Anexo.CasosDeUso.odt = E:\Desarrollos\Laboratorio\Documentacion\SRS.Anexo.CasosDeUso.odt
+		E:\Desarrollos\Laboratorio\Documentacion\SRS.odt = E:\Desarrollos\Laboratorio\Documentacion\SRS.odt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Diagramas", "Diagramas", "{A659369E-1469-4375-892A-D5F677E4A1FE}"
+	ProjectSection(SolutionItems) = preProject
+		E:\Desarrollos\Laboratorio\Diagramas\CU Administrador.png = E:\Desarrollos\Laboratorio\Diagramas\CU Administrador.png
+		E:\Desarrollos\Laboratorio\Diagramas\CU Analista.png = E:\Desarrollos\Laboratorio\Diagramas\CU Analista.png
+		E:\Desarrollos\Laboratorio\Diagramas\CU Generales.png = E:\Desarrollos\Laboratorio\Diagramas\CU Generales.png
+		E:\Desarrollos\Laboratorio\Diagramas\CU Monitor.png = E:\Desarrollos\Laboratorio\Diagramas\CU Monitor.png
+		E:\Desarrollos\Laboratorio\Diagramas\CU Verificador.png = E:\Desarrollos\Laboratorio\Diagramas\CU Verificador.png
+		E:\Desarrollos\Laboratorio\Diagramas\Diagrama de Clases.png = E:\Desarrollos\Laboratorio\Diagramas\Diagrama de Clases.png
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
