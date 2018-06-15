@@ -26,7 +26,9 @@ namespace FrigLab.View.Areas {
 
 		private ControladorAreas cAreas = new ControladorAreas();
 
-		private IEnumerable<Area> areasRegistradas = new List<Area>();
+        private string vigenciaFiltrada = "Todas";
+        private string textoBusqueda;
+		private IEnumerable<Area> areasFiltradas = new List<Area>();
 		private IEnumerable<Area> areasRegistradasSinFiltro = new List<Area>();
 
 		private DataTable tabla;
@@ -46,7 +48,7 @@ namespace FrigLab.View.Areas {
 			tablaDatos.DataSource = tabla;
 			tablaDatos.Columns["Id"].Visible = false;
 
-			areaSeleccionada = areasRegistradas.FirstOrDefault();
+			areaSeleccionada = areasFiltradas.FirstOrDefault();
 			tablaDatos.ContextMenuStrip = CrearMenuContextual();
 		}
 
@@ -68,23 +70,29 @@ namespace FrigLab.View.Areas {
 			}
 			return ctxMenuStrip;
 		}
-		
-		private void GrupoVigenciaChange_Click(object sender, EventArgs e) {
-			string vigencia = (sender as RadioButton).Text;
-			switch (vigencia){
-				case "Solo Vigentes":
-					areasRegistradas = areasRegistradasSinFiltro.Where(a => a.FechaNoVigente == null).OrderBy(a => a.NombreDeArea);
-					break;
-					
-				case "Solo No Vigentes":
-					areasRegistradas = areasRegistradasSinFiltro.Where(a => a.FechaNoVigente != null).OrderBy(a => a.NombreDeArea);
-					break;
-					
-				default:
-					areasRegistradas = areasRegistradasSinFiltro.OrderBy(a => a.NombreDeArea);
-					break;
-			}
-			LlenarTabla();
+
+       #region Datos
+       private void FiltrarTabla() {
+            areasFiltradas = FiltrarVigencia(vigenciaFiltrada, areasRegistradasSinFiltro.ToList());
+            LlenarTabla();
+        }
+
+        private List<Area> FiltrarVigencia(string vigencia, List<Area> areasSinFiltrar) {
+            switch(vigencia) {
+                case "Solo Vigentes":
+                    return areasRegistradasSinFiltro.Where(a => a.FechaNoVigente == null).OrderBy(a => a.NombreDeArea).ToList();
+
+                case "Solo No Vigentes":
+                    return areasRegistradasSinFiltro.Where(a => a.FechaNoVigente != null).OrderBy(a => a.NombreDeArea).ToList();
+
+                default:
+                    return areasRegistradasSinFiltro.OrderBy(a => a.NombreDeArea).ToList();
+            }
+        }
+
+        private void GrupoVigenciaChange_Click(object sender, EventArgs e) {
+			vigenciaFiltrada = (sender as RadioButton).Text;
+            FiltrarTabla();			
 		}
 		
 		private void CrearTabla() {
@@ -99,7 +107,7 @@ namespace FrigLab.View.Areas {
 			if (tabla.Rows.Count != 0){
 				tabla.Clear();
 			}
-			foreach (Area area in areasRegistradas){
+			foreach (Area area in areasFiltradas){
 				string vigencia = "Si";
 				if (area.FechaNoVigente != null){
 					vigencia = "No";
@@ -111,44 +119,47 @@ namespace FrigLab.View.Areas {
 			}
 		}
 
-		private void BtnEditar_Click(object sender, EventArgs e) {
-			if (areaSeleccionada != null){
-				Form editarAreaForm = EditarArea.GetInstancia(areaSeleccionada);
-				editarAreaForm.MdiParent = this.MdiParent;
-				editarAreaForm.Show();
-				editarAreaForm.BringToFront();
-			} else {
-				MessageBox.Show("No hay area seleccionada");
-			}
-		}
+        public void ActualizarRegistros() {
+            areasFiltradas = cAreas.ListarAreas().OrderBy(a => a.NombreDeArea);
+            areasRegistradasSinFiltro = cAreas.ListarAreas().OrderBy(a => a.NombreDeArea);
+            areaSeleccionada = areasFiltradas.FirstOrDefault();
+            LlenarTabla();
+        }
 
-		public void ActualizarRegistros() {
-			areasRegistradas = cAreas.ListarAreas().OrderBy(a => a.NombreDeArea);
-			areasRegistradasSinFiltro = cAreas.ListarAreas().OrderBy(a => a.NombreDeArea);
-			areaSeleccionada = areasRegistradas.FirstOrDefault();
-			LlenarTabla();
-		}
+        #endregion
+        
+        #region Busqueda
+        private List<Area> BuscarNombre(string texto, List<Area> areasABuscar) {
+                return areasABuscar.Where(a => a.NombreDeArea.ToLower().Contains(texto.ToLower()))
+                        .OrderBy(a => a.NombreDeArea).ToList();
+        }
 
-		private void TxtBuscarNombre_TextChanged(object sender, EventArgs e) {
-			if ((sender as TextBox).Text != "") {
-				string texto = (sender as TextBox).Text;
-				grupoVigencia.Enabled = false;
-				areasRegistradas = areasRegistradasSinFiltro
-					.Where(a => a.NombreDeArea.ToLower()
-					       .Contains(texto.ToLower()))
-					.OrderBy(a => a.NombreDeArea);
-			} else {
-				grupoVigencia.Enabled = true;
-				areasRegistradas = areasRegistradasSinFiltro.OrderBy(a => a.NombreDeArea);
-			}
-			LlenarTabla();
-		}
-		
-		private void BtnQuitarFiltroNombreClick(object sender, EventArgs e) {
-			txtBuscarNombre.Clear();
-		}
-		
-		private void BtnEliminarClick(object sender, EventArgs e) {
+        private void BtnBuscar_Click(object sender, EventArgs e) {
+            textoBusqueda = txtBuscarNombre.Text;
+            areasFiltradas = BuscarNombre(textoBusqueda, areasFiltradas.ToList());
+            LlenarTabla();
+        }
+
+        private void BtnQuitarFiltroNombreClick(object sender, EventArgs e) {
+            txtBuscarNombre.Clear();
+            textoBusqueda = "";
+            FiltrarTabla();
+        }
+        #endregion
+
+        #region Acciones
+        private void BtnEditar_Click(object sender, EventArgs e) {
+            if(areaSeleccionada != null) {
+                Form editarAreaForm = EditarArea.GetInstancia(areaSeleccionada);
+                editarAreaForm.MdiParent = this.MdiParent;
+                editarAreaForm.Show();
+                editarAreaForm.BringToFront();
+            } else {
+                MessageBox.Show("No hay area seleccionada");
+            }
+        }
+
+        private void BtnEliminarClick(object sender, EventArgs e) {
 			if (areaSeleccionada != null){
 				if(MessageBox.Show("Seguro que quiere eliminar el area seleccionada? \n" +
 				                   "Esta accion no se puede deshacer.", "Eliminar Area?", MessageBoxButtons.OKCancel) == DialogResult.OK) {
@@ -163,8 +174,9 @@ namespace FrigLab.View.Areas {
 				MessageBox.Show("No hay area seleccionada");
 			}
 		}
-		
-		public override void Refresh() {
+        #endregion
+
+        public override void Refresh() {
 			base.Refresh();
 			ActualizarRegistros();
 		}
@@ -195,7 +207,7 @@ namespace FrigLab.View.Areas {
 		
 		private void SeleccionarElemento(DataGridView tabla, int filaActual){
 			try {
-				areaSeleccionada = areasRegistradas.Single(a => a.AreaId == (int)(tabla.Rows[filaActual].Cells[0].Value));
+				areaSeleccionada = areasFiltradas.Single(a => a.AreaId == (int)(tabla.Rows[filaActual].Cells[0].Value));
 				if (SesionDeUsuario.UsuarioLogueado.PermisoDeUsuario == EnumPermisoUsuario.Administrador &&
 				    !areaSeleccionada.EspecificacionesDeMuestras.Any()){
 					btnEliminar.Enabled = true;
