@@ -7,7 +7,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>WinExe</OutputType>
     <RootNamespace>FrigLab</RootNamespace>
-    <AssemblyName>FrigLab</AssemblyName>
+    <AssemblyName>FrigoLab</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SignAssembly>False</SignAssembly>
@@ -21,6 +21,7 @@
     <TargetFrameworkProfile />
     <RunCodeAnalysis>False</RunCodeAnalysis>
     <SourceAnalysisOverrideSettingsFile>C:\Users\dperez\AppData\Roaming\ICSharpCode\SharpDevelop5\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -33,7 +34,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -134,12 +134,6 @@
     <Compile Include="Model\Dominio\Enumeraciones\Muestras\EnumClaseMuestra.cs" />
     <Compile Include="Model\Dominio\Enumeraciones\Muestras\EnumHorario.cs" />
     <Compile Include="Model\Dominio\Enumeraciones\Muestreos\EnumAlmacenamientoMuestreo.cs" />
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\Dominio\Clases\Muestras\Ambiente.cs" />
     <Compile Include="Model\Dominio\Clases\Muestras\Area.cs" />
     <Compile Include="Model\Dominio\Clases\Muestras\EspecificacionDeMuestra.cs" />
@@ -181,6 +175,12 @@
     <Compile Include="Model\Sesion\SesionDeUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -394,8 +394,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -542,6 +542,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imagen_matraz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LateralAzul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_usuario_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_usuario_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_grupo_usuarios_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_mapa_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_caja_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_microscopio_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_matraz_48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

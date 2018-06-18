@@ -44,7 +44,7 @@ namespace FrigLab.View.Usuarios {
                             Application.Exit();
                         } else {
                             this.Dispose();
-                            new MainForm().ShowDialog();
+                            new FormMain().ShowDialog();
                         }
                     } else {
                         MessageBox.Show("No es correcto!");

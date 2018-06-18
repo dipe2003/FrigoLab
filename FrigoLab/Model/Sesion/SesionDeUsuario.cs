@@ -78,7 +78,7 @@ namespace FrigLab.Model.Sesion {
         public static void ActualizarMain() {
             Form form = formulariosAbiertos.FirstOrDefault(f => f.Name == "MainForm");
             if(form != null) {
-                (form as MainForm).CambiarInfoSesion();
+                (form as FormMain).CambiarInfoSesion();
             }
         }
     }
