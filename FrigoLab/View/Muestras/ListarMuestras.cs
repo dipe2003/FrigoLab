@@ -18,6 +18,11 @@ namespace FrigLab.View.Muestras {
 
         private IEnumerable<EspecificacionDeMuestra> especificacionesFiltradas;
         private IEnumerable<EspecificacionDeMuestra> especificacionesSinFiltro;
+
+        private string tipoFiltrado = "Todas";
+        private string sectorFiltrado = "Todos";
+        private List<string> sectoresEnFiltro = new List<string>();
+
         private IEnumerable<Area> areasRegistradas;
         private IEnumerable<Area> areasSinFiltro;
         private DataTable tabla;
@@ -28,29 +33,28 @@ namespace FrigLab.View.Muestras {
             InitializeComponent();
             CrearTabla();
             ActualizarRegistros();
-            
+            LLenarComboSectores(true);
+
             foreach(System.Windows.Forms.RadioButton radio in grupoTipo.Controls) {
                 radio.CheckedChanged += GrupoTipos_CheckedChanged;
             }
-            
-            foreach (Control txtbox in grupoBuscar.Controls) {
-				if (txtbox is TextBox){
-					(txtbox as TextBox).TextChanged += GrupoBuscar_TextChanged;
-				}
-            }
-            
-            RadioTodas.Checked = true;
-            if(SesionDeUsuario.PermisoUsuario() == EnumPermisoUsuario.Administrador 
+
+            if(SesionDeUsuario.PermisoUsuario() == EnumPermisoUsuario.Administrador
                 || SesionDeUsuario.PermisoUsuario() == EnumPermisoUsuario.Verificador) {
                 btnEditar.Enabled = true;
                 btnEliminar.Enabled = true;
             }
             tablaDatos.DataSource = tabla;
             tablaDatos.Columns["Id"].Visible = false;
-            
-			especificacionSeleccionada = especificacionesFiltradas.FirstOrDefault();
-			
-			tablaDatos.ContextMenuStrip = CrearMenuContextual();
+
+            especificacionSeleccionada = especificacionesFiltradas.FirstOrDefault();
+
+            tablaDatos.ContextMenuStrip = CrearMenuContextual();
+
+            // Grupo Sectores
+            cboSector.DataSource = sectoresEnFiltro;
+            sectorFiltrado = "Todos";
+            cboSector.Text = sectorFiltrado;
         }
 
         public static ListarMuestras GetInstancia() {
@@ -60,8 +64,9 @@ namespace FrigLab.View.Muestras {
             return instancia;
         }
 
+        #region Datos
         private void CrearTabla() {
-           tabla = new DataTable();
+            tabla = new DataTable();
             tabla.Columns.Add("Id", typeof(int));
             tabla.Columns.Add("Nombre", typeof(string));
             tabla.Columns.Add("Tipo", typeof(string));
@@ -71,7 +76,7 @@ namespace FrigLab.View.Muestras {
         }
 
         private void LlenarTabla() {
-           if(tabla.Rows.Count != 0) {
+            if(tabla.Rows.Count != 0) {
                 tabla.Clear();
             }
 
@@ -96,31 +101,66 @@ namespace FrigLab.View.Muestras {
             }
         }
 
-          private ContextMenuStrip CrearMenuContextual(bool seleccion = false){			
-			ContextMenuStrip ctxMenuStrip = new ContextMenuStrip();
-			if(!seleccion || SesionDeUsuario.PermisoUsuario() != EnumPermisoUsuario.Administrador
-                && SesionDeUsuario.PermisoUsuario() != EnumPermisoUsuario.Verificador) {
-				ctxMenuStrip.Items.Add("No hay acciones disponibles", Properties.Resources.imagen_no_disponible);
-			} else {
-				ctxMenuStrip.Items.Add("Editar", Properties.Resources.imagen_editar, BtnEditar_Click);
-				ctxMenuStrip.Items.Add("Eliminar", Properties.Resources.imagen_eliminar, BtnEliminarClick);
-			}
-			return ctxMenuStrip;
-		}
-        
-        private void BtnEditar_Click(object sender, EventArgs e) {
-			if (especificacionSeleccionada != null){
-				Form editarEspecificacionMuestraForm = EditarMuestra.GetInstancia(especificacionSeleccionada);
-				editarEspecificacionMuestraForm.MdiParent = this.MdiParent;
-				editarEspecificacionMuestraForm.Show();
-				editarEspecificacionMuestraForm.BringToFront();
-			}else{
-				MessageBox.Show("No hay muestra seleccionada.");
-			}
+        private void LLenarComboSectores(bool inicio) {
+            List<string> nombreSectores = new List<string>();
+            if(inicio) {
+                List<Area> areasEspecificaciones = especificacionesSinFiltro.SelectMany<EspecificacionDeMuestra, Area>(es => es.Areas).ToList();
+                var sectores = from area in areasEspecificaciones
+                               select area.NombreDeArea;
+                nombreSectores = sectores.Distinct().ToList();
+                nombreSectores.Add("Todos");
+            } else {
+                if(especificacionesFiltradas.Any()) {
+                    List<Area> areasEspecificaciones = especificacionesFiltradas.SelectMany<EspecificacionDeMuestra, Area>(es => es.Areas).ToList();
+                    var sectores = from area in areasEspecificaciones
+                                   select area.NombreDeArea;
+                    nombreSectores = sectores.Distinct().ToList();
+                    nombreSectores.Add("Todos");
+                } else {
+                    var sectores = new List<string> { "Todos" };
+                }
+            }
+            sectoresEnFiltro = nombreSectores;
+            cboSector.Text = sectorFiltrado =="Todos" ? "Todos" : sectoresEnFiltro.FirstOrDefault();
         }
-        
+
+        private ContextMenuStrip CrearMenuContextual(bool seleccion = false) {
+            ContextMenuStrip ctxMenuStrip = new ContextMenuStrip();
+            if(!seleccion || SesionDeUsuario.PermisoUsuario() != EnumPermisoUsuario.Administrador
+                && SesionDeUsuario.PermisoUsuario() != EnumPermisoUsuario.Verificador) {
+                ctxMenuStrip.Items.Add("No hay acciones disponibles", Properties.Resources.imagen_no_disponible);
+            } else {
+                ctxMenuStrip.Items.Add("Editar", Properties.Resources.imagen_editar, BtnEditar_Click);
+                ctxMenuStrip.Items.Add("Eliminar", Properties.Resources.imagen_eliminar, BtnEliminarClick);
+            }
+            return ctxMenuStrip;
+        }
+
+        public void ActualizarRegistros() {
+            areasRegistradas = new ControladorAreas().ListarAreas().OrderBy(a => a.NombreDeArea);
+            areasSinFiltro=  new ControladorAreas().ListarAreas().OrderBy(a => a.NombreDeArea);
+            especificacionesFiltradas = cMuestras.ListarEspecificacionesDeMuestras()
+                .OrderBy(esp => esp.NombreDeEspecificacionDeMuestra);
+            especificacionesSinFiltro = cMuestras.ListarEspecificacionesDeMuestras()
+                .OrderBy(esp => esp.NombreDeEspecificacionDeMuestra);
+            LlenarTabla();
+        }
+        #endregion
+
+        #region Acciones
+        private void BtnEditar_Click(object sender, EventArgs e) {
+            if(especificacionSeleccionada != null) {
+                Form editarEspecificacionMuestraForm = EditarMuestra.GetInstancia(especificacionSeleccionada);
+                editarEspecificacionMuestraForm.MdiParent = this.MdiParent;
+                editarEspecificacionMuestraForm.Show();
+                editarEspecificacionMuestraForm.BringToFront();
+            } else {
+                MessageBox.Show("No hay muestra seleccionada.");
+            }
+        }
+
         private void BtnEliminarClick(object sender, EventArgs e) {
-			if (especificacionSeleccionada != null){
+            if(especificacionSeleccionada != null) {
                 if(MessageBox.Show("Seguro que quiere eliminar la muestra seleccionada? \n" +
                     "Esta accion no se puede deshacer.", "Eliminar Muestra?", MessageBoxButtons.OKCancel) == DialogResult.OK) {
                     if(!cMuestras.EliminarEspecificacionDeMuestra(especificacionSeleccionada.EspecificacionDeMuestraId)) {
@@ -130,133 +170,111 @@ namespace FrigLab.View.Muestras {
                         MessageBox.Show("La Muestra seleccionada fue eliminada");
                     }
                 }
-			}else{
-				MessageBox.Show("No hay muestra seleccionada");
-			}
+            } else {
+                MessageBox.Show("No hay muestra seleccionada");
+            }
         }
-
-        public void ActualizarRegistros() {
-            areasRegistradas = new ControladorAreas().ListarAreas().OrderBy(a=>a.NombreDeArea);
-            areasSinFiltro=  new ControladorAreas().ListarAreas().OrderBy(a=>a.NombreDeArea);
-            especificacionesFiltradas = cMuestras.ListarEspecificacionesDeMuestras()
-            	.OrderBy(esp=>esp.NombreDeEspecificacionDeMuestra);
-			especificacionesSinFiltro = cMuestras.ListarEspecificacionesDeMuestras()
-            	.OrderBy(esp => esp.NombreDeEspecificacionDeMuestra);
-            LlenarTabla();
-        }
+        #endregion        
 
         #region Filtro Tipos
-        private void GrupoTipos_CheckedChanged(object sender, EventArgs e) {
-            if((sender as RadioButton).Text != "Todas") {
-                especificacionesFiltradas = especificacionesSinFiltro.Where(es => es.ClaseDeMuestra == (EnumClaseMuestra)(Enum.Parse(typeof(EnumClaseMuestra), (sender as RadioButton).Text)));
-            } else {
-                especificacionesFiltradas = especificacionesSinFiltro;
-            }
+        private void FiltrarTabla() {
+            especificacionesFiltradas = FiltrarTipo(tipoFiltrado, especificacionesSinFiltro.ToList());
+            especificacionesFiltradas = FiltrarSector(sectorFiltrado, especificacionesFiltradas.ToList());
             LlenarTabla();
+            LLenarComboSectores(false);
+        }
+
+        private List<EspecificacionDeMuestra> FiltrarTipo(string tipo, List<EspecificacionDeMuestra> especificacionesAFiltrar) {
+            if(string.IsNullOrEmpty(tipo) || tipo == "Todas") {
+                return especificacionesAFiltrar.ToList();
+            } else {
+                EnumClaseMuestra claseDeMuestra = (EnumClaseMuestra)(Enum.Parse(typeof(EnumClaseMuestra), tipo));
+                return especificacionesAFiltrar.Where(es => es.ClaseDeMuestra == claseDeMuestra).ToList();
+            }
+        }
+
+        private void GrupoTipos_CheckedChanged(object sender, EventArgs e) {
+            tipoFiltrado = (sender as RadioButton).Text;
+            FiltrarTabla();
+        }
+
+        #region Filtro::Sectores
+        private List<EspecificacionDeMuestra> FiltrarSector(string nombreSector, List<EspecificacionDeMuestra> especificacionesAFiltrar) {
+            if(string.IsNullOrEmpty(nombreSector) || nombreSector=="Todos") {
+                return especificacionesAFiltrar;
+            }
+            Area area = especificacionesAFiltrar.SelectMany<EspecificacionDeMuestra, Area>(es => es.Areas)
+                 .Where(a => a.NombreDeArea == nombreSector).FirstOrDefault();
+            return especificacionesAFiltrar.Where(esp=>esp.Areas.Contains(area)).ToList();
+        }
+
+        private void CboSectores_SelectedIndexChanged(object sender, EventArgs e) {
+            sectorFiltrado = (sender as ComboBox).Text;
+            FiltrarTabla();
+        }
+
+        #endregion
+
+        private void BorrarFiltros(object sender, EventArgs e) {
+            txtBuscarNombre.Clear();
+            this.Refresh();
+            RadioTodas.Checked = true;
+            cboSector.Text = "Todos";
         }
         #endregion
 
-        #region Filtro Texto
-		private void GrupoBuscar_TextChanged(object sender, EventArgs e) {
-        	if (!string.IsNullOrEmpty((sender as TextBox).Text)){
-				string texto = (sender as TextBox).Text;
-				grupoTipo.Enabled = false;
-				BloquearFiltros(sender);
-                
-				switch ((sender as TextBox).Name){
-					case "txtBuscarSector":
-                        areasRegistradas = areasSinFiltro
-                            .Where(a => a.NombreDeArea.ToLower()
-                            .Contains(texto.ToLower()));
-                        IDictionary<int, EspecificacionDeMuestra> especificaciones = new Dictionary<int, EspecificacionDeMuestra>();
-                        foreach(Area area  in areasRegistradas) {
-                            foreach(EspecificacionDeMuestra esp in area.EspecificacionesDeMuestras) {
-                                if(!especificaciones.ContainsKey(esp.EspecificacionDeMuestraId)) {
-                                    especificaciones.Add(esp.EspecificacionDeMuestraId, esp);
-                                }
-                            }
-                        }
-                        especificacionesFiltradas = especificaciones.Values.OrderBy(esp=>esp.NombreDeEspecificacionDeMuestra).ToList();
-						break;
-                		
-					case "txtBuscarNombre":
-						especificacionesFiltradas = especificacionesSinFiltro
-							.Where(t => t.NombreDeEspecificacionDeMuestra.ToLower()
-							.Contains(texto.ToLower()))
-							.OrderBy(esp=>esp.NombreDeEspecificacionDeMuestra);
-						break;
-                		
-					default: 
-						especificacionesFiltradas = especificacionesSinFiltro.OrderBy(esp=>esp.NombreDeEspecificacionDeMuestra);
-						break;
-				}
-        	}else{
-        		grupoTipo.Enabled = true;
-                BorrarFiltros();
-                especificacionesFiltradas = especificacionesSinFiltro.OrderBy(esp=>esp.NombreDeEspecificacionDeMuestra);
-        	}
-			LlenarTabla();
-		}
-        
-        private void BloquearFiltros(object excepcion){
-        	foreach (Control txtbox in grupoBuscar.Controls) {
-        		if (txtbox is TextBox){
-        			if ((txtbox as TextBox).Name != (excepcion as TextBox).Name){
-        				(txtbox as TextBox).Clear();
-        				(txtbox as TextBox).Enabled = false;
-        			}
-        		}
-        	}
-        }
-        
-        private void BorrarFiltros(object sender, EventArgs e){
-            BorrarFiltros();
-        }
-        private void BorrarFiltros() {
-            foreach(Control txtbox in grupoBuscar.Controls) {
-                if(txtbox is TextBox) {
-                    (txtbox as TextBox).Clear();
-                    (txtbox as TextBox).Enabled = true;
-                }
+        #region Busqueda
+        private void BtnBuscar_Click(object sender, EventArgs e) {
+            string textoBuscado = (sender as TextBox).Text;
+            if(!string.IsNullOrEmpty(textoBuscado)) {
+                especificacionesFiltradas = BuscarTexto(textoBuscado, especificacionesFiltradas.ToList());
+                LlenarTabla();
             }
         }
+
+        private List<EspecificacionDeMuestra> BuscarTexto(string texto, List<EspecificacionDeMuestra> especificacionesABuscar) {
+            return especificacionesFiltradas
+                .Where(es => es.NombreDeEspecificacionDeMuestra.ToLower().Contains(texto.ToLower())).ToList();
+        }
+
+        
         #endregion
 
         private void TablaDatosMouseDown(object sender, MouseEventArgs e) {
-			int currentMouseOverRow = (sender as DataGridView).HitTest(e.X,e.Y).RowIndex;
-			CambioFila(sender as DataGridView, currentMouseOverRow);
-		}
-		
-		private void TablaDatosRowEnter(object sender, DataGridViewCellEventArgs e) {
-			int currentMouseOverRow = e.RowIndex;
-			CambioFila(sender as DataGridView, currentMouseOverRow);
-		}
-		
-		private void CambioFila(DataGridView tabla, int filaActual){
-			if (filaActual >= 0){
-				tabla.Rows[filaActual].Selected = true;
-				SeleccionarElemento(tabla, filaActual);
-			}else{
-				tablaDatos.ContextMenuStrip = CrearMenuContextual();
-			}
-		}
-		
-		private void SeleccionarElemento(DataGridView tabla, int filaActual){
-			try {
-        		especificacionSeleccionada = especificacionesFiltradas.Single(es => es.EspecificacionDeMuestraId == ((int)(tabla.Rows[filaActual].Cells[0].Value)));
+            int currentMouseOverRow = (sender as DataGridView).HitTest(e.X, e.Y).RowIndex;
+            CambioFila(sender as DataGridView, currentMouseOverRow);
+        }
+
+        private void TablaDatosRowEnter(object sender, DataGridViewCellEventArgs e) {
+            int currentMouseOverRow = e.RowIndex;
+            CambioFila(sender as DataGridView, currentMouseOverRow);
+        }
+
+        private void CambioFila(DataGridView tabla, int filaActual) {
+            if(filaActual >= 0) {
+                tabla.Rows[filaActual].Selected = true;
+                SeleccionarElemento(tabla, filaActual);
+            } else {
+                tablaDatos.ContextMenuStrip = CrearMenuContextual();
+            }
+        }
+
+        private void SeleccionarElemento(DataGridView tabla, int filaActual) {
+            try {
+                especificacionSeleccionada = especificacionesFiltradas.Single(es => es.EspecificacionDeMuestraId == ((int)(tabla.Rows[filaActual].Cells[0].Value)));
                 if(SesionDeUsuario.UsuarioLogueado.PermisoDeUsuario == EnumPermisoUsuario.Administrador &&
                    !especificacionSeleccionada.MuestrasDeEspecifcacionDeMuestra.Any()) {
                     btnEliminar.Enabled = true;
                 }
-				tablaDatos.ContextMenuStrip = CrearMenuContextual(true);
+                tablaDatos.ContextMenuStrip = CrearMenuContextual(true);
             } catch(Exception) { }
-		}
-        
-        private void ListarMuestrasFormFormClosing(object sender, FormClosingEventArgs e) {
-        	SesionDeUsuario.RemoverFormularioAbierto(this);
-        	instancia = null;
         }
-        
+
+        private void ListarMuestrasFormFormClosing(object sender, FormClosingEventArgs e) {
+            SesionDeUsuario.RemoverFormularioAbierto(this);
+            instancia = null;
+        }
+
         public override void Refresh() {
             base.Refresh();
             ActualizarRegistros();
@@ -267,5 +285,6 @@ namespace FrigLab.View.Muestras {
             instancia = null;
         }
         #endregion
+
     }
 }

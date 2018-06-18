@@ -444,12 +444,7 @@ namespace FrigLab.View.Muestreos {
         #endregion
 
         private void BorrarFiltros(object sender, EventArgs e) {
-            foreach(Control txtbox in grupoBuscar.Controls) {
-                if(txtbox is TextBox) {
-                    (txtbox as TextBox).Clear();
-                    (txtbox as TextBox).Enabled = true;
-                }
-            }
+            txtBuscarTexto.Clear();
             this.Refresh();
             CalcularFechasIniciales();
             LlenarControlesFechas();
