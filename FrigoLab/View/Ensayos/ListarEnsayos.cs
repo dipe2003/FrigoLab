@@ -96,8 +96,8 @@ namespace FrigLab.View.Ensayos {
                 && SesionDeUsuario.PermisoUsuario() != EnumPermisoUsuario.Verificador ){
 				ctxMenuStrip.Items.Add("No hay acciones disponibles", Properties.Resources.imagen_no_disponible);
 			} else {
-				ctxMenuStrip.Items.Add("Editar", null, BtnEditar_Click);
-				ctxMenuStrip.Items.Add("Eliminar", null, BtnEliminarClick);
+				ctxMenuStrip.Items.Add("Editar", Properties.Resources.imagen_editar, BtnEditar_Click);
+				ctxMenuStrip.Items.Add("Eliminar", Properties.Resources.imagen_eliminar, BtnEliminarClick);
 			}
 			return ctxMenuStrip;
 		}

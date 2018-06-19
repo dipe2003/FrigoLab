@@ -28,7 +28,6 @@ namespace FrigLab.View.Muestreos
 		private System.Windows.Forms.RadioButton radioSuperficie;
 		private System.Windows.Forms.RadioButton radioAmbiente;
 		private System.Windows.Forms.RadioButton radioOperario;
-		private System.Windows.Forms.DataGridView tablaDatos;
 		private System.Windows.Forms.Button btnResultado;
 		private System.Windows.Forms.Button btnVerMuestreo;
 		private System.Windows.Forms.GroupBox grupoTabla;
@@ -67,7 +66,9 @@ namespace FrigLab.View.Muestreos
 		/// </summary>
 		private void InitializeComponent()
 		{
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grupoAcciones = new System.Windows.Forms.GroupBox();
             this.btnVerMuestreo = new System.Windows.Forms.Button();
             this.btnResultado = new System.Windows.Forms.Button();
@@ -96,12 +97,12 @@ namespace FrigLab.View.Muestreos
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.bntBuscar = new System.Windows.Forms.Button();
             this.txtBuscarTexto = new System.Windows.Forms.TextBox();
-            this.tablaDatos = new System.Windows.Forms.DataGridView();
             this.grupoTabla = new System.Windows.Forms.GroupBox();
             this.chkPool = new System.Windows.Forms.CheckBox();
             this.chkRequisitos = new System.Windows.Forms.CheckBox();
             this.chkRepeticion = new System.Windows.Forms.CheckBox();
             this.chkObservaciones = new System.Windows.Forms.CheckBox();
+            this.tablaDatos = new System.Windows.Forms.DataGridView();
             this.grupoAcciones.SuspendLayout();
             this.grupoFiltros.SuspendLayout();
             this.grupoSector.SuspendLayout();
@@ -109,8 +110,8 @@ namespace FrigLab.View.Muestreos
             this.grupoEstado.SuspendLayout();
             this.grupoClase.SuspendLayout();
             this.grupoBuscar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).BeginInit();
             this.grupoTabla.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // grupoAcciones
@@ -445,35 +446,6 @@ namespace FrigLab.View.Muestreos
             this.txtBuscarTexto.Size = new System.Drawing.Size(156, 22);
             this.txtBuscarTexto.TabIndex = 1;
             // 
-            // tablaDatos
-            // 
-            this.tablaDatos.AllowUserToAddRows = false;
-            this.tablaDatos.AllowUserToDeleteRows = false;
-            this.tablaDatos.AllowUserToOrderColumns = true;
-            this.tablaDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tablaDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tablaDatos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.tablaDatos.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.tablaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaDatos.Location = new System.Drawing.Point(21, 219);
-            this.tablaDatos.Margin = new System.Windows.Forms.Padding(5);
-            this.tablaDatos.MultiSelect = false;
-            this.tablaDatos.Name = "tablaDatos";
-            this.tablaDatos.ReadOnly = true;
-            this.tablaDatos.RowHeadersVisible = false;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaDatos.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.tablaDatos.RowTemplate.ReadOnly = true;
-            this.tablaDatos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaDatos.Size = new System.Drawing.Size(1217, 430);
-            this.tablaDatos.TabIndex = 3;
-            this.tablaDatos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaDatosRowEnter);
-            this.tablaDatos.Sorted += new System.EventHandler(this.TablaDatosSorted);
-            this.tablaDatos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TablaDatosMouseDown);
-            // 
             // grupoTabla
             // 
             this.grupoTabla.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -542,16 +514,66 @@ namespace FrigLab.View.Muestreos
             this.chkObservaciones.Text = "Observaciones";
             this.chkObservaciones.UseVisualStyleBackColor = true;
             // 
+            // tablaDatos
+            // 
+            this.tablaDatos.AllowUserToAddRows = false;
+            this.tablaDatos.AllowUserToDeleteRows = false;
+            this.tablaDatos.AllowUserToOrderColumns = true;
+            this.tablaDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tablaDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tablaDatos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tablaDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.tablaDatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaDatos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaDatos.EnableHeadersVisualStyles = false;
+            this.tablaDatos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.tablaDatos.Location = new System.Drawing.Point(20, 218);
+            this.tablaDatos.Margin = new System.Windows.Forms.Padding(4);
+            this.tablaDatos.MultiSelect = false;
+            this.tablaDatos.Name = "tablaDatos";
+            this.tablaDatos.ReadOnly = true;
+            this.tablaDatos.RowHeadersVisible = false;
+            this.tablaDatos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.tablaDatos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.tablaDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tablaDatos.Size = new System.Drawing.Size(1219, 422);
+            this.tablaDatos.TabIndex = 8;
+            this.tablaDatos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaDatosRowEnter);
+            this.tablaDatos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TablaDatosMouseDown);
+            // 
             // ListarMuestreosAmbientales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1259, 667);
+            this.Controls.Add(this.tablaDatos);
             this.Controls.Add(this.grupoTabla);
             this.Controls.Add(this.grupoAcciones);
             this.Controls.Add(this.grupoFiltros);
             this.Controls.Add(this.grupoBuscar);
-            this.Controls.Add(this.tablaDatos);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "ListarMuestreosAmbientales";
@@ -567,9 +589,9 @@ namespace FrigLab.View.Muestreos
             this.grupoClase.PerformLayout();
             this.grupoBuscar.ResumeLayout(false);
             this.grupoBuscar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).EndInit();
             this.grupoTabla.ResumeLayout(false);
             this.grupoTabla.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -599,5 +621,6 @@ namespace FrigLab.View.Muestreos
         private System.Windows.Forms.ComboBox cboSector;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DataGridView tablaDatos;
     }
 }

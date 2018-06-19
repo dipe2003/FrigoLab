@@ -221,7 +221,6 @@ namespace FrigLab.View.Areas {
 			CambioFila(sender as DataGridView, currentMouseOverRow);
 		}
 
-		#endregion
-
-	}
+        #endregion
+    }
 }

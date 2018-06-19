@@ -514,40 +514,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\imagen_editar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imagen_eliminar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imagen_nuevo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imagen_quitar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imagen_resultados.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imagen_ver.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imagen_no_verificar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imagen_verificar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imagen_no_disponible.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imagen_matraz.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\LateralAzul.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\imagen_usuario_48.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imagen_usuario_32.png" />
@@ -566,6 +533,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imagen_matraz_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_login_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_acceso_100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -26,88 +26,88 @@ namespace FrigLab {
         /// </summary>
         private void InitializeComponent() {
             this.panelSuperior = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelSubmenuMuestras = new System.Windows.Forms.Panel();
-            this.buttonNuevaMuestra = new System.Windows.Forms.Button();
-            this.buttonListarMuestras = new System.Windows.Forms.Button();
-            this.panelSubmenuAreas = new System.Windows.Forms.Panel();
-            this.buttonNuevaArea = new System.Windows.Forms.Button();
-            this.buttonListarAreas = new System.Windows.Forms.Button();
-            this.panelSubmenuMuestreos = new System.Windows.Forms.Panel();
-            this.buttonNuevoPool = new System.Windows.Forms.Button();
-            this.buttonNuevoMuestreo = new System.Windows.Forms.Button();
-            this.buttonListarMuestreos = new System.Windows.Forms.Button();
-            this.panelSubmenuUsuarios = new System.Windows.Forms.Panel();
-            this.buttonNuevoUsuario = new System.Windows.Forms.Button();
-            this.buttonListarUsuarios = new System.Windows.Forms.Button();
-            this.panelSubmenuLaboratorio = new System.Windows.Forms.Panel();
-            this.buttonLaboratorios = new System.Windows.Forms.Button();
-            this.buttonRequisitos = new System.Windows.Forms.Button();
-            this.buttonEnsayos = new System.Windows.Forms.Button();
-            this.panelSubMenuButtonEnsayos = new System.Windows.Forms.Panel();
-            this.buttonNuevoEnsayo = new System.Windows.Forms.Button();
-            this.buttonListarEnsayos = new System.Windows.Forms.Button();
-            this.panelSubmenuButtonRequisitos = new System.Windows.Forms.Panel();
-            this.buttonNuevoRequisito = new System.Windows.Forms.Button();
-            this.buttonListarRequisitos = new System.Windows.Forms.Button();
-            this.panelSubmenuButtonLaboratorios = new System.Windows.Forms.Panel();
-            this.buttonNuevoLaboratorio = new System.Windows.Forms.Button();
-            this.buttonListarLaboratorios = new System.Windows.Forms.Button();
-            this.panelSubmenuSesion = new System.Windows.Forms.Panel();
-            this.buttonCerrarSesion = new System.Windows.Forms.Button();
-            this.buttonMisDatos = new System.Windows.Forms.Button();
-            this.panelContenido = new System.Windows.Forms.Panel();
-            this.panelSubmenuButtonNuevoMuestreo = new System.Windows.Forms.Panel();
-            this.buttonNuevoOtro = new System.Windows.Forms.Button();
-            this.buttonNuevoOperario = new System.Windows.Forms.Button();
-            this.buttonNuevoSuperficie = new System.Windows.Forms.Button();
-            this.buttonNuevoAmbiente = new System.Windows.Forms.Button();
-            this.buttonNuevoProducto = new System.Windows.Forms.Button();
-            this.panelSubmenuButtonListarMuestreo = new System.Windows.Forms.Panel();
-            this.buttonListarOtrosMuestreos = new System.Windows.Forms.Button();
-            this.buttonListarMuestreosAmbientales = new System.Windows.Forms.Button();
-            this.buttonListarMuestreoProducto = new System.Windows.Forms.Button();
-            this.pictureBoxLateralAzulSubmenuSesion = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLateralAzulSubmenuLaboratoriosLab = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLateralAzulSubmenuRequisitos = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLateralAzulSubmenuEnsayos = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLateralAzulSubmenuNuevoProducto = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLateralAzulSubmenuLaboratorios = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLateralAzulSubmenuUsuarios = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLateralAzulSubmenuMuestreos = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLateralAzulSubmenuAreas = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLateralIzquierdoSubmenuMuestras = new System.Windows.Forms.PictureBox();
             this.buttonAreas = new System.Windows.Forms.Button();
             this.buttonLaboratorio = new System.Windows.Forms.Button();
             this.buttonSesion = new System.Windows.Forms.Button();
             this.buttonUsuarios = new System.Windows.Forms.Button();
             this.buttonMuestreos = new System.Windows.Forms.Button();
             this.buttonMuestras = new System.Windows.Forms.Button();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.panelSubmenuMuestras = new System.Windows.Forms.Panel();
+            this.pictureBoxLateralIzquierdoSubmenuMuestras = new System.Windows.Forms.PictureBox();
+            this.buttonNuevaMuestra = new System.Windows.Forms.Button();
+            this.buttonListarMuestras = new System.Windows.Forms.Button();
+            this.panelSubmenuAreas = new System.Windows.Forms.Panel();
+            this.pictureBoxLateralAzulSubmenuAreas = new System.Windows.Forms.PictureBox();
+            this.buttonNuevaArea = new System.Windows.Forms.Button();
+            this.buttonListarAreas = new System.Windows.Forms.Button();
+            this.panelSubmenuMuestreos = new System.Windows.Forms.Panel();
+            this.pictureBoxLateralAzulSubmenuMuestreos = new System.Windows.Forms.PictureBox();
+            this.buttonNuevoPool = new System.Windows.Forms.Button();
+            this.buttonNuevoMuestreo = new System.Windows.Forms.Button();
+            this.buttonListarMuestreos = new System.Windows.Forms.Button();
+            this.panelSubmenuUsuarios = new System.Windows.Forms.Panel();
+            this.pictureBoxLateralAzulSubmenuUsuarios = new System.Windows.Forms.PictureBox();
+            this.buttonNuevoUsuario = new System.Windows.Forms.Button();
+            this.buttonListarUsuarios = new System.Windows.Forms.Button();
+            this.panelSubmenuLaboratorio = new System.Windows.Forms.Panel();
+            this.pictureBoxLateralAzulSubmenuLaboratorios = new System.Windows.Forms.PictureBox();
+            this.buttonLaboratorios = new System.Windows.Forms.Button();
+            this.buttonRequisitos = new System.Windows.Forms.Button();
+            this.buttonEnsayos = new System.Windows.Forms.Button();
+            this.panelSubMenuButtonEnsayos = new System.Windows.Forms.Panel();
+            this.pictureBoxLateralAzulSubmenuEnsayos = new System.Windows.Forms.PictureBox();
+            this.buttonNuevoEnsayo = new System.Windows.Forms.Button();
+            this.buttonListarEnsayos = new System.Windows.Forms.Button();
+            this.panelSubmenuButtonRequisitos = new System.Windows.Forms.Panel();
+            this.pictureBoxLateralAzulSubmenuRequisitos = new System.Windows.Forms.PictureBox();
+            this.buttonNuevoRequisito = new System.Windows.Forms.Button();
+            this.buttonListarRequisitos = new System.Windows.Forms.Button();
+            this.panelSubmenuButtonLaboratorios = new System.Windows.Forms.Panel();
+            this.pictureBoxLateralAzulSubmenuLaboratoriosLab = new System.Windows.Forms.PictureBox();
+            this.buttonNuevoLaboratorio = new System.Windows.Forms.Button();
+            this.buttonListarLaboratorios = new System.Windows.Forms.Button();
+            this.panelSubmenuSesion = new System.Windows.Forms.Panel();
+            this.pictureBoxLateralAzulSubmenuSesion = new System.Windows.Forms.PictureBox();
+            this.buttonCerrarSesion = new System.Windows.Forms.Button();
+            this.buttonMisDatos = new System.Windows.Forms.Button();
+            this.panelContenido = new System.Windows.Forms.Panel();
+            this.panelSubmenuButtonListarMuestreo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonListarOtrosMuestreos = new System.Windows.Forms.Button();
+            this.buttonListarMuestreosAmbientales = new System.Windows.Forms.Button();
+            this.buttonListarMuestreoProducto = new System.Windows.Forms.Button();
+            this.panelSubmenuButtonNuevoMuestreo = new System.Windows.Forms.Panel();
+            this.pictureBoxLateralAzulSubmenuNuevoProducto = new System.Windows.Forms.PictureBox();
+            this.buttonNuevoOtro = new System.Windows.Forms.Button();
+            this.buttonNuevoOperario = new System.Windows.Forms.Button();
+            this.buttonNuevoSuperficie = new System.Windows.Forms.Button();
+            this.buttonNuevoAmbiente = new System.Windows.Forms.Button();
+            this.buttonNuevoProducto = new System.Windows.Forms.Button();
             this.panelSuperior.SuspendLayout();
             this.panelSubmenuMuestras.SuspendLayout();
-            this.panelSubmenuAreas.SuspendLayout();
-            this.panelSubmenuMuestreos.SuspendLayout();
-            this.panelSubmenuUsuarios.SuspendLayout();
-            this.panelSubmenuLaboratorio.SuspendLayout();
-            this.panelSubMenuButtonEnsayos.SuspendLayout();
-            this.panelSubmenuButtonRequisitos.SuspendLayout();
-            this.panelSubmenuButtonLaboratorios.SuspendLayout();
-            this.panelSubmenuSesion.SuspendLayout();
-            this.panelContenido.SuspendLayout();
-            this.panelSubmenuButtonNuevoMuestreo.SuspendLayout();
-            this.panelSubmenuButtonListarMuestreo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuSesion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuLaboratoriosLab)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuRequisitos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuEnsayos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuNuevoProducto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuLaboratorios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuMuestreos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuAreas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralIzquierdoSubmenuMuestras)).BeginInit();
+            this.panelSubmenuAreas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuAreas)).BeginInit();
+            this.panelSubmenuMuestreos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuMuestreos)).BeginInit();
+            this.panelSubmenuUsuarios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuUsuarios)).BeginInit();
+            this.panelSubmenuLaboratorio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuLaboratorios)).BeginInit();
+            this.panelSubMenuButtonEnsayos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuEnsayos)).BeginInit();
+            this.panelSubmenuButtonRequisitos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuRequisitos)).BeginInit();
+            this.panelSubmenuButtonLaboratorios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuLaboratoriosLab)).BeginInit();
+            this.panelSubmenuSesion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuSesion)).BeginInit();
+            this.panelContenido.SuspendLayout();
+            this.panelSubmenuButtonListarMuestreo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelSubmenuButtonNuevoMuestreo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuNuevoProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSuperior
@@ -122,8 +122,135 @@ namespace FrigLab {
             this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSuperior.Location = new System.Drawing.Point(0, 0);
             this.panelSuperior.Name = "panelSuperior";
-            this.panelSuperior.Size = new System.Drawing.Size(982, 75);
+            this.panelSuperior.Size = new System.Drawing.Size(1102, 75);
             this.panelSuperior.TabIndex = 1;
+            // 
+            // buttonAreas
+            // 
+            this.buttonAreas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonAreas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
+            this.buttonAreas.FlatAppearance.BorderSize = 0;
+            this.buttonAreas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.buttonAreas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonAreas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAreas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAreas.ForeColor = System.Drawing.Color.White;
+            this.buttonAreas.Image = global::FrigLab.Properties.Resources.imagen_mapa_48;
+            this.buttonAreas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAreas.Location = new System.Drawing.Point(126, 2);
+            this.buttonAreas.Name = "buttonAreas";
+            this.buttonAreas.Size = new System.Drawing.Size(123, 69);
+            this.buttonAreas.TabIndex = 0;
+            this.buttonAreas.Text = "Areas";
+            this.buttonAreas.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.buttonAreas.UseVisualStyleBackColor = true;
+            this.buttonAreas.Click += new System.EventHandler(this.buttonAreas_Click);
+            // 
+            // buttonLaboratorio
+            // 
+            this.buttonLaboratorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonLaboratorio.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
+            this.buttonLaboratorio.FlatAppearance.BorderSize = 0;
+            this.buttonLaboratorio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.buttonLaboratorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonLaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLaboratorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLaboratorio.ForeColor = System.Drawing.Color.White;
+            this.buttonLaboratorio.Image = global::FrigLab.Properties.Resources.imagen_microscopio_48;
+            this.buttonLaboratorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLaboratorio.Location = new System.Drawing.Point(513, 2);
+            this.buttonLaboratorio.Name = "buttonLaboratorio";
+            this.buttonLaboratorio.Size = new System.Drawing.Size(123, 69);
+            this.buttonLaboratorio.TabIndex = 2;
+            this.buttonLaboratorio.Text = "Laboratorio";
+            this.buttonLaboratorio.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.buttonLaboratorio.UseVisualStyleBackColor = true;
+            this.buttonLaboratorio.Click += new System.EventHandler(this.buttonLaboratorio_Click);
+            // 
+            // buttonSesion
+            // 
+            this.buttonSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonSesion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
+            this.buttonSesion.FlatAppearance.BorderSize = 0;
+            this.buttonSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.buttonSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSesion.ForeColor = System.Drawing.Color.White;
+            this.buttonSesion.Image = global::FrigLab.Properties.Resources.imagen_usuario_32;
+            this.buttonSesion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonSesion.Location = new System.Drawing.Point(958, 2);
+            this.buttonSesion.Name = "buttonSesion";
+            this.buttonSesion.Size = new System.Drawing.Size(123, 69);
+            this.buttonSesion.TabIndex = 2;
+            this.buttonSesion.Text = "[Sesion]";
+            this.buttonSesion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonSesion.UseVisualStyleBackColor = true;
+            this.buttonSesion.Click += new System.EventHandler(this.buttonSesion_Click);
+            // 
+            // buttonUsuarios
+            // 
+            this.buttonUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonUsuarios.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
+            this.buttonUsuarios.FlatAppearance.BorderSize = 0;
+            this.buttonUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.buttonUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUsuarios.ForeColor = System.Drawing.Color.White;
+            this.buttonUsuarios.Image = global::FrigLab.Properties.Resources.imagen_grupo_usuarios_48;
+            this.buttonUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonUsuarios.Location = new System.Drawing.Point(642, 2);
+            this.buttonUsuarios.Name = "buttonUsuarios";
+            this.buttonUsuarios.Size = new System.Drawing.Size(123, 69);
+            this.buttonUsuarios.TabIndex = 2;
+            this.buttonUsuarios.Text = "Usuarios";
+            this.buttonUsuarios.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.buttonUsuarios.UseVisualStyleBackColor = true;
+            this.buttonUsuarios.Click += new System.EventHandler(this.buttonUsuarios_Click);
+            // 
+            // buttonMuestreos
+            // 
+            this.buttonMuestreos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonMuestreos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
+            this.buttonMuestreos.FlatAppearance.BorderSize = 0;
+            this.buttonMuestreos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.buttonMuestreos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonMuestreos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMuestreos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMuestreos.ForeColor = System.Drawing.Color.White;
+            this.buttonMuestreos.Image = global::FrigLab.Properties.Resources.imagen_caja_48;
+            this.buttonMuestreos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonMuestreos.Location = new System.Drawing.Point(384, 2);
+            this.buttonMuestreos.Name = "buttonMuestreos";
+            this.buttonMuestreos.Size = new System.Drawing.Size(123, 69);
+            this.buttonMuestreos.TabIndex = 2;
+            this.buttonMuestreos.Text = "Muestreos";
+            this.buttonMuestreos.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.buttonMuestreos.UseVisualStyleBackColor = true;
+            this.buttonMuestreos.Click += new System.EventHandler(this.buttonMuestreos_Click);
+            // 
+            // buttonMuestras
+            // 
+            this.buttonMuestras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonMuestras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
+            this.buttonMuestras.FlatAppearance.BorderSize = 0;
+            this.buttonMuestras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.buttonMuestras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonMuestras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMuestras.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMuestras.ForeColor = System.Drawing.Color.White;
+            this.buttonMuestras.Image = global::FrigLab.Properties.Resources.imagen_matraz_48;
+            this.buttonMuestras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonMuestras.Location = new System.Drawing.Point(255, 2);
+            this.buttonMuestras.Name = "buttonMuestras";
+            this.buttonMuestras.Size = new System.Drawing.Size(123, 69);
+            this.buttonMuestras.TabIndex = 2;
+            this.buttonMuestras.Text = "Muestras";
+            this.buttonMuestras.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.buttonMuestras.UseVisualStyleBackColor = true;
+            this.buttonMuestras.Click += new System.EventHandler(this.buttonMuestras_Click);
             // 
             // panelLogo
             // 
@@ -144,6 +271,16 @@ namespace FrigLab {
             this.panelSubmenuMuestras.Size = new System.Drawing.Size(101, 83);
             this.panelSubmenuMuestras.TabIndex = 3;
             this.panelSubmenuMuestras.Visible = false;
+            // 
+            // pictureBoxLateralIzquierdoSubmenuMuestras
+            // 
+            this.pictureBoxLateralIzquierdoSubmenuMuestras.Image = global::FrigLab.Properties.Resources.LateralAzul;
+            this.pictureBoxLateralIzquierdoSubmenuMuestras.Location = new System.Drawing.Point(6, 5);
+            this.pictureBoxLateralIzquierdoSubmenuMuestras.Name = "pictureBoxLateralIzquierdoSubmenuMuestras";
+            this.pictureBoxLateralIzquierdoSubmenuMuestras.Size = new System.Drawing.Size(10, 74);
+            this.pictureBoxLateralIzquierdoSubmenuMuestras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLateralIzquierdoSubmenuMuestras.TabIndex = 2;
+            this.pictureBoxLateralIzquierdoSubmenuMuestras.TabStop = false;
             // 
             // buttonNuevaMuestra
             // 
@@ -197,6 +334,16 @@ namespace FrigLab {
             this.panelSubmenuAreas.TabIndex = 1;
             this.panelSubmenuAreas.Visible = false;
             // 
+            // pictureBoxLateralAzulSubmenuAreas
+            // 
+            this.pictureBoxLateralAzulSubmenuAreas.Image = global::FrigLab.Properties.Resources.LateralAzul;
+            this.pictureBoxLateralAzulSubmenuAreas.Location = new System.Drawing.Point(6, 5);
+            this.pictureBoxLateralAzulSubmenuAreas.Name = "pictureBoxLateralAzulSubmenuAreas";
+            this.pictureBoxLateralAzulSubmenuAreas.Size = new System.Drawing.Size(10, 74);
+            this.pictureBoxLateralAzulSubmenuAreas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLateralAzulSubmenuAreas.TabIndex = 2;
+            this.pictureBoxLateralAzulSubmenuAreas.TabStop = false;
+            // 
             // buttonNuevaArea
             // 
             this.buttonNuevaArea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -249,6 +396,16 @@ namespace FrigLab {
             this.panelSubmenuMuestreos.Size = new System.Drawing.Size(101, 121);
             this.panelSubmenuMuestreos.TabIndex = 3;
             this.panelSubmenuMuestreos.Visible = false;
+            // 
+            // pictureBoxLateralAzulSubmenuMuestreos
+            // 
+            this.pictureBoxLateralAzulSubmenuMuestreos.Image = global::FrigLab.Properties.Resources.LateralAzul;
+            this.pictureBoxLateralAzulSubmenuMuestreos.Location = new System.Drawing.Point(6, 5);
+            this.pictureBoxLateralAzulSubmenuMuestreos.Name = "pictureBoxLateralAzulSubmenuMuestreos";
+            this.pictureBoxLateralAzulSubmenuMuestreos.Size = new System.Drawing.Size(10, 113);
+            this.pictureBoxLateralAzulSubmenuMuestreos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLateralAzulSubmenuMuestreos.TabIndex = 2;
+            this.pictureBoxLateralAzulSubmenuMuestreos.TabStop = false;
             // 
             // buttonNuevoPool
             // 
@@ -322,6 +479,16 @@ namespace FrigLab {
             this.panelSubmenuUsuarios.TabIndex = 3;
             this.panelSubmenuUsuarios.Visible = false;
             // 
+            // pictureBoxLateralAzulSubmenuUsuarios
+            // 
+            this.pictureBoxLateralAzulSubmenuUsuarios.Image = global::FrigLab.Properties.Resources.LateralAzul;
+            this.pictureBoxLateralAzulSubmenuUsuarios.Location = new System.Drawing.Point(6, 5);
+            this.pictureBoxLateralAzulSubmenuUsuarios.Name = "pictureBoxLateralAzulSubmenuUsuarios";
+            this.pictureBoxLateralAzulSubmenuUsuarios.Size = new System.Drawing.Size(10, 74);
+            this.pictureBoxLateralAzulSubmenuUsuarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLateralAzulSubmenuUsuarios.TabIndex = 2;
+            this.pictureBoxLateralAzulSubmenuUsuarios.TabStop = false;
+            // 
             // buttonNuevoUsuario
             // 
             this.buttonNuevoUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -372,6 +539,16 @@ namespace FrigLab {
             this.panelSubmenuLaboratorio.Size = new System.Drawing.Size(128, 121);
             this.panelSubmenuLaboratorio.TabIndex = 3;
             this.panelSubmenuLaboratorio.Visible = false;
+            // 
+            // pictureBoxLateralAzulSubmenuLaboratorios
+            // 
+            this.pictureBoxLateralAzulSubmenuLaboratorios.Image = global::FrigLab.Properties.Resources.LateralAzul;
+            this.pictureBoxLateralAzulSubmenuLaboratorios.Location = new System.Drawing.Point(6, 5);
+            this.pictureBoxLateralAzulSubmenuLaboratorios.Name = "pictureBoxLateralAzulSubmenuLaboratorios";
+            this.pictureBoxLateralAzulSubmenuLaboratorios.Size = new System.Drawing.Size(10, 112);
+            this.pictureBoxLateralAzulSubmenuLaboratorios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLateralAzulSubmenuLaboratorios.TabIndex = 2;
+            this.pictureBoxLateralAzulSubmenuLaboratorios.TabStop = false;
             // 
             // buttonLaboratorios
             // 
@@ -445,6 +622,16 @@ namespace FrigLab {
             this.panelSubMenuButtonEnsayos.TabIndex = 3;
             this.panelSubMenuButtonEnsayos.Visible = false;
             // 
+            // pictureBoxLateralAzulSubmenuEnsayos
+            // 
+            this.pictureBoxLateralAzulSubmenuEnsayos.Image = global::FrigLab.Properties.Resources.LateralAzul;
+            this.pictureBoxLateralAzulSubmenuEnsayos.Location = new System.Drawing.Point(6, 5);
+            this.pictureBoxLateralAzulSubmenuEnsayos.Name = "pictureBoxLateralAzulSubmenuEnsayos";
+            this.pictureBoxLateralAzulSubmenuEnsayos.Size = new System.Drawing.Size(10, 74);
+            this.pictureBoxLateralAzulSubmenuEnsayos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLateralAzulSubmenuEnsayos.TabIndex = 2;
+            this.pictureBoxLateralAzulSubmenuEnsayos.TabStop = false;
+            // 
             // buttonNuevoEnsayo
             // 
             this.buttonNuevoEnsayo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -494,6 +681,16 @@ namespace FrigLab {
             this.panelSubmenuButtonRequisitos.Size = new System.Drawing.Size(101, 83);
             this.panelSubmenuButtonRequisitos.TabIndex = 3;
             this.panelSubmenuButtonRequisitos.Visible = false;
+            // 
+            // pictureBoxLateralAzulSubmenuRequisitos
+            // 
+            this.pictureBoxLateralAzulSubmenuRequisitos.Image = global::FrigLab.Properties.Resources.LateralAzul;
+            this.pictureBoxLateralAzulSubmenuRequisitos.Location = new System.Drawing.Point(6, 5);
+            this.pictureBoxLateralAzulSubmenuRequisitos.Name = "pictureBoxLateralAzulSubmenuRequisitos";
+            this.pictureBoxLateralAzulSubmenuRequisitos.Size = new System.Drawing.Size(10, 74);
+            this.pictureBoxLateralAzulSubmenuRequisitos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLateralAzulSubmenuRequisitos.TabIndex = 2;
+            this.pictureBoxLateralAzulSubmenuRequisitos.TabStop = false;
             // 
             // buttonNuevoRequisito
             // 
@@ -545,6 +742,16 @@ namespace FrigLab {
             this.panelSubmenuButtonLaboratorios.TabIndex = 3;
             this.panelSubmenuButtonLaboratorios.Visible = false;
             // 
+            // pictureBoxLateralAzulSubmenuLaboratoriosLab
+            // 
+            this.pictureBoxLateralAzulSubmenuLaboratoriosLab.Image = global::FrigLab.Properties.Resources.LateralAzul;
+            this.pictureBoxLateralAzulSubmenuLaboratoriosLab.Location = new System.Drawing.Point(6, 5);
+            this.pictureBoxLateralAzulSubmenuLaboratoriosLab.Name = "pictureBoxLateralAzulSubmenuLaboratoriosLab";
+            this.pictureBoxLateralAzulSubmenuLaboratoriosLab.Size = new System.Drawing.Size(10, 74);
+            this.pictureBoxLateralAzulSubmenuLaboratoriosLab.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLateralAzulSubmenuLaboratoriosLab.TabIndex = 2;
+            this.pictureBoxLateralAzulSubmenuLaboratoriosLab.TabStop = false;
+            // 
             // buttonNuevoLaboratorio
             // 
             this.buttonNuevoLaboratorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -590,11 +797,21 @@ namespace FrigLab {
             this.panelSubmenuSesion.Controls.Add(this.pictureBoxLateralAzulSubmenuSesion);
             this.panelSubmenuSesion.Controls.Add(this.buttonCerrarSesion);
             this.panelSubmenuSesion.Controls.Add(this.buttonMisDatos);
-            this.panelSubmenuSesion.Location = new System.Drawing.Point(838, 0);
+            this.panelSubmenuSesion.Location = new System.Drawing.Point(958, 0);
             this.panelSubmenuSesion.Name = "panelSubmenuSesion";
             this.panelSubmenuSesion.Size = new System.Drawing.Size(142, 83);
             this.panelSubmenuSesion.TabIndex = 3;
             this.panelSubmenuSesion.Visible = false;
+            // 
+            // pictureBoxLateralAzulSubmenuSesion
+            // 
+            this.pictureBoxLateralAzulSubmenuSesion.Image = global::FrigLab.Properties.Resources.LateralAzul;
+            this.pictureBoxLateralAzulSubmenuSesion.Location = new System.Drawing.Point(6, 5);
+            this.pictureBoxLateralAzulSubmenuSesion.Name = "pictureBoxLateralAzulSubmenuSesion";
+            this.pictureBoxLateralAzulSubmenuSesion.Size = new System.Drawing.Size(10, 74);
+            this.pictureBoxLateralAzulSubmenuSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLateralAzulSubmenuSesion.TabIndex = 2;
+            this.pictureBoxLateralAzulSubmenuSesion.TabStop = false;
             // 
             // buttonCerrarSesion
             // 
@@ -639,6 +856,7 @@ namespace FrigLab {
             // panelContenido
             // 
             this.panelContenido.AutoScroll = true;
+            this.panelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
             this.panelContenido.Controls.Add(this.panelSubmenuSesion);
             this.panelContenido.Controls.Add(this.panelSubmenuButtonLaboratorios);
             this.panelContenido.Controls.Add(this.panelSubmenuButtonRequisitos);
@@ -653,9 +871,92 @@ namespace FrigLab {
             this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenido.Location = new System.Drawing.Point(0, 75);
             this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(982, 478);
+            this.panelContenido.Size = new System.Drawing.Size(1102, 478);
             this.panelContenido.TabIndex = 2;
             this.panelContenido.Click += new System.EventHandler(this.panelContenido_Click);
+            // 
+            // panelSubmenuButtonListarMuestreo
+            // 
+            this.panelSubmenuButtonListarMuestreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.panelSubmenuButtonListarMuestreo.Controls.Add(this.pictureBox1);
+            this.panelSubmenuButtonListarMuestreo.Controls.Add(this.buttonListarOtrosMuestreos);
+            this.panelSubmenuButtonListarMuestreo.Controls.Add(this.buttonListarMuestreosAmbientales);
+            this.panelSubmenuButtonListarMuestreo.Controls.Add(this.buttonListarMuestreoProducto);
+            this.panelSubmenuButtonListarMuestreo.Location = new System.Drawing.Point(507, 12);
+            this.panelSubmenuButtonListarMuestreo.Name = "panelSubmenuButtonListarMuestreo";
+            this.panelSubmenuButtonListarMuestreo.Size = new System.Drawing.Size(128, 133);
+            this.panelSubmenuButtonListarMuestreo.TabIndex = 3;
+            this.panelSubmenuButtonListarMuestreo.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::FrigLab.Properties.Resources.LateralAzul;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(10, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // buttonListarOtrosMuestreos
+            // 
+            this.buttonListarOtrosMuestreos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonListarOtrosMuestreos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
+            this.buttonListarOtrosMuestreos.FlatAppearance.BorderSize = 0;
+            this.buttonListarOtrosMuestreos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.buttonListarOtrosMuestreos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonListarOtrosMuestreos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListarOtrosMuestreos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonListarOtrosMuestreos.ForeColor = System.Drawing.Color.White;
+            this.buttonListarOtrosMuestreos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonListarOtrosMuestreos.Location = new System.Drawing.Point(13, 87);
+            this.buttonListarOtrosMuestreos.Name = "buttonListarOtrosMuestreos";
+            this.buttonListarOtrosMuestreos.Size = new System.Drawing.Size(115, 38);
+            this.buttonListarOtrosMuestreos.TabIndex = 1;
+            this.buttonListarOtrosMuestreos.Text = "Otro";
+            this.buttonListarOtrosMuestreos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonListarOtrosMuestreos.UseVisualStyleBackColor = true;
+            this.buttonListarOtrosMuestreos.Click += new System.EventHandler(this.ButtonListarOtrosMuestreos_Click);
+            // 
+            // buttonListarMuestreosAmbientales
+            // 
+            this.buttonListarMuestreosAmbientales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonListarMuestreosAmbientales.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
+            this.buttonListarMuestreosAmbientales.FlatAppearance.BorderSize = 0;
+            this.buttonListarMuestreosAmbientales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.buttonListarMuestreosAmbientales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonListarMuestreosAmbientales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListarMuestreosAmbientales.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonListarMuestreosAmbientales.ForeColor = System.Drawing.Color.White;
+            this.buttonListarMuestreosAmbientales.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonListarMuestreosAmbientales.Location = new System.Drawing.Point(10, 42);
+            this.buttonListarMuestreosAmbientales.Name = "buttonListarMuestreosAmbientales";
+            this.buttonListarMuestreosAmbientales.Size = new System.Drawing.Size(115, 37);
+            this.buttonListarMuestreosAmbientales.TabIndex = 1;
+            this.buttonListarMuestreosAmbientales.Text = "Ambiental";
+            this.buttonListarMuestreosAmbientales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonListarMuestreosAmbientales.UseVisualStyleBackColor = true;
+            this.buttonListarMuestreosAmbientales.Click += new System.EventHandler(this.ButtonListarMuestreosAmbientales_Click);
+            // 
+            // buttonListarMuestreoProducto
+            // 
+            this.buttonListarMuestreoProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonListarMuestreoProducto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
+            this.buttonListarMuestreoProducto.FlatAppearance.BorderSize = 0;
+            this.buttonListarMuestreoProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.buttonListarMuestreoProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonListarMuestreoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonListarMuestreoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonListarMuestreoProducto.ForeColor = System.Drawing.Color.White;
+            this.buttonListarMuestreoProducto.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonListarMuestreoProducto.Location = new System.Drawing.Point(11, 5);
+            this.buttonListarMuestreoProducto.Name = "buttonListarMuestreoProducto";
+            this.buttonListarMuestreoProducto.Size = new System.Drawing.Size(114, 37);
+            this.buttonListarMuestreoProducto.TabIndex = 0;
+            this.buttonListarMuestreoProducto.Text = "Producto";
+            this.buttonListarMuestreoProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonListarMuestreoProducto.UseVisualStyleBackColor = true;
+            this.buttonListarMuestreoProducto.Click += new System.EventHandler(this.ButtonListarMuestreosProducto_Click);
             // 
             // panelSubmenuButtonNuevoMuestreo
             // 
@@ -671,6 +972,16 @@ namespace FrigLab {
             this.panelSubmenuButtonNuevoMuestreo.Size = new System.Drawing.Size(128, 211);
             this.panelSubmenuButtonNuevoMuestreo.TabIndex = 3;
             this.panelSubmenuButtonNuevoMuestreo.Visible = false;
+            // 
+            // pictureBoxLateralAzulSubmenuNuevoProducto
+            // 
+            this.pictureBoxLateralAzulSubmenuNuevoProducto.Image = global::FrigLab.Properties.Resources.LateralAzul;
+            this.pictureBoxLateralAzulSubmenuNuevoProducto.Location = new System.Drawing.Point(6, 5);
+            this.pictureBoxLateralAzulSubmenuNuevoProducto.Name = "pictureBoxLateralAzulSubmenuNuevoProducto";
+            this.pictureBoxLateralAzulSubmenuNuevoProducto.Size = new System.Drawing.Size(10, 201);
+            this.pictureBoxLateralAzulSubmenuNuevoProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLateralAzulSubmenuNuevoProducto.TabIndex = 2;
+            this.pictureBoxLateralAzulSubmenuNuevoProducto.TabStop = false;
             // 
             // buttonNuevoOtro
             // 
@@ -772,354 +1083,44 @@ namespace FrigLab {
             this.buttonNuevoProducto.UseVisualStyleBackColor = true;
             this.buttonNuevoProducto.Click += new System.EventHandler(this.buttonNuevoProducto_Click);
             // 
-            // panelSubmenuButtonListarMuestreo
-            // 
-            this.panelSubmenuButtonListarMuestreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
-            this.panelSubmenuButtonListarMuestreo.Controls.Add(this.pictureBox1);
-            this.panelSubmenuButtonListarMuestreo.Controls.Add(this.buttonListarOtrosMuestreos);
-            this.panelSubmenuButtonListarMuestreo.Controls.Add(this.buttonListarMuestreosAmbientales);
-            this.panelSubmenuButtonListarMuestreo.Controls.Add(this.buttonListarMuestreoProducto);
-            this.panelSubmenuButtonListarMuestreo.Location = new System.Drawing.Point(507, 12);
-            this.panelSubmenuButtonListarMuestreo.Name = "panelSubmenuButtonListarMuestreo";
-            this.panelSubmenuButtonListarMuestreo.Size = new System.Drawing.Size(128, 133);
-            this.panelSubmenuButtonListarMuestreo.TabIndex = 3;
-            this.panelSubmenuButtonListarMuestreo.Visible = false;
-            // 
-            // buttonListarOtrosMuestreos
-            // 
-            this.buttonListarOtrosMuestreos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonListarOtrosMuestreos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
-            this.buttonListarOtrosMuestreos.FlatAppearance.BorderSize = 0;
-            this.buttonListarOtrosMuestreos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
-            this.buttonListarOtrosMuestreos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.buttonListarOtrosMuestreos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonListarOtrosMuestreos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListarOtrosMuestreos.ForeColor = System.Drawing.Color.White;
-            this.buttonListarOtrosMuestreos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonListarOtrosMuestreos.Location = new System.Drawing.Point(13, 87);
-            this.buttonListarOtrosMuestreos.Name = "buttonListarOtrosMuestreos";
-            this.buttonListarOtrosMuestreos.Size = new System.Drawing.Size(115, 38);
-            this.buttonListarOtrosMuestreos.TabIndex = 1;
-            this.buttonListarOtrosMuestreos.Text = "Otro";
-            this.buttonListarOtrosMuestreos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonListarOtrosMuestreos.UseVisualStyleBackColor = true;
-            this.buttonListarOtrosMuestreos.Click += new System.EventHandler(this.ButtonListarOtrosMuestreos_Click);
-            // 
-            // buttonListarMuestreosAmbientales
-            // 
-            this.buttonListarMuestreosAmbientales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonListarMuestreosAmbientales.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
-            this.buttonListarMuestreosAmbientales.FlatAppearance.BorderSize = 0;
-            this.buttonListarMuestreosAmbientales.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
-            this.buttonListarMuestreosAmbientales.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.buttonListarMuestreosAmbientales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonListarMuestreosAmbientales.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListarMuestreosAmbientales.ForeColor = System.Drawing.Color.White;
-            this.buttonListarMuestreosAmbientales.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonListarMuestreosAmbientales.Location = new System.Drawing.Point(10, 42);
-            this.buttonListarMuestreosAmbientales.Name = "buttonListarMuestreosAmbientales";
-            this.buttonListarMuestreosAmbientales.Size = new System.Drawing.Size(115, 37);
-            this.buttonListarMuestreosAmbientales.TabIndex = 1;
-            this.buttonListarMuestreosAmbientales.Text = "Ambiental";
-            this.buttonListarMuestreosAmbientales.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonListarMuestreosAmbientales.UseVisualStyleBackColor = true;
-            this.buttonListarMuestreosAmbientales.Click += new System.EventHandler(this.ButtonListarMuestreosAmbientales_Click);
-            // 
-            // buttonListarMuestreoProducto
-            // 
-            this.buttonListarMuestreoProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonListarMuestreoProducto.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
-            this.buttonListarMuestreoProducto.FlatAppearance.BorderSize = 0;
-            this.buttonListarMuestreoProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
-            this.buttonListarMuestreoProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.buttonListarMuestreoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonListarMuestreoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListarMuestreoProducto.ForeColor = System.Drawing.Color.White;
-            this.buttonListarMuestreoProducto.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonListarMuestreoProducto.Location = new System.Drawing.Point(11, 5);
-            this.buttonListarMuestreoProducto.Name = "buttonListarMuestreoProducto";
-            this.buttonListarMuestreoProducto.Size = new System.Drawing.Size(114, 37);
-            this.buttonListarMuestreoProducto.TabIndex = 0;
-            this.buttonListarMuestreoProducto.Text = "Producto";
-            this.buttonListarMuestreoProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonListarMuestreoProducto.UseVisualStyleBackColor = true;
-            this.buttonListarMuestreoProducto.Click += new System.EventHandler(this.ButtonListarMuestreosProducto_Click);
-            // 
-            // pictureBoxLateralAzulSubmenuSesion
-            // 
-            this.pictureBoxLateralAzulSubmenuSesion.Image = global::FrigLab.Properties.Resources.LateralAzul;
-            this.pictureBoxLateralAzulSubmenuSesion.Location = new System.Drawing.Point(6, 5);
-            this.pictureBoxLateralAzulSubmenuSesion.Name = "pictureBoxLateralAzulSubmenuSesion";
-            this.pictureBoxLateralAzulSubmenuSesion.Size = new System.Drawing.Size(10, 74);
-            this.pictureBoxLateralAzulSubmenuSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLateralAzulSubmenuSesion.TabIndex = 2;
-            this.pictureBoxLateralAzulSubmenuSesion.TabStop = false;
-            // 
-            // pictureBoxLateralAzulSubmenuLaboratoriosLab
-            // 
-            this.pictureBoxLateralAzulSubmenuLaboratoriosLab.Image = global::FrigLab.Properties.Resources.LateralAzul;
-            this.pictureBoxLateralAzulSubmenuLaboratoriosLab.Location = new System.Drawing.Point(6, 5);
-            this.pictureBoxLateralAzulSubmenuLaboratoriosLab.Name = "pictureBoxLateralAzulSubmenuLaboratoriosLab";
-            this.pictureBoxLateralAzulSubmenuLaboratoriosLab.Size = new System.Drawing.Size(10, 74);
-            this.pictureBoxLateralAzulSubmenuLaboratoriosLab.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLateralAzulSubmenuLaboratoriosLab.TabIndex = 2;
-            this.pictureBoxLateralAzulSubmenuLaboratoriosLab.TabStop = false;
-            // 
-            // pictureBoxLateralAzulSubmenuRequisitos
-            // 
-            this.pictureBoxLateralAzulSubmenuRequisitos.Image = global::FrigLab.Properties.Resources.LateralAzul;
-            this.pictureBoxLateralAzulSubmenuRequisitos.Location = new System.Drawing.Point(6, 5);
-            this.pictureBoxLateralAzulSubmenuRequisitos.Name = "pictureBoxLateralAzulSubmenuRequisitos";
-            this.pictureBoxLateralAzulSubmenuRequisitos.Size = new System.Drawing.Size(10, 74);
-            this.pictureBoxLateralAzulSubmenuRequisitos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLateralAzulSubmenuRequisitos.TabIndex = 2;
-            this.pictureBoxLateralAzulSubmenuRequisitos.TabStop = false;
-            // 
-            // pictureBoxLateralAzulSubmenuEnsayos
-            // 
-            this.pictureBoxLateralAzulSubmenuEnsayos.Image = global::FrigLab.Properties.Resources.LateralAzul;
-            this.pictureBoxLateralAzulSubmenuEnsayos.Location = new System.Drawing.Point(6, 5);
-            this.pictureBoxLateralAzulSubmenuEnsayos.Name = "pictureBoxLateralAzulSubmenuEnsayos";
-            this.pictureBoxLateralAzulSubmenuEnsayos.Size = new System.Drawing.Size(10, 74);
-            this.pictureBoxLateralAzulSubmenuEnsayos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLateralAzulSubmenuEnsayos.TabIndex = 2;
-            this.pictureBoxLateralAzulSubmenuEnsayos.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FrigLab.Properties.Resources.LateralAzul;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(10, 120);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBoxLateralAzulSubmenuNuevoProducto
-            // 
-            this.pictureBoxLateralAzulSubmenuNuevoProducto.Image = global::FrigLab.Properties.Resources.LateralAzul;
-            this.pictureBoxLateralAzulSubmenuNuevoProducto.Location = new System.Drawing.Point(6, 5);
-            this.pictureBoxLateralAzulSubmenuNuevoProducto.Name = "pictureBoxLateralAzulSubmenuNuevoProducto";
-            this.pictureBoxLateralAzulSubmenuNuevoProducto.Size = new System.Drawing.Size(10, 201);
-            this.pictureBoxLateralAzulSubmenuNuevoProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLateralAzulSubmenuNuevoProducto.TabIndex = 2;
-            this.pictureBoxLateralAzulSubmenuNuevoProducto.TabStop = false;
-            // 
-            // pictureBoxLateralAzulSubmenuLaboratorios
-            // 
-            this.pictureBoxLateralAzulSubmenuLaboratorios.Image = global::FrigLab.Properties.Resources.LateralAzul;
-            this.pictureBoxLateralAzulSubmenuLaboratorios.Location = new System.Drawing.Point(6, 5);
-            this.pictureBoxLateralAzulSubmenuLaboratorios.Name = "pictureBoxLateralAzulSubmenuLaboratorios";
-            this.pictureBoxLateralAzulSubmenuLaboratorios.Size = new System.Drawing.Size(10, 112);
-            this.pictureBoxLateralAzulSubmenuLaboratorios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLateralAzulSubmenuLaboratorios.TabIndex = 2;
-            this.pictureBoxLateralAzulSubmenuLaboratorios.TabStop = false;
-            // 
-            // pictureBoxLateralAzulSubmenuUsuarios
-            // 
-            this.pictureBoxLateralAzulSubmenuUsuarios.Image = global::FrigLab.Properties.Resources.LateralAzul;
-            this.pictureBoxLateralAzulSubmenuUsuarios.Location = new System.Drawing.Point(6, 5);
-            this.pictureBoxLateralAzulSubmenuUsuarios.Name = "pictureBoxLateralAzulSubmenuUsuarios";
-            this.pictureBoxLateralAzulSubmenuUsuarios.Size = new System.Drawing.Size(10, 74);
-            this.pictureBoxLateralAzulSubmenuUsuarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLateralAzulSubmenuUsuarios.TabIndex = 2;
-            this.pictureBoxLateralAzulSubmenuUsuarios.TabStop = false;
-            // 
-            // pictureBoxLateralAzulSubmenuMuestreos
-            // 
-            this.pictureBoxLateralAzulSubmenuMuestreos.Image = global::FrigLab.Properties.Resources.LateralAzul;
-            this.pictureBoxLateralAzulSubmenuMuestreos.Location = new System.Drawing.Point(6, 5);
-            this.pictureBoxLateralAzulSubmenuMuestreos.Name = "pictureBoxLateralAzulSubmenuMuestreos";
-            this.pictureBoxLateralAzulSubmenuMuestreos.Size = new System.Drawing.Size(10, 113);
-            this.pictureBoxLateralAzulSubmenuMuestreos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLateralAzulSubmenuMuestreos.TabIndex = 2;
-            this.pictureBoxLateralAzulSubmenuMuestreos.TabStop = false;
-            // 
-            // pictureBoxLateralAzulSubmenuAreas
-            // 
-            this.pictureBoxLateralAzulSubmenuAreas.Image = global::FrigLab.Properties.Resources.LateralAzul;
-            this.pictureBoxLateralAzulSubmenuAreas.Location = new System.Drawing.Point(6, 5);
-            this.pictureBoxLateralAzulSubmenuAreas.Name = "pictureBoxLateralAzulSubmenuAreas";
-            this.pictureBoxLateralAzulSubmenuAreas.Size = new System.Drawing.Size(10, 74);
-            this.pictureBoxLateralAzulSubmenuAreas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLateralAzulSubmenuAreas.TabIndex = 2;
-            this.pictureBoxLateralAzulSubmenuAreas.TabStop = false;
-            // 
-            // pictureBoxLateralIzquierdoSubmenuMuestras
-            // 
-            this.pictureBoxLateralIzquierdoSubmenuMuestras.Image = global::FrigLab.Properties.Resources.LateralAzul;
-            this.pictureBoxLateralIzquierdoSubmenuMuestras.Location = new System.Drawing.Point(6, 5);
-            this.pictureBoxLateralIzquierdoSubmenuMuestras.Name = "pictureBoxLateralIzquierdoSubmenuMuestras";
-            this.pictureBoxLateralIzquierdoSubmenuMuestras.Size = new System.Drawing.Size(10, 74);
-            this.pictureBoxLateralIzquierdoSubmenuMuestras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLateralIzquierdoSubmenuMuestras.TabIndex = 2;
-            this.pictureBoxLateralIzquierdoSubmenuMuestras.TabStop = false;
-            // 
-            // buttonAreas
-            // 
-            this.buttonAreas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonAreas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
-            this.buttonAreas.FlatAppearance.BorderSize = 0;
-            this.buttonAreas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
-            this.buttonAreas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.buttonAreas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAreas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAreas.ForeColor = System.Drawing.Color.White;
-            this.buttonAreas.Image = global::FrigLab.Properties.Resources.imagen_mapa_48;
-            this.buttonAreas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAreas.Location = new System.Drawing.Point(126, 2);
-            this.buttonAreas.Name = "buttonAreas";
-            this.buttonAreas.Size = new System.Drawing.Size(123, 69);
-            this.buttonAreas.TabIndex = 0;
-            this.buttonAreas.Text = "Areas";
-            this.buttonAreas.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.buttonAreas.UseVisualStyleBackColor = true;
-            this.buttonAreas.Click += new System.EventHandler(this.buttonAreas_Click);
-            // 
-            // buttonLaboratorio
-            // 
-            this.buttonLaboratorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonLaboratorio.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
-            this.buttonLaboratorio.FlatAppearance.BorderSize = 0;
-            this.buttonLaboratorio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
-            this.buttonLaboratorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.buttonLaboratorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLaboratorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLaboratorio.ForeColor = System.Drawing.Color.White;
-            this.buttonLaboratorio.Image = global::FrigLab.Properties.Resources.imagen_microscopio_48;
-            this.buttonLaboratorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLaboratorio.Location = new System.Drawing.Point(513, 2);
-            this.buttonLaboratorio.Name = "buttonLaboratorio";
-            this.buttonLaboratorio.Size = new System.Drawing.Size(123, 69);
-            this.buttonLaboratorio.TabIndex = 2;
-            this.buttonLaboratorio.Text = "Laboratorio";
-            this.buttonLaboratorio.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.buttonLaboratorio.UseVisualStyleBackColor = true;
-            this.buttonLaboratorio.Click += new System.EventHandler(this.buttonLaboratorio_Click);
-            // 
-            // buttonSesion
-            // 
-            this.buttonSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonSesion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
-            this.buttonSesion.FlatAppearance.BorderSize = 0;
-            this.buttonSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
-            this.buttonSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.buttonSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSesion.ForeColor = System.Drawing.Color.White;
-            this.buttonSesion.Image = global::FrigLab.Properties.Resources.imagen_usuario_32;
-            this.buttonSesion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonSesion.Location = new System.Drawing.Point(838, 2);
-            this.buttonSesion.Name = "buttonSesion";
-            this.buttonSesion.Size = new System.Drawing.Size(123, 69);
-            this.buttonSesion.TabIndex = 2;
-            this.buttonSesion.Text = "[Sesion]";
-            this.buttonSesion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonSesion.UseVisualStyleBackColor = true;
-            this.buttonSesion.Click += new System.EventHandler(this.buttonSesion_Click);
-            // 
-            // buttonUsuarios
-            // 
-            this.buttonUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonUsuarios.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
-            this.buttonUsuarios.FlatAppearance.BorderSize = 0;
-            this.buttonUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
-            this.buttonUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.buttonUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUsuarios.ForeColor = System.Drawing.Color.White;
-            this.buttonUsuarios.Image = global::FrigLab.Properties.Resources.imagen_grupo_usuarios_48;
-            this.buttonUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonUsuarios.Location = new System.Drawing.Point(642, 2);
-            this.buttonUsuarios.Name = "buttonUsuarios";
-            this.buttonUsuarios.Size = new System.Drawing.Size(123, 69);
-            this.buttonUsuarios.TabIndex = 2;
-            this.buttonUsuarios.Text = "Usuarios";
-            this.buttonUsuarios.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.buttonUsuarios.UseVisualStyleBackColor = true;
-            this.buttonUsuarios.Click += new System.EventHandler(this.buttonUsuarios_Click);
-            // 
-            // buttonMuestreos
-            // 
-            this.buttonMuestreos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonMuestreos.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
-            this.buttonMuestreos.FlatAppearance.BorderSize = 0;
-            this.buttonMuestreos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
-            this.buttonMuestreos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.buttonMuestreos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMuestreos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMuestreos.ForeColor = System.Drawing.Color.White;
-            this.buttonMuestreos.Image = global::FrigLab.Properties.Resources.imagen_caja_48;
-            this.buttonMuestreos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonMuestreos.Location = new System.Drawing.Point(384, 2);
-            this.buttonMuestreos.Name = "buttonMuestreos";
-            this.buttonMuestreos.Size = new System.Drawing.Size(123, 69);
-            this.buttonMuestreos.TabIndex = 2;
-            this.buttonMuestreos.Text = "Muestreos";
-            this.buttonMuestreos.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.buttonMuestreos.UseVisualStyleBackColor = true;
-            this.buttonMuestreos.Click += new System.EventHandler(this.buttonMuestreos_Click);
-            // 
-            // buttonMuestras
-            // 
-            this.buttonMuestras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonMuestras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
-            this.buttonMuestras.FlatAppearance.BorderSize = 0;
-            this.buttonMuestras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
-            this.buttonMuestras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.buttonMuestras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMuestras.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMuestras.ForeColor = System.Drawing.Color.White;
-            this.buttonMuestras.Image = global::FrigLab.Properties.Resources.imagen_matraz_48;
-            this.buttonMuestras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonMuestras.Location = new System.Drawing.Point(255, 2);
-            this.buttonMuestras.Name = "buttonMuestras";
-            this.buttonMuestras.Size = new System.Drawing.Size(123, 69);
-            this.buttonMuestras.TabIndex = 2;
-            this.buttonMuestras.Text = "Muestras";
-            this.buttonMuestras.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.buttonMuestras.UseVisualStyleBackColor = true;
-            this.buttonMuestras.Click += new System.EventHandler(this.buttonMuestras_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
-            this.ClientSize = new System.Drawing.Size(982, 553);
+            this.ClientSize = new System.Drawing.Size(1102, 553);
             this.Controls.Add(this.panelContenido);
             this.Controls.Add(this.panelLogo);
             this.Controls.Add(this.panelSuperior);
             this.IsMdiContainer = true;
-            this.MinimumSize = new System.Drawing.Size(1000, 600);
+            this.MinimumSize = new System.Drawing.Size(1120, 600);
             this.Name = "FormMain";
             this.Text = "Frigo Lab";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
             this.panelSuperior.ResumeLayout(false);
             this.panelSubmenuMuestras.ResumeLayout(false);
-            this.panelSubmenuAreas.ResumeLayout(false);
-            this.panelSubmenuMuestreos.ResumeLayout(false);
-            this.panelSubmenuUsuarios.ResumeLayout(false);
-            this.panelSubmenuLaboratorio.ResumeLayout(false);
-            this.panelSubMenuButtonEnsayos.ResumeLayout(false);
-            this.panelSubmenuButtonRequisitos.ResumeLayout(false);
-            this.panelSubmenuButtonLaboratorios.ResumeLayout(false);
-            this.panelSubmenuSesion.ResumeLayout(false);
-            this.panelContenido.ResumeLayout(false);
-            this.panelSubmenuButtonNuevoMuestreo.ResumeLayout(false);
-            this.panelSubmenuButtonListarMuestreo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuSesion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuLaboratoriosLab)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuRequisitos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuEnsayos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuNuevoProducto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuLaboratorios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuMuestreos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuAreas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralIzquierdoSubmenuMuestras)).EndInit();
+            this.panelSubmenuAreas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuAreas)).EndInit();
+            this.panelSubmenuMuestreos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuMuestreos)).EndInit();
+            this.panelSubmenuUsuarios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuUsuarios)).EndInit();
+            this.panelSubmenuLaboratorio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuLaboratorios)).EndInit();
+            this.panelSubMenuButtonEnsayos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuEnsayos)).EndInit();
+            this.panelSubmenuButtonRequisitos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuRequisitos)).EndInit();
+            this.panelSubmenuButtonLaboratorios.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuLaboratoriosLab)).EndInit();
+            this.panelSubmenuSesion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuSesion)).EndInit();
+            this.panelContenido.ResumeLayout(false);
+            this.panelSubmenuButtonListarMuestreo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelSubmenuButtonNuevoMuestreo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralAzulSubmenuNuevoProducto)).EndInit();
             this.ResumeLayout(false);
 
         }

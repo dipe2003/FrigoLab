@@ -9,6 +9,7 @@
 using FrigLab.Model.Logica.Muestras;
 using FrigLab.Model.Sesion;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace FrigLab.View.Areas {
@@ -34,7 +35,7 @@ namespace FrigLab.View.Areas {
         
 		private  void BtnGuardarClick(object sender, EventArgs e) {
 			string nombre = txtNombre.Text;
-            if(cAreas.CrearNuevaArea(nombre)!=null) {
+            if(!string.IsNullOrEmpty(nombre) && cAreas.CrearNuevaArea(nombre)!=null) {
                 SesionDeUsuario.ActualizarFormulariosAbiertos(this);
                 MessageBox.Show("El área fue guardada");
                 this.Close();
@@ -55,6 +56,7 @@ namespace FrigLab.View.Areas {
         public void CerrarInstancia() {
         	instancia = null;
         }
-        #endregion        
-	}
+        #endregion
+
+    }
 }

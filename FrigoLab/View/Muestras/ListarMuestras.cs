@@ -44,8 +44,6 @@ namespace FrigLab.View.Muestras {
                 btnEditar.Enabled = true;
                 btnEliminar.Enabled = true;
             }
-            tablaDatos.DataSource = tabla;
-            tablaDatos.Columns["Id"].Visible = false;
 
             especificacionSeleccionada = especificacionesFiltradas.FirstOrDefault();
 
@@ -55,6 +53,9 @@ namespace FrigLab.View.Muestras {
             cboSector.DataSource = sectoresEnFiltro;
             sectorFiltrado = "Todos";
             cboSector.Text = sectorFiltrado;
+
+            tablaDatos.DataSource = tabla;
+            tablaDatos.Columns["Id"].Visible = false;
         }
 
         public static ListarMuestras GetInstancia() {

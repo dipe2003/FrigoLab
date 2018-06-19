@@ -23,10 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.bntCambiarCredencial = new System.Windows.Forms.Button();
             this.txtMensaje = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPadron = new System.Windows.Forms.TextBox();
@@ -36,25 +33,19 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.grupoPermiso = new System.Windows.Forms.GroupBox();
+            this.radioVisitante = new System.Windows.Forms.RadioButton();
             this.radioMonitor = new System.Windows.Forms.RadioButton();
             this.radioAnalista = new System.Windows.Forms.RadioButton();
             this.radioVerificador = new System.Windows.Forms.RadioButton();
             this.radioAdministrador = new System.Windows.Forms.RadioButton();
             this.chkVigente = new System.Windows.Forms.CheckBox();
-            this.radioVisitante = new System.Windows.Forms.RadioButton();
+            this.bntCambiarCredencial = new System.Windows.Forms.Button();
+            this.panelInferiorControles = new System.Windows.Forms.Panel();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.grupoPermiso.SuspendLayout();
+            this.panelInferiorControles.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // bntCambiarCredencial
-            // 
-            this.bntCambiarCredencial.Location = new System.Drawing.Point(33, 302);
-            this.bntCambiarCredencial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bntCambiarCredencial.Name = "bntCambiarCredencial";
-            this.bntCambiarCredencial.Size = new System.Drawing.Size(312, 36);
-            this.bntCambiarCredencial.TabIndex = 15;
-            this.bntCambiarCredencial.Text = "Cambiar Password";
-            this.bntCambiarCredencial.UseVisualStyleBackColor = true;
-            this.bntCambiarCredencial.Click += new System.EventHandler(this.BntCambiarCredencialClick);
             // 
             // txtMensaje
             // 
@@ -62,42 +53,20 @@
             this.txtMensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMensaje.ForeColor = System.Drawing.Color.White;
-            this.txtMensaje.Location = new System.Drawing.Point(35, 353);
-            this.txtMensaje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMensaje.Location = new System.Drawing.Point(35, 342);
+            this.txtMensaje.Margin = new System.Windows.Forms.Padding(4);
             this.txtMensaje.Multiline = true;
             this.txtMensaje.Name = "txtMensaje";
             this.txtMensaje.ReadOnly = true;
-            this.txtMensaje.Size = new System.Drawing.Size(312, 57);
+            this.txtMensaje.Size = new System.Drawing.Size(312, 49);
             this.txtMensaje.TabIndex = 23;
             this.txtMensaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtMensaje.Visible = false;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(35, 418);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(140, 36);
-            this.btnCancelar.TabIndex = 17;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(205, 418);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(140, 36);
-            this.btnGuardar.TabIndex = 16;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(196, 82);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(149, 22);
             this.txtApellido.TabIndex = 13;
@@ -114,7 +83,7 @@
             // txtPadron
             // 
             this.txtPadron.Location = new System.Drawing.Point(109, 15);
-            this.txtPadron.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPadron.Margin = new System.Windows.Forms.Padding(4);
             this.txtPadron.Name = "txtPadron";
             this.txtPadron.ReadOnly = true;
             this.txtPadron.Size = new System.Drawing.Size(237, 22);
@@ -132,7 +101,7 @@
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(109, 124);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(236, 22);
             this.txtCorreo.TabIndex = 14;
@@ -149,7 +118,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(35, 82);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(149, 22);
             this.txtNombre.TabIndex = 12;
@@ -170,7 +139,7 @@
             this.grupoPermiso.Controls.Add(this.radioAnalista);
             this.grupoPermiso.Controls.Add(this.radioVerificador);
             this.grupoPermiso.Controls.Add(this.radioAdministrador);
-            this.grupoPermiso.Location = new System.Drawing.Point(35, 167);
+            this.grupoPermiso.Location = new System.Drawing.Point(35, 156);
             this.grupoPermiso.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grupoPermiso.Name = "grupoPermiso";
             this.grupoPermiso.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -178,6 +147,18 @@
             this.grupoPermiso.TabIndex = 24;
             this.grupoPermiso.TabStop = false;
             this.grupoPermiso.Text = "Permiso";
+            // 
+            // radioVisitante
+            // 
+            this.radioVisitante.AutoSize = true;
+            this.radioVisitante.Location = new System.Drawing.Point(170, 44);
+            this.radioVisitante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioVisitante.Name = "radioVisitante";
+            this.radioVisitante.Size = new System.Drawing.Size(83, 21);
+            this.radioVisitante.TabIndex = 3;
+            this.radioVisitante.TabStop = true;
+            this.radioVisitante.Text = "Visitante";
+            this.radioVisitante.UseVisualStyleBackColor = true;
             // 
             // radioMonitor
             // 
@@ -232,7 +213,7 @@
             this.chkVigente.AutoSize = true;
             this.chkVigente.Checked = true;
             this.chkVigente.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkVigente.Location = new System.Drawing.Point(59, 277);
+            this.chkVigente.Location = new System.Drawing.Point(59, 266);
             this.chkVigente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkVigente.Name = "chkVigente";
             this.chkVigente.Size = new System.Drawing.Size(110, 21);
@@ -241,29 +222,78 @@
             this.chkVigente.UseVisualStyleBackColor = true;
             this.chkVigente.CheckedChanged += new System.EventHandler(this.ChkVigente_CheckedChanged);
             // 
-            // radioVisitante
+            // bntCambiarCredencial
             // 
-            this.radioVisitante.AutoSize = true;
-            this.radioVisitante.Location = new System.Drawing.Point(170, 44);
-            this.radioVisitante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioVisitante.Name = "radioVisitante";
-            this.radioVisitante.Size = new System.Drawing.Size(83, 21);
-            this.radioVisitante.TabIndex = 3;
-            this.radioVisitante.TabStop = true;
-            this.radioVisitante.Text = "Visitante";
-            this.radioVisitante.UseVisualStyleBackColor = true;
+            this.bntCambiarCredencial.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.bntCambiarCredencial.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.bntCambiarCredencial.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PowderBlue;
+            this.bntCambiarCredencial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntCambiarCredencial.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntCambiarCredencial.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.bntCambiarCredencial.Location = new System.Drawing.Point(33, 291);
+            this.bntCambiarCredencial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bntCambiarCredencial.Name = "bntCambiarCredencial";
+            this.bntCambiarCredencial.Size = new System.Drawing.Size(314, 36);
+            this.bntCambiarCredencial.TabIndex = 48;
+            this.bntCambiarCredencial.Text = "Cambiar Password";
+            this.bntCambiarCredencial.UseVisualStyleBackColor = false;
+            this.bntCambiarCredencial.Click += new System.EventHandler(this.BntCambiarCredencialClick);
+            // 
+            // panelInferiorControles
+            // 
+            this.panelInferiorControles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.panelInferiorControles.Controls.Add(this.btnGuardar);
+            this.panelInferiorControles.Controls.Add(this.btnCancelar);
+            this.panelInferiorControles.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInferiorControles.Location = new System.Drawing.Point(0, 403);
+            this.panelInferiorControles.Name = "panelInferiorControles";
+            this.panelInferiorControles.Size = new System.Drawing.Size(381, 68);
+            this.panelInferiorControles.TabIndex = 52;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.YellowGreen;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnGuardar.Location = new System.Drawing.Point(212, 19);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(140, 36);
+            this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCancelar.Location = new System.Drawing.Point(36, 19);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(140, 36);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // EditarUsuarioAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 471);
+            this.Controls.Add(this.panelInferiorControles);
+            this.Controls.Add(this.bntCambiarCredencial);
             this.Controls.Add(this.chkVigente);
             this.Controls.Add(this.grupoPermiso);
-            this.Controls.Add(this.bntCambiarCredencial);
             this.Controls.Add(this.txtMensaje);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPadron);
@@ -281,17 +311,14 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditarUsuarioAdminForm_FormClosing);
             this.grupoPermiso.ResumeLayout(false);
             this.grupoPermiso.PerformLayout();
+            this.panelInferiorControles.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button bntCambiarCredencial;
         private System.Windows.Forms.TextBox txtMensaje;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPadron;
@@ -307,5 +334,9 @@
         private System.Windows.Forms.RadioButton radioAdministrador;
         private System.Windows.Forms.CheckBox chkVigente;
         private System.Windows.Forms.RadioButton radioVisitante;
+        private System.Windows.Forms.Button bntCambiarCredencial;
+        private System.Windows.Forms.Panel panelInferiorControles;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

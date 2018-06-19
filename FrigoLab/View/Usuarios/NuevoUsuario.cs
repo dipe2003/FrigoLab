@@ -95,5 +95,9 @@ namespace FrigLab.View.Usuarios {
         	instancia = null;
         }
         #endregion
-	}
+
+        private void btnCancelar_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+    }
 }

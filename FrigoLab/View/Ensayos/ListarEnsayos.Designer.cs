@@ -24,7 +24,6 @@ namespace FrigLab.View.Ensayos
 		private System.Windows.Forms.Button btnQuitarFiltroNombre;
 		private System.Windows.Forms.TextBox txtBuscarMetodo;
 		private System.Windows.Forms.TextBox txtBuscarNombre;
-		private System.Windows.Forms.DataGridView tablaDatos;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -47,287 +46,317 @@ namespace FrigLab.View.Ensayos
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			this.grupoAcciones = new System.Windows.Forms.GroupBox();
-			this.btnEliminar = new System.Windows.Forms.Button();
-			this.btnEditar = new System.Windows.Forms.Button();
-			this.grupoFiltros = new System.Windows.Forms.GroupBox();
-			this.grupoBuscar = new System.Windows.Forms.GroupBox();
-			this.grupoClaseMuestra = new System.Windows.Forms.GroupBox();
-			this.radioTodas = new System.Windows.Forms.RadioButton();
-			this.radioOtra = new System.Windows.Forms.RadioButton();
-			this.radioSuperficie = new System.Windows.Forms.RadioButton();
-			this.radioAmbiente = new System.Windows.Forms.RadioButton();
-			this.radioOperario = new System.Windows.Forms.RadioButton();
-			this.radioProducto = new System.Windows.Forms.RadioButton();
-			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.btnQuitarFiltroNombre = new System.Windows.Forms.Button();
-			this.txtBuscarMetodo = new System.Windows.Forms.TextBox();
-			this.txtBuscarNombre = new System.Windows.Forms.TextBox();
-			this.tablaDatos = new System.Windows.Forms.DataGridView();
-			this.grupoAcciones.SuspendLayout();
-			this.grupoFiltros.SuspendLayout();
-			this.grupoBuscar.SuspendLayout();
-			this.grupoClaseMuestra.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// grupoAcciones
-			// 
-			this.grupoAcciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.grupoAcciones.Controls.Add(this.btnEliminar);
-			this.grupoAcciones.Controls.Add(this.btnEditar);
-			this.grupoAcciones.Location = new System.Drawing.Point(451, 5);
-			this.grupoAcciones.Name = "grupoAcciones";
-			this.grupoAcciones.Size = new System.Drawing.Size(128, 126);
-			this.grupoAcciones.TabIndex = 8;
-			this.grupoAcciones.TabStop = false;
-			this.grupoAcciones.Text = "Acciones";
-			// 
-			// btnEliminar
-			// 
-			this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Right)));
-			this.btnEliminar.Enabled = false;
-			this.btnEliminar.Location = new System.Drawing.Point(19, 75);
-			this.btnEliminar.Name = "btnEliminar";
-			this.btnEliminar.Size = new System.Drawing.Size(88, 36);
-			this.btnEliminar.TabIndex = 1;
-			this.btnEliminar.Text = "Eliminar";
-			this.btnEliminar.UseVisualStyleBackColor = true;
-			this.btnEliminar.Click += new System.EventHandler(this.BtnEliminarClick);
-			// 
-			// btnEditar
-			// 
-			this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Right)));
-			this.btnEditar.Enabled = false;
-			this.btnEditar.Location = new System.Drawing.Point(19, 33);
-			this.btnEditar.Name = "btnEditar";
-			this.btnEditar.Size = new System.Drawing.Size(88, 32);
-			this.btnEditar.TabIndex = 0;
-			this.btnEditar.Text = "Editar";
-			this.btnEditar.UseVisualStyleBackColor = true;
-			this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
-			// 
-			// grupoFiltros
-			// 
-			this.grupoFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
-			this.grupoFiltros.Controls.Add(this.grupoBuscar);
-			this.grupoFiltros.Location = new System.Drawing.Point(14, 5);
-			this.grupoFiltros.Name = "grupoFiltros";
-			this.grupoFiltros.Size = new System.Drawing.Size(434, 126);
-			this.grupoFiltros.TabIndex = 7;
-			this.grupoFiltros.TabStop = false;
-			this.grupoFiltros.Text = "Filtros";
-			// 
-			// grupoBuscar
-			// 
-			this.grupoBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
-			this.grupoBuscar.Controls.Add(this.grupoClaseMuestra);
-			this.grupoBuscar.Controls.Add(this.label2);
-			this.grupoBuscar.Controls.Add(this.label1);
-			this.grupoBuscar.Controls.Add(this.btnQuitarFiltroNombre);
-			this.grupoBuscar.Controls.Add(this.txtBuscarMetodo);
-			this.grupoBuscar.Controls.Add(this.txtBuscarNombre);
-			this.grupoBuscar.Location = new System.Drawing.Point(5, 18);
-			this.grupoBuscar.Margin = new System.Windows.Forms.Padding(2);
-			this.grupoBuscar.Name = "grupoBuscar";
-			this.grupoBuscar.Padding = new System.Windows.Forms.Padding(2);
-			this.grupoBuscar.Size = new System.Drawing.Size(424, 103);
-			this.grupoBuscar.TabIndex = 1;
-			this.grupoBuscar.TabStop = false;
-			this.grupoBuscar.Text = "Busqueda";
-			// 
-			// grupoClaseMuestra
-			// 
-			this.grupoClaseMuestra.Controls.Add(this.radioTodas);
-			this.grupoClaseMuestra.Controls.Add(this.radioOtra);
-			this.grupoClaseMuestra.Controls.Add(this.radioSuperficie);
-			this.grupoClaseMuestra.Controls.Add(this.radioAmbiente);
-			this.grupoClaseMuestra.Controls.Add(this.radioOperario);
-			this.grupoClaseMuestra.Controls.Add(this.radioProducto);
-			this.grupoClaseMuestra.Location = new System.Drawing.Point(145, 10);
-			this.grupoClaseMuestra.Margin = new System.Windows.Forms.Padding(2);
-			this.grupoClaseMuestra.Name = "grupoClaseMuestra";
-			this.grupoClaseMuestra.Padding = new System.Windows.Forms.Padding(2);
-			this.grupoClaseMuestra.Size = new System.Drawing.Size(161, 88);
-			this.grupoClaseMuestra.TabIndex = 28;
-			this.grupoClaseMuestra.TabStop = false;
-			this.grupoClaseMuestra.Text = "Muestra";
-			// 
-			// radioTodas
-			// 
-			this.radioTodas.AutoSize = true;
-			this.radioTodas.Location = new System.Drawing.Point(81, 57);
-			this.radioTodas.Margin = new System.Windows.Forms.Padding(2);
-			this.radioTodas.Name = "radioTodas";
-			this.radioTodas.Size = new System.Drawing.Size(55, 17);
-			this.radioTodas.TabIndex = 5;
-			this.radioTodas.TabStop = true;
-			this.radioTodas.Text = "Todas";
-			this.radioTodas.UseVisualStyleBackColor = true;
-			// 
-			// radioOtra
-			// 
-			this.radioOtra.AutoSize = true;
-			this.radioOtra.Location = new System.Drawing.Point(81, 37);
-			this.radioOtra.Margin = new System.Windows.Forms.Padding(2);
-			this.radioOtra.Name = "radioOtra";
-			this.radioOtra.Size = new System.Drawing.Size(45, 17);
-			this.radioOtra.TabIndex = 4;
-			this.radioOtra.TabStop = true;
-			this.radioOtra.Text = "Otra";
-			this.radioOtra.UseVisualStyleBackColor = true;
-			// 
-			// radioSuperficie
-			// 
-			this.radioSuperficie.AutoSize = true;
-			this.radioSuperficie.Location = new System.Drawing.Point(81, 16);
-			this.radioSuperficie.Margin = new System.Windows.Forms.Padding(2);
-			this.radioSuperficie.Name = "radioSuperficie";
-			this.radioSuperficie.Size = new System.Drawing.Size(72, 17);
-			this.radioSuperficie.TabIndex = 3;
-			this.radioSuperficie.TabStop = true;
-			this.radioSuperficie.Text = "Superficie";
-			this.radioSuperficie.UseVisualStyleBackColor = true;
-			// 
-			// radioAmbiente
-			// 
-			this.radioAmbiente.AutoSize = true;
-			this.radioAmbiente.Location = new System.Drawing.Point(13, 37);
-			this.radioAmbiente.Margin = new System.Windows.Forms.Padding(2);
-			this.radioAmbiente.Name = "radioAmbiente";
-			this.radioAmbiente.Size = new System.Drawing.Size(69, 17);
-			this.radioAmbiente.TabIndex = 1;
-			this.radioAmbiente.TabStop = true;
-			this.radioAmbiente.Text = "Ambiente";
-			this.radioAmbiente.UseVisualStyleBackColor = true;
-			// 
-			// radioOperario
-			// 
-			this.radioOperario.AutoSize = true;
-			this.radioOperario.Location = new System.Drawing.Point(13, 57);
-			this.radioOperario.Margin = new System.Windows.Forms.Padding(2);
-			this.radioOperario.Name = "radioOperario";
-			this.radioOperario.Size = new System.Drawing.Size(65, 17);
-			this.radioOperario.TabIndex = 2;
-			this.radioOperario.TabStop = true;
-			this.radioOperario.Text = "Operario";
-			this.radioOperario.UseVisualStyleBackColor = true;
-			// 
-			// radioProducto
-			// 
-			this.radioProducto.AutoSize = true;
-			this.radioProducto.Location = new System.Drawing.Point(13, 16);
-			this.radioProducto.Margin = new System.Windows.Forms.Padding(2);
-			this.radioProducto.Name = "radioProducto";
-			this.radioProducto.Size = new System.Drawing.Size(68, 17);
-			this.radioProducto.TabIndex = 0;
-			this.radioProducto.TabStop = true;
-			this.radioProducto.Text = "Producto";
-			this.radioProducto.UseVisualStyleBackColor = true;
-			// 
-			// label2
-			// 
-			this.label2.Location = new System.Drawing.Point(10, 63);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(100, 14);
-			this.label2.TabIndex = 2;
-			this.label2.Text = "Metodo";
-			// 
-			// label1
-			// 
-			this.label1.Location = new System.Drawing.Point(10, 15);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(100, 14);
-			this.label1.TabIndex = 2;
-			this.label1.Text = "Nombre";
-			// 
-			// btnQuitarFiltroNombre
-			// 
-			this.btnQuitarFiltroNombre.Location = new System.Drawing.Point(321, 67);
-			this.btnQuitarFiltroNombre.Name = "btnQuitarFiltroNombre";
-			this.btnQuitarFiltroNombre.Size = new System.Drawing.Size(88, 31);
-			this.btnQuitarFiltroNombre.TabIndex = 1;
-			this.btnQuitarFiltroNombre.Text = "Borrar";
-			this.btnQuitarFiltroNombre.UseVisualStyleBackColor = true;
-			this.btnQuitarFiltroNombre.Click += new System.EventHandler(this.BtnQuitarFiltroBusquedasClick);
-			// 
-			// txtBuscarMetodo
-			// 
-			this.txtBuscarMetodo.Location = new System.Drawing.Point(10, 80);
-			this.txtBuscarMetodo.Margin = new System.Windows.Forms.Padding(2);
-			this.txtBuscarMetodo.Name = "txtBuscarMetodo";
-			this.txtBuscarMetodo.Size = new System.Drawing.Size(132, 20);
-			this.txtBuscarMetodo.TabIndex = 0;
-			this.txtBuscarMetodo.TextChanged += new System.EventHandler(this.TxtBuscarMetodo_TextChanged);
-			// 
-			// txtBuscarNombre
-			// 
-			this.txtBuscarNombre.Location = new System.Drawing.Point(10, 31);
-			this.txtBuscarNombre.Margin = new System.Windows.Forms.Padding(2);
-			this.txtBuscarNombre.Name = "txtBuscarNombre";
-			this.txtBuscarNombre.Size = new System.Drawing.Size(132, 20);
-			this.txtBuscarNombre.TabIndex = 0;
-			this.txtBuscarNombre.TextChanged += new System.EventHandler(this.TxtBuscarNombre_TextChanged);
-			// 
-			// tablaDatos
-			// 
-			this.tablaDatos.AllowUserToAddRows = false;
-			this.tablaDatos.AllowUserToDeleteRows = false;
-			this.tablaDatos.AllowUserToOrderColumns = true;
-			this.tablaDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
-			this.tablaDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.tablaDatos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-			this.tablaDatos.BackgroundColor = System.Drawing.SystemColors.Control;
-			this.tablaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.tablaDatos.DefaultCellStyle = dataGridViewCellStyle1;
-			this.tablaDatos.Location = new System.Drawing.Point(14, 137);
-			this.tablaDatos.MultiSelect = false;
-			this.tablaDatos.Name = "tablaDatos";
-			this.tablaDatos.ReadOnly = true;
-			this.tablaDatos.RowHeadersVisible = false;
-			this.tablaDatos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-			this.tablaDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.tablaDatos.Size = new System.Drawing.Size(564, 240);
-			this.tablaDatos.TabIndex = 6;
-			this.tablaDatos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaDatosRowEnter);
-			this.tablaDatos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TablaDatosMouseDown);
-			// 
-			// ListarEnsayos
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(593, 392);
-			this.Controls.Add(this.grupoAcciones);
-			this.Controls.Add(this.grupoFiltros);
-			this.Controls.Add(this.tablaDatos);
-			this.MaximizeBox = false;
-			this.MinimumSize = new System.Drawing.Size(588, 426);
-			this.Name = "ListarEnsayos";
-			this.Text = "Listado de Ensayos";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListarEnsayosFormFormClosing);
-			this.grupoAcciones.ResumeLayout(false);
-			this.grupoFiltros.ResumeLayout(false);
-			this.grupoBuscar.ResumeLayout(false);
-			this.grupoBuscar.PerformLayout();
-			this.grupoClaseMuestra.ResumeLayout(false);
-			this.grupoClaseMuestra.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).EndInit();
-			this.ResumeLayout(false);
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.grupoAcciones = new System.Windows.Forms.GroupBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.grupoFiltros = new System.Windows.Forms.GroupBox();
+            this.grupoBuscar = new System.Windows.Forms.GroupBox();
+            this.grupoClaseMuestra = new System.Windows.Forms.GroupBox();
+            this.radioTodas = new System.Windows.Forms.RadioButton();
+            this.radioOtra = new System.Windows.Forms.RadioButton();
+            this.radioSuperficie = new System.Windows.Forms.RadioButton();
+            this.radioAmbiente = new System.Windows.Forms.RadioButton();
+            this.radioOperario = new System.Windows.Forms.RadioButton();
+            this.radioProducto = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnQuitarFiltroNombre = new System.Windows.Forms.Button();
+            this.txtBuscarMetodo = new System.Windows.Forms.TextBox();
+            this.txtBuscarNombre = new System.Windows.Forms.TextBox();
+            this.tablaDatos = new System.Windows.Forms.DataGridView();
+            this.grupoAcciones.SuspendLayout();
+            this.grupoFiltros.SuspendLayout();
+            this.grupoBuscar.SuspendLayout();
+            this.grupoClaseMuestra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // grupoAcciones
+            // 
+            this.grupoAcciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.grupoAcciones.Controls.Add(this.btnEliminar);
+            this.grupoAcciones.Controls.Add(this.btnEditar);
+            this.grupoAcciones.Location = new System.Drawing.Point(601, 6);
+            this.grupoAcciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grupoAcciones.Name = "grupoAcciones";
+            this.grupoAcciones.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grupoAcciones.Size = new System.Drawing.Size(171, 155);
+            this.grupoAcciones.TabIndex = 8;
+            this.grupoAcciones.TabStop = false;
+            this.grupoAcciones.Text = "Acciones";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Location = new System.Drawing.Point(25, 92);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(117, 44);
+            this.btnEliminar.TabIndex = 1;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminarClick);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditar.Enabled = false;
+            this.btnEditar.Location = new System.Drawing.Point(25, 41);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(117, 39);
+            this.btnEditar.TabIndex = 0;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            // 
+            // grupoFiltros
+            // 
+            this.grupoFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grupoFiltros.Controls.Add(this.grupoBuscar);
+            this.grupoFiltros.Location = new System.Drawing.Point(19, 6);
+            this.grupoFiltros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grupoFiltros.Name = "grupoFiltros";
+            this.grupoFiltros.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grupoFiltros.Size = new System.Drawing.Size(579, 155);
+            this.grupoFiltros.TabIndex = 7;
+            this.grupoFiltros.TabStop = false;
+            this.grupoFiltros.Text = "Filtros";
+            // 
+            // grupoBuscar
+            // 
+            this.grupoBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grupoBuscar.Controls.Add(this.grupoClaseMuestra);
+            this.grupoBuscar.Controls.Add(this.label2);
+            this.grupoBuscar.Controls.Add(this.label1);
+            this.grupoBuscar.Controls.Add(this.btnQuitarFiltroNombre);
+            this.grupoBuscar.Controls.Add(this.txtBuscarMetodo);
+            this.grupoBuscar.Controls.Add(this.txtBuscarNombre);
+            this.grupoBuscar.Location = new System.Drawing.Point(7, 22);
+            this.grupoBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grupoBuscar.Name = "grupoBuscar";
+            this.grupoBuscar.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grupoBuscar.Size = new System.Drawing.Size(565, 127);
+            this.grupoBuscar.TabIndex = 1;
+            this.grupoBuscar.TabStop = false;
+            this.grupoBuscar.Text = "Busqueda";
+            // 
+            // grupoClaseMuestra
+            // 
+            this.grupoClaseMuestra.Controls.Add(this.radioTodas);
+            this.grupoClaseMuestra.Controls.Add(this.radioOtra);
+            this.grupoClaseMuestra.Controls.Add(this.radioSuperficie);
+            this.grupoClaseMuestra.Controls.Add(this.radioAmbiente);
+            this.grupoClaseMuestra.Controls.Add(this.radioOperario);
+            this.grupoClaseMuestra.Controls.Add(this.radioProducto);
+            this.grupoClaseMuestra.Location = new System.Drawing.Point(193, 12);
+            this.grupoClaseMuestra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grupoClaseMuestra.Name = "grupoClaseMuestra";
+            this.grupoClaseMuestra.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grupoClaseMuestra.Size = new System.Drawing.Size(215, 108);
+            this.grupoClaseMuestra.TabIndex = 28;
+            this.grupoClaseMuestra.TabStop = false;
+            this.grupoClaseMuestra.Text = "Muestra";
+            // 
+            // radioTodas
+            // 
+            this.radioTodas.AutoSize = true;
+            this.radioTodas.Location = new System.Drawing.Point(108, 70);
+            this.radioTodas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioTodas.Name = "radioTodas";
+            this.radioTodas.Size = new System.Drawing.Size(69, 21);
+            this.radioTodas.TabIndex = 5;
+            this.radioTodas.TabStop = true;
+            this.radioTodas.Text = "Todas";
+            this.radioTodas.UseVisualStyleBackColor = true;
+            // 
+            // radioOtra
+            // 
+            this.radioOtra.AutoSize = true;
+            this.radioOtra.Location = new System.Drawing.Point(108, 46);
+            this.radioOtra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioOtra.Name = "radioOtra";
+            this.radioOtra.Size = new System.Drawing.Size(57, 21);
+            this.radioOtra.TabIndex = 4;
+            this.radioOtra.TabStop = true;
+            this.radioOtra.Text = "Otra";
+            this.radioOtra.UseVisualStyleBackColor = true;
+            // 
+            // radioSuperficie
+            // 
+            this.radioSuperficie.AutoSize = true;
+            this.radioSuperficie.Location = new System.Drawing.Point(108, 20);
+            this.radioSuperficie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioSuperficie.Name = "radioSuperficie";
+            this.radioSuperficie.Size = new System.Drawing.Size(92, 21);
+            this.radioSuperficie.TabIndex = 3;
+            this.radioSuperficie.TabStop = true;
+            this.radioSuperficie.Text = "Superficie";
+            this.radioSuperficie.UseVisualStyleBackColor = true;
+            // 
+            // radioAmbiente
+            // 
+            this.radioAmbiente.AutoSize = true;
+            this.radioAmbiente.Location = new System.Drawing.Point(17, 46);
+            this.radioAmbiente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioAmbiente.Name = "radioAmbiente";
+            this.radioAmbiente.Size = new System.Drawing.Size(88, 21);
+            this.radioAmbiente.TabIndex = 1;
+            this.radioAmbiente.TabStop = true;
+            this.radioAmbiente.Text = "Ambiente";
+            this.radioAmbiente.UseVisualStyleBackColor = true;
+            // 
+            // radioOperario
+            // 
+            this.radioOperario.AutoSize = true;
+            this.radioOperario.Location = new System.Drawing.Point(17, 70);
+            this.radioOperario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioOperario.Name = "radioOperario";
+            this.radioOperario.Size = new System.Drawing.Size(85, 21);
+            this.radioOperario.TabIndex = 2;
+            this.radioOperario.TabStop = true;
+            this.radioOperario.Text = "Operario";
+            this.radioOperario.UseVisualStyleBackColor = true;
+            // 
+            // radioProducto
+            // 
+            this.radioProducto.AutoSize = true;
+            this.radioProducto.Location = new System.Drawing.Point(17, 20);
+            this.radioProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioProducto.Name = "radioProducto";
+            this.radioProducto.Size = new System.Drawing.Size(86, 21);
+            this.radioProducto.TabIndex = 0;
+            this.radioProducto.TabStop = true;
+            this.radioProducto.Text = "Producto";
+            this.radioProducto.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(13, 78);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(133, 17);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Metodo";
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(13, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nombre";
+            // 
+            // btnQuitarFiltroNombre
+            // 
+            this.btnQuitarFiltroNombre.Location = new System.Drawing.Point(428, 82);
+            this.btnQuitarFiltroNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuitarFiltroNombre.Name = "btnQuitarFiltroNombre";
+            this.btnQuitarFiltroNombre.Size = new System.Drawing.Size(117, 38);
+            this.btnQuitarFiltroNombre.TabIndex = 1;
+            this.btnQuitarFiltroNombre.Text = "Borrar";
+            this.btnQuitarFiltroNombre.UseVisualStyleBackColor = true;
+            this.btnQuitarFiltroNombre.Click += new System.EventHandler(this.BtnQuitarFiltroBusquedasClick);
+            // 
+            // txtBuscarMetodo
+            // 
+            this.txtBuscarMetodo.Location = new System.Drawing.Point(13, 98);
+            this.txtBuscarMetodo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBuscarMetodo.Name = "txtBuscarMetodo";
+            this.txtBuscarMetodo.Size = new System.Drawing.Size(175, 22);
+            this.txtBuscarMetodo.TabIndex = 0;
+            this.txtBuscarMetodo.TextChanged += new System.EventHandler(this.TxtBuscarMetodo_TextChanged);
+            // 
+            // txtBuscarNombre
+            // 
+            this.txtBuscarNombre.Location = new System.Drawing.Point(13, 38);
+            this.txtBuscarNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBuscarNombre.Name = "txtBuscarNombre";
+            this.txtBuscarNombre.Size = new System.Drawing.Size(175, 22);
+            this.txtBuscarNombre.TabIndex = 0;
+            this.txtBuscarNombre.TextChanged += new System.EventHandler(this.TxtBuscarNombre_TextChanged);
+            // 
+            // tablaDatos
+            // 
+            this.tablaDatos.AllowUserToAddRows = false;
+            this.tablaDatos.AllowUserToDeleteRows = false;
+            this.tablaDatos.AllowUserToOrderColumns = true;
+            this.tablaDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tablaDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tablaDatos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tablaDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.tablaDatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaDatos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaDatos.EnableHeadersVisualStyles = false;
+            this.tablaDatos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.tablaDatos.Location = new System.Drawing.Point(19, 169);
+            this.tablaDatos.Margin = new System.Windows.Forms.Padding(4);
+            this.tablaDatos.MultiSelect = false;
+            this.tablaDatos.Name = "tablaDatos";
+            this.tablaDatos.ReadOnly = true;
+            this.tablaDatos.RowHeadersVisible = false;
+            this.tablaDatos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.tablaDatos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.tablaDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tablaDatos.Size = new System.Drawing.Size(753, 291);
+            this.tablaDatos.TabIndex = 9;
+            this.tablaDatos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaDatosRowEnter);
+            this.tablaDatos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TablaDatosMouseDown);
+            // 
+            // ListarEnsayos
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(791, 482);
+            this.Controls.Add(this.tablaDatos);
+            this.Controls.Add(this.grupoAcciones);
+            this.Controls.Add(this.grupoFiltros);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(778, 513);
+            this.Name = "ListarEnsayos";
+            this.Text = "Listado de Ensayos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ListarEnsayosFormFormClosing);
+            this.grupoAcciones.ResumeLayout(false);
+            this.grupoFiltros.ResumeLayout(false);
+            this.grupoBuscar.ResumeLayout(false);
+            this.grupoBuscar.PerformLayout();
+            this.grupoClaseMuestra.ResumeLayout(false);
+            this.grupoClaseMuestra.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).EndInit();
+            this.ResumeLayout(false);
 
 		}
 
@@ -338,5 +367,6 @@ namespace FrigLab.View.Ensayos
         private System.Windows.Forms.RadioButton radioOperario;
         private System.Windows.Forms.RadioButton radioProducto;
         private System.Windows.Forms.RadioButton radioTodas;
+        private System.Windows.Forms.DataGridView tablaDatos;
     }
 }

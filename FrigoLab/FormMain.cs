@@ -79,8 +79,7 @@ namespace FrigLab {
         }
 
         private void buttonListarMuestreos_Click(object sender, EventArgs e) {
-            (sender as Button).BackColor = Color.FromArgb(0, 122, 204);
-            buttonListarMuestreos.BackColor = Color.FromArgb(41, 57, 85);
+            (sender as Button).BackColor = Color.FromArgb(41, 57, 85);
             buttonNuevoPool.BackColor = Color.FromArgb(41, 57, 85);
             CambiarVisibilidadPaneles(formPaneles, new Panel[] { panelSubmenuMuestreos, panelSubmenuButtonListarMuestreo });
         }
@@ -107,8 +106,7 @@ namespace FrigLab {
         }
 
         private void buttonNuevoMuestreo_Click(object sender, EventArgs e) {
-            (sender as Button).BackColor = Color.FromArgb(0, 122, 204);
-            buttonListarMuestreos.BackColor = Color.FromArgb(41, 57, 85);
+            (sender as Button).BackColor = Color.FromArgb(41, 57, 85);
             buttonNuevoPool.BackColor = Color.FromArgb(41, 57, 85);
             CambiarVisibilidadPaneles(formPaneles, new Panel[] { panelSubmenuMuestreos, panelSubmenuButtonNuevoMuestreo });
         }
@@ -149,7 +147,7 @@ namespace FrigLab {
         }
 
         private void buttonNuevoPool_Click(object sender, EventArgs e) {
-            buttonNuevoMuestreo.BackColor = Color.FromArgb(41, 57, 85);
+            (sender as Button).BackColor = Color.FromArgb(41, 57, 85);
             CambiarVisibilidadPaneles(formPaneles);
             Form nuevoPool = NuevoPool.GetInstancia();
             MostrarFormulario(nuevoPool, true);
@@ -162,57 +160,63 @@ namespace FrigLab {
         }
 
         private void buttonEnsayos_Click(object sender, EventArgs e) {
-            (sender as Button).BackColor = Color.FromArgb(0, 122, 204);
+            (sender as Button).BackColor = Color.FromArgb(41, 57, 85);
             buttonRequisitos.BackColor = Color.FromArgb(41, 57, 85);
             buttonLaboratorios.BackColor = Color.FromArgb(41, 57, 85);
             CambiarVisibilidadPaneles(formPaneles, new Panel[] { panelSubmenuLaboratorio, panelSubMenuButtonEnsayos });
         }
 
         private void buttonRequisitos_Click(object sender, EventArgs e) {
-            (sender as Button).BackColor = Color.FromArgb(0, 122, 204);
+            (sender as Button).BackColor = Color.FromArgb(41, 57, 85);
             buttonEnsayos.BackColor = Color.FromArgb(41, 57, 85);
             buttonLaboratorios.BackColor = Color.FromArgb(41, 57, 85);
             CambiarVisibilidadPaneles(formPaneles, new Panel[] { panelSubmenuLaboratorio, panelSubmenuButtonRequisitos });
         }
 
         private void buttonLaboratorios_Click(object sender, EventArgs e) {
-            (sender as Button).BackColor = Color.FromArgb(0, 122, 204);
+            (sender as Button).BackColor = Color.FromArgb(41, 57, 85);
             buttonEnsayos.BackColor = Color.FromArgb(41, 57, 85);
             buttonRequisitos.BackColor = Color.FromArgb(41, 57, 85);
             CambiarVisibilidadPaneles(formPaneles, new Panel[] { panelSubmenuLaboratorio, panelSubmenuButtonLaboratorios });
         }
 
         private void buttonListarEnsayos_Click(object sender, EventArgs e) {
+            (sender as Button).BackColor = Color.FromArgb(41, 57, 85);
             CambiarVisibilidadPaneles(formPaneles);
             Form listarEnsayos = ListarEnsayos.GetInstancia();
             MostrarFormulario(listarEnsayos, true);
         }
 
         private void buttonListarLaboratorios_Click(object sender, EventArgs e) {
+            (sender as Button).BackColor = Color.FromArgb(41, 57, 85);
             CambiarVisibilidadPaneles(formPaneles);
             Form listarLaboratorios = ListarLaboratorios.GetInstancia();
             MostrarFormulario(listarLaboratorios, true);
         }
 
         private void buttonListarRequisitos_Click(object sender, EventArgs e) {
+            (sender as Button).BackColor = Color.FromArgb(41, 57, 85);
             CambiarVisibilidadPaneles(formPaneles);
             Form listarRequisitos = ListarRequisitos.GetInstancia();
             MostrarFormulario(listarRequisitos, true);
         }
 
         private void buttonNuevoLaboratorio_Click(object sender, EventArgs e) {
+            (sender as Button).BackColor = Color.FromArgb(41, 57, 85);
             CambiarVisibilidadPaneles(formPaneles);
             Form nuevoLaboratorioForm = NuevoLaboratorio.GetInstancia();
             MostrarFormulario(nuevoLaboratorioForm, true);
         }
 
         private void buttonNuevoEnsayo_Click(object sender, EventArgs e) {
+            (sender as Button).BackColor = Color.FromArgb(41, 57, 85);
             CambiarVisibilidadPaneles(formPaneles);
             Form nuevaEspecificacionEnsayoForm = NuevoEnsayo.GetInstancia();
             MostrarFormulario(nuevaEspecificacionEnsayoForm, true);
         }
 
         private void buttonNuevoRequisito_Click(object sender, EventArgs e) {
+            (sender as Button).BackColor = Color.FromArgb(41, 57, 85);
             CambiarVisibilidadPaneles(formPaneles);
             Form nuevoRequisitoForm = NuevoRequisito.GetInstancia();
             MostrarFormulario(nuevoRequisitoForm, true);
@@ -263,7 +267,6 @@ namespace FrigLab {
             CambiarVisibilidadPaneles(formPaneles);
         }
         #endregion
-
 
         public void CambiarInfoSesion() {
             if(SesionDeUsuario.HaySesionIniciada()) {

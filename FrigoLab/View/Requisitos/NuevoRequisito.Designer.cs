@@ -14,11 +14,8 @@ namespace FrigLab.View.Requisitos
 		/// Designer variable used to keep track of non-visual components.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
-		private System.Windows.Forms.Button btnCancelar;
-		private System.Windows.Forms.Button btnGuardar;
 		private System.Windows.Forms.TextBox txtNombre;
 		private System.Windows.Forms.Label lblNombre;
-		private System.Windows.Forms.Button btnDefinirLimite;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -41,121 +38,196 @@ namespace FrigLab.View.Requisitos
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.btnCancelar = new System.Windows.Forms.Button();
-			this.btnGuardar = new System.Windows.Forms.Button();
-			this.txtNombre = new System.Windows.Forms.TextBox();
-			this.lblNombre = new System.Windows.Forms.Label();
-			this.btnDefinirLimite = new System.Windows.Forms.Button();
-			this.tablaDatos = new System.Windows.Forms.DataGridView();
-			this.btnQuitarLimite = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).BeginInit();
-			this.SuspendLayout();
-			// 
-			// btnCancelar
-			// 
-			this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnCancelar.Location = new System.Drawing.Point(209, 317);
-			this.btnCancelar.Name = "btnCancelar";
-			this.btnCancelar.Size = new System.Drawing.Size(105, 29);
-			this.btnCancelar.TabIndex = 18;
-			this.btnCancelar.Text = "Cancelar";
-			this.btnCancelar.UseVisualStyleBackColor = true;
-			this.btnCancelar.Click += new System.EventHandler(this.BtnCancelarClick);
-			// 
-			// btnGuardar
-			// 
-			this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnGuardar.Location = new System.Drawing.Point(320, 317);
-			this.btnGuardar.Name = "btnGuardar";
-			this.btnGuardar.Size = new System.Drawing.Size(105, 29);
-			this.btnGuardar.TabIndex = 17;
-			this.btnGuardar.Text = "Guardar";
-			this.btnGuardar.UseVisualStyleBackColor = true;
-			this.btnGuardar.Click += new System.EventHandler(this.BtnGuardarClick);
-			// 
-			// txtNombre
-			// 
-			this.txtNombre.Location = new System.Drawing.Point(29, 51);
-			this.txtNombre.Name = "txtNombre";
-			this.txtNombre.Size = new System.Drawing.Size(227, 20);
-			this.txtNombre.TabIndex = 16;
-			// 
-			// lblNombre
-			// 
-			this.lblNombre.Location = new System.Drawing.Point(29, 25);
-			this.lblNombre.Name = "lblNombre";
-			this.lblNombre.Size = new System.Drawing.Size(100, 23);
-			this.lblNombre.TabIndex = 14;
-			this.lblNombre.Text = "Nombre";
-			// 
-			// btnDefinirLimite
-			// 
-			this.btnDefinirLimite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnDefinirLimite.Location = new System.Drawing.Point(332, 262);
-			this.btnDefinirLimite.Name = "btnDefinirLimite";
-			this.btnDefinirLimite.Size = new System.Drawing.Size(79, 29);
-			this.btnDefinirLimite.TabIndex = 18;
-			this.btnDefinirLimite.Text = "Definir Limite";
-			this.btnDefinirLimite.UseVisualStyleBackColor = true;
-			this.btnDefinirLimite.Click += new System.EventHandler(this.BntDefinirLimiteClick);
-			// 
-			// tablaDatos
-			// 
-			this.tablaDatos.AllowUserToAddRows = false;
-			this.tablaDatos.AllowUserToDeleteRows = false;
-			this.tablaDatos.AllowUserToOrderColumns = true;
-			this.tablaDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-			| System.Windows.Forms.AnchorStyles.Left) 
-			| System.Windows.Forms.AnchorStyles.Right)));
-			this.tablaDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-			this.tablaDatos.BackgroundColor = System.Drawing.SystemColors.Control;
-			this.tablaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.tablaDatos.Location = new System.Drawing.Point(28, 76);
-			this.tablaDatos.MinimumSize = new System.Drawing.Size(390, 179);
-			this.tablaDatos.MultiSelect = false;
-			this.tablaDatos.Name = "tablaDatos";
-			this.tablaDatos.ReadOnly = true;
-			this.tablaDatos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-			this.tablaDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.tablaDatos.Size = new System.Drawing.Size(398, 179);
-			this.tablaDatos.TabIndex = 28;
-			this.tablaDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaDatos_CellClick);
-			// 
-			// btnQuitarLimite
-			// 
-			this.btnQuitarLimite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnQuitarLimite.Location = new System.Drawing.Point(227, 262);
-			this.btnQuitarLimite.Name = "btnQuitarLimite";
-			this.btnQuitarLimite.Size = new System.Drawing.Size(79, 29);
-			this.btnQuitarLimite.TabIndex = 18;
-			this.btnQuitarLimite.Text = "Quitar Limite";
-			this.btnQuitarLimite.UseVisualStyleBackColor = true;
-			this.btnQuitarLimite.Click += new System.EventHandler(this.BntQuitarLimiteClick);
-			// 
-			// NuevoRequisito
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(453, 375);
-			this.Controls.Add(this.tablaDatos);
-			this.Controls.Add(this.btnQuitarLimite);
-			this.Controls.Add(this.btnDefinirLimite);
-			this.Controls.Add(this.btnCancelar);
-			this.Controls.Add(this.btnGuardar);
-			this.Controls.Add(this.txtNombre);
-			this.Controls.Add(this.lblNombre);
-			this.MaximizeBox = false;
-			this.MinimumSize = new System.Drawing.Size(469, 413);
-			this.Name = "NuevoRequisito";
-			this.Text = "Registrar Requisito";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NuevoRequisitoFormFormClosing);
-			((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).EndInit();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.btnDefinirLimite = new System.Windows.Forms.Button();
+            this.btnQuitarLimite = new System.Windows.Forms.Button();
+            this.panelInferiorControles = new System.Windows.Forms.Panel();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.tablaDatos = new System.Windows.Forms.DataGridView();
+            this.panelInferiorControles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(39, 63);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(301, 22);
+            this.txtNombre.TabIndex = 16;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.Location = new System.Drawing.Point(39, 31);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(133, 28);
+            this.lblNombre.TabIndex = 14;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // btnDefinirLimite
+            // 
+            this.btnDefinirLimite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDefinirLimite.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnDefinirLimite.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDefinirLimite.FlatAppearance.MouseOverBackColor = System.Drawing.Color.YellowGreen;
+            this.btnDefinirLimite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDefinirLimite.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDefinirLimite.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnDefinirLimite.Location = new System.Drawing.Point(428, 325);
+            this.btnDefinirLimite.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDefinirLimite.Name = "btnDefinirLimite";
+            this.btnDefinirLimite.Size = new System.Drawing.Size(140, 36);
+            this.btnDefinirLimite.TabIndex = 42;
+            this.btnDefinirLimite.Text = "Definir Limite";
+            this.btnDefinirLimite.UseVisualStyleBackColor = false;
+            this.btnDefinirLimite.Click += new System.EventHandler(this.BntDefinirLimiteClick);
+            // 
+            // btnQuitarLimite
+            // 
+            this.btnQuitarLimite.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnQuitarLimite.BackColor = System.Drawing.Color.LightCoral;
+            this.btnQuitarLimite.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnQuitarLimite.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnQuitarLimite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnQuitarLimite.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuitarLimite.ForeColor = System.Drawing.Color.Maroon;
+            this.btnQuitarLimite.Location = new System.Drawing.Point(280, 325);
+            this.btnQuitarLimite.Margin = new System.Windows.Forms.Padding(4);
+            this.btnQuitarLimite.Name = "btnQuitarLimite";
+            this.btnQuitarLimite.Size = new System.Drawing.Size(140, 36);
+            this.btnQuitarLimite.TabIndex = 43;
+            this.btnQuitarLimite.Text = "Quitar Limite";
+            this.btnQuitarLimite.UseVisualStyleBackColor = false;
+            this.btnQuitarLimite.Click += new System.EventHandler(this.BntQuitarLimiteClick);
+            // 
+            // panelInferiorControles
+            // 
+            this.panelInferiorControles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.panelInferiorControles.Controls.Add(this.btnGuardar);
+            this.panelInferiorControles.Controls.Add(this.btnCancelar);
+            this.panelInferiorControles.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInferiorControles.Location = new System.Drawing.Point(0, 394);
+            this.panelInferiorControles.Name = "panelInferiorControles";
+            this.panelInferiorControles.Size = new System.Drawing.Size(604, 68);
+            this.panelInferiorControles.TabIndex = 53;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.YellowGreen;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnGuardar.Location = new System.Drawing.Point(420, 19);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(140, 36);
+            this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardarClick);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCancelar.Location = new System.Drawing.Point(248, 19);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(140, 36);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelarClick);
+            // 
+            // tablaDatos
+            // 
+            this.tablaDatos.AllowUserToAddRows = false;
+            this.tablaDatos.AllowUserToDeleteRows = false;
+            this.tablaDatos.AllowUserToOrderColumns = true;
+            this.tablaDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tablaDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tablaDatos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tablaDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.tablaDatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaDatos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaDatos.EnableHeadersVisualStyles = false;
+            this.tablaDatos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.tablaDatos.Location = new System.Drawing.Point(39, 93);
+            this.tablaDatos.Margin = new System.Windows.Forms.Padding(4);
+            this.tablaDatos.MultiSelect = false;
+            this.tablaDatos.Name = "tablaDatos";
+            this.tablaDatos.ReadOnly = true;
+            this.tablaDatos.RowHeadersVisible = false;
+            this.tablaDatos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.tablaDatos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.tablaDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tablaDatos.Size = new System.Drawing.Size(529, 224);
+            this.tablaDatos.TabIndex = 54;
+            this.tablaDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaDatos_CellClick);
+            // 
+            // NuevoRequisito
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(604, 462);
+            this.Controls.Add(this.tablaDatos);
+            this.Controls.Add(this.panelInferiorControles);
+            this.Controls.Add(this.btnQuitarLimite);
+            this.Controls.Add(this.btnDefinirLimite);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.lblNombre);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(619, 497);
+            this.Name = "NuevoRequisito";
+            this.Text = "Registrar Requisito";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NuevoRequisitoFormFormClosing);
+            this.panelInferiorControles.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
-
-        private System.Windows.Forms.DataGridView tablaDatos;
+        private System.Windows.Forms.Button btnDefinirLimite;
         private System.Windows.Forms.Button btnQuitarLimite;
+        private System.Windows.Forms.Panel panelInferiorControles;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridView tablaDatos;
     }
 }

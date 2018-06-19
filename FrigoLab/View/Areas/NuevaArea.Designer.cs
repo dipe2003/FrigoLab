@@ -44,11 +44,15 @@ namespace FrigLab.View.Areas
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.panelInferiorControles = new System.Windows.Forms.Panel();
+            this.panelInferiorControles.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNombre
             // 
-            this.lblNombre.Location = new System.Drawing.Point(36, 53);
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(36, 59);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(133, 28);
@@ -57,42 +61,65 @@ namespace FrigLab.View.Areas
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(36, 85);
+            this.txtNombre.Location = new System.Drawing.Point(36, 91);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(301, 22);
+            this.txtNombre.Size = new System.Drawing.Size(316, 22);
             this.txtNombre.TabIndex = 1;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(199, 261);
+            this.btnGuardar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.YellowGreen;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnGuardar.Location = new System.Drawing.Point(212, 19);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(140, 36);
             this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardarClick);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(36, 261);
+            this.btnCancelar.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCancelar.Location = new System.Drawing.Point(36, 19);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(140, 36);
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelarClick);
+            // 
+            // panelInferiorControles
+            // 
+            this.panelInferiorControles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.panelInferiorControles.Controls.Add(this.btnGuardar);
+            this.panelInferiorControles.Controls.Add(this.btnCancelar);
+            this.panelInferiorControles.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInferiorControles.Location = new System.Drawing.Point(0, 245);
+            this.panelInferiorControles.Name = "panelInferiorControles";
+            this.panelInferiorControles.Size = new System.Drawing.Size(372, 68);
+            this.panelInferiorControles.TabIndex = 51;
             // 
             // NuevaArea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
             this.ClientSize = new System.Drawing.Size(372, 313);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.panelInferiorControles);
             this.Controls.Add(this.lblNombre);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -105,9 +132,12 @@ namespace FrigLab.View.Areas
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registro de Area";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NuevaAreaFormFormClosing);
+            this.panelInferiorControles.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
 		}
-	}
+
+        private System.Windows.Forms.Panel panelInferiorControles;
+    }
 }

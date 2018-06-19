@@ -14,8 +14,6 @@ namespace FrigLab.View.Areas
 		/// Designer variable used to keep track of non-visual components.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
-		private System.Windows.Forms.Button btnCancelar;
-		private System.Windows.Forms.Button btnGuardar;
 		private System.Windows.Forms.TextBox txtNombre;
 		private System.Windows.Forms.Label lblNombre;
 		
@@ -40,45 +38,26 @@ namespace FrigLab.View.Areas
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.chkVigente = new System.Windows.Forms.CheckBox();
+            this.panelInferiorControles = new System.Windows.Forms.Panel();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.panelInferiorControles.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(36, 261);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(140, 36);
-            this.btnCancelar.TabIndex = 4;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelarClick);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(199, 261);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(140, 36);
-            this.btnGuardar.TabIndex = 3;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardarClick);
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(36, 85);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(301, 22);
             this.txtNombre.TabIndex = 1;
             // 
             // lblNombre
             // 
+            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.Location = new System.Drawing.Point(36, 53);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
@@ -98,17 +77,61 @@ namespace FrigLab.View.Areas
             this.chkVigente.UseVisualStyleBackColor = true;
             this.chkVigente.CheckedChanged += new System.EventHandler(this.ChkVigente_CheckedChanged);
             // 
+            // panelInferiorControles
+            // 
+            this.panelInferiorControles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.panelInferiorControles.Controls.Add(this.btnGuardar);
+            this.panelInferiorControles.Controls.Add(this.btnCancelar);
+            this.panelInferiorControles.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInferiorControles.Location = new System.Drawing.Point(0, 243);
+            this.panelInferiorControles.Name = "panelInferiorControles";
+            this.panelInferiorControles.Size = new System.Drawing.Size(376, 68);
+            this.panelInferiorControles.TabIndex = 52;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.YellowGreen;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnGuardar.Location = new System.Drawing.Point(197, 19);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(140, 36);
+            this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardarClick);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCancelar.Location = new System.Drawing.Point(36, 19);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(140, 36);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelarClick);
+            // 
             // EditarArea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 311);
+            this.Controls.Add(this.panelInferiorControles);
             this.Controls.Add(this.chkVigente);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(394, 358);
             this.MinimizeBox = false;
@@ -118,11 +141,15 @@ namespace FrigLab.View.Areas
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Editar Area:";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditarAreaFormFormClosing);
+            this.panelInferiorControles.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
 		}
 
         private System.Windows.Forms.CheckBox chkVigente;
+        private System.Windows.Forms.Panel panelInferiorControles;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

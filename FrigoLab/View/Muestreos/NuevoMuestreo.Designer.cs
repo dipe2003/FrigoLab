@@ -23,15 +23,13 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.grupoRequisitosAnalisis = new System.Windows.Forms.GroupBox();
+            this.btnAgregarAnalisis = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cboLaboratorios = new System.Windows.Forms.ComboBox();
             this.cboAnalisis = new System.Windows.Forms.ComboBox();
             this.tablaDatos2 = new System.Windows.Forms.DataGridView();
-            this.btnAgregarAnalisis = new System.Windows.Forms.Button();
             this.grupoMuestreo = new System.Windows.Forms.GroupBox();
             this.pickerFechaMuestreo = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,6 +74,9 @@
             this.radioOperativo = new System.Windows.Forms.RadioButton();
             this.radioPreoperativo = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
+            this.panelInferiorControles = new System.Windows.Forms.Panel();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.grupoRequisitosAnalisis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDatos2)).BeginInit();
             this.grupoMuestreo.SuspendLayout();
@@ -87,40 +88,17 @@
             this.panelProducto.SuspendLayout();
             this.grupoArea.SuspendLayout();
             this.grupoHorario.SuspendLayout();
+            this.panelInferiorControles.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(668, 530);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(140, 36);
-            this.btnCancelar.TabIndex = 34;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelarClick);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Location = new System.Drawing.Point(827, 530);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(140, 36);
-            this.btnGuardar.TabIndex = 33;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // grupoRequisitosAnalisis
             // 
+            this.grupoRequisitosAnalisis.Controls.Add(this.btnAgregarAnalisis);
             this.grupoRequisitosAnalisis.Controls.Add(this.label11);
             this.grupoRequisitosAnalisis.Controls.Add(this.label10);
             this.grupoRequisitosAnalisis.Controls.Add(this.cboLaboratorios);
             this.grupoRequisitosAnalisis.Controls.Add(this.cboAnalisis);
             this.grupoRequisitosAnalisis.Controls.Add(this.tablaDatos2);
-            this.grupoRequisitosAnalisis.Controls.Add(this.btnAgregarAnalisis);
             this.grupoRequisitosAnalisis.Location = new System.Drawing.Point(12, 283);
             this.grupoRequisitosAnalisis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grupoRequisitosAnalisis.Name = "grupoRequisitosAnalisis";
@@ -129,6 +107,23 @@
             this.grupoRequisitosAnalisis.TabIndex = 37;
             this.grupoRequisitosAnalisis.TabStop = false;
             this.grupoRequisitosAnalisis.Text = "Analisis";
+            // 
+            // btnAgregarAnalisis
+            // 
+            this.btnAgregarAnalisis.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnAgregarAnalisis.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregarAnalisis.FlatAppearance.MouseOverBackColor = System.Drawing.Color.YellowGreen;
+            this.btnAgregarAnalisis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarAnalisis.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarAnalisis.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnAgregarAnalisis.Location = new System.Drawing.Point(815, 145);
+            this.btnAgregarAnalisis.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAgregarAnalisis.Name = "btnAgregarAnalisis";
+            this.btnAgregarAnalisis.Size = new System.Drawing.Size(140, 36);
+            this.btnAgregarAnalisis.TabIndex = 40;
+            this.btnAgregarAnalisis.Text = "Agregar Analisis";
+            this.btnAgregarAnalisis.UseVisualStyleBackColor = false;
+            this.btnAgregarAnalisis.Click += new System.EventHandler(this.BtnAgregarAnalisisClick);
             // 
             // label11
             // 
@@ -190,18 +185,6 @@
             this.tablaDatos2.Size = new System.Drawing.Size(577, 176);
             this.tablaDatos2.TabIndex = 11;
             this.tablaDatos2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaDatos_CellClick);
-            // 
-            // btnAgregarAnalisis
-            // 
-            this.btnAgregarAnalisis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarAnalisis.Location = new System.Drawing.Point(835, 162);
-            this.btnAgregarAnalisis.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAgregarAnalisis.Name = "btnAgregarAnalisis";
-            this.btnAgregarAnalisis.Size = new System.Drawing.Size(120, 36);
-            this.btnAgregarAnalisis.TabIndex = 32;
-            this.btnAgregarAnalisis.Text = "Agregar Analisis";
-            this.btnAgregarAnalisis.UseVisualStyleBackColor = true;
-            this.btnAgregarAnalisis.Click += new System.EventHandler(this.BtnAgregarAnalisisClick);
             // 
             // grupoMuestreo
             // 
@@ -694,16 +677,60 @@
             this.label9.TabIndex = 5;
             this.label9.Text = "Identificacion";
             // 
+            // panelInferiorControles
+            // 
+            this.panelInferiorControles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.panelInferiorControles.Controls.Add(this.btnGuardar);
+            this.panelInferiorControles.Controls.Add(this.btnCancelar);
+            this.panelInferiorControles.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInferiorControles.Location = new System.Drawing.Point(0, 523);
+            this.panelInferiorControles.Name = "panelInferiorControles";
+            this.panelInferiorControles.Size = new System.Drawing.Size(1005, 68);
+            this.panelInferiorControles.TabIndex = 52;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.YellowGreen;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnGuardar.Location = new System.Drawing.Point(825, 19);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(140, 36);
+            this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCancelar.Location = new System.Drawing.Point(617, 19);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(140, 36);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelarClick);
+            // 
             // NuevoMuestreo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1005, 591);
+            this.Controls.Add(this.panelInferiorControles);
             this.Controls.Add(this.grupoRequisitosAnalisis);
             this.Controls.Add(this.grupoMuestreo);
             this.Controls.Add(this.grupoMuestra);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1023, 638);
@@ -731,20 +758,18 @@
             this.grupoArea.ResumeLayout(false);
             this.grupoHorario.ResumeLayout(false);
             this.grupoHorario.PerformLayout();
+            this.panelInferiorControles.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox grupoRequisitosAnalisis;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cboLaboratorios;
         private System.Windows.Forms.ComboBox cboAnalisis;
         private System.Windows.Forms.DataGridView tablaDatos2;
-        private System.Windows.Forms.Button btnAgregarAnalisis;
         private System.Windows.Forms.GroupBox grupoMuestreo;
         private System.Windows.Forms.DateTimePicker pickerFechaMuestreo;
         private System.Windows.Forms.Label label1;
@@ -789,5 +814,9 @@
         private System.Windows.Forms.RadioButton radioOperativo;
         private System.Windows.Forms.RadioButton radioPreoperativo;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnAgregarAnalisis;
+        private System.Windows.Forms.Panel panelInferiorControles;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

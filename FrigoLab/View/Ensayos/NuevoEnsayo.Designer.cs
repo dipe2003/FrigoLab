@@ -18,8 +18,6 @@ namespace FrigLab.View.Ensayos
 		private System.Windows.Forms.Label lblNombre;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox txtMetodo;
-		private System.Windows.Forms.Button btnCancelar;
-		private System.Windows.Forms.Button btnGuardar;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -42,227 +40,259 @@ namespace FrigLab.View.Ensayos
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.txtNombre = new System.Windows.Forms.TextBox();
-			this.lblNombre = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.txtMetodo = new System.Windows.Forms.TextBox();
-			this.btnCancelar = new System.Windows.Forms.Button();
-			this.btnGuardar = new System.Windows.Forms.Button();
-			this.GrupoTipoAnalisis = new System.Windows.Forms.GroupBox();
-			this.RadioRecuento = new System.Windows.Forms.RadioButton();
-			this.RadioMarginal = new System.Windows.Forms.RadioButton();
-			this.RadioBusqueda = new System.Windows.Forms.RadioButton();
-			this.grupoClaseMuestra = new System.Windows.Forms.GroupBox();
-			this.radioOtra = new System.Windows.Forms.RadioButton();
-			this.radioSuperficie = new System.Windows.Forms.RadioButton();
-			this.radioAmbiente = new System.Windows.Forms.RadioButton();
-			this.radioOperario = new System.Windows.Forms.RadioButton();
-			this.radioProducto = new System.Windows.Forms.RadioButton();
-			this.GrupoTipoAnalisis.SuspendLayout();
-			this.grupoClaseMuestra.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// txtNombre
-			// 
-			this.txtNombre.Location = new System.Drawing.Point(18, 32);
-			this.txtNombre.Name = "txtNombre";
-			this.txtNombre.Size = new System.Drawing.Size(315, 20);
-			this.txtNombre.TabIndex = 8;
-			// 
-			// lblNombre
-			// 
-			this.lblNombre.Location = new System.Drawing.Point(19, 15);
-			this.lblNombre.Name = "lblNombre";
-			this.lblNombre.Size = new System.Drawing.Size(100, 13);
-			this.lblNombre.TabIndex = 7;
-			this.lblNombre.Text = "Nombre";
-			// 
-			// label1
-			// 
-			this.label1.Location = new System.Drawing.Point(21, 59);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(100, 14);
-			this.label1.TabIndex = 7;
-			this.label1.Text = "Metodo";
-			// 
-			// txtMetodo
-			// 
-			this.txtMetodo.Location = new System.Drawing.Point(19, 76);
-			this.txtMetodo.Name = "txtMetodo";
-			this.txtMetodo.Size = new System.Drawing.Size(314, 20);
-			this.txtMetodo.TabIndex = 8;
-			// 
-			// btnCancelar
-			// 
-			this.btnCancelar.Location = new System.Drawing.Point(21, 248);
-			this.btnCancelar.Name = "btnCancelar";
-			this.btnCancelar.Size = new System.Drawing.Size(105, 29);
-			this.btnCancelar.TabIndex = 11;
-			this.btnCancelar.Text = "Cancelar";
-			this.btnCancelar.UseVisualStyleBackColor = true;
-			this.btnCancelar.Click += new System.EventHandler(this.BtnCancelarClick);
-			// 
-			// btnGuardar
-			// 
-			this.btnGuardar.Location = new System.Drawing.Point(222, 248);
-			this.btnGuardar.Name = "btnGuardar";
-			this.btnGuardar.Size = new System.Drawing.Size(105, 29);
-			this.btnGuardar.TabIndex = 10;
-			this.btnGuardar.Text = "Guardar";
-			this.btnGuardar.UseVisualStyleBackColor = true;
-			this.btnGuardar.Click += new System.EventHandler(this.BtnGuardarClick);
-			// 
-			// GrupoTipoAnalisis
-			// 
-			this.GrupoTipoAnalisis.Controls.Add(this.RadioRecuento);
-			this.GrupoTipoAnalisis.Controls.Add(this.RadioMarginal);
-			this.GrupoTipoAnalisis.Controls.Add(this.RadioBusqueda);
-			this.GrupoTipoAnalisis.Location = new System.Drawing.Point(20, 99);
-			this.GrupoTipoAnalisis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.GrupoTipoAnalisis.Name = "GrupoTipoAnalisis";
-			this.GrupoTipoAnalisis.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.GrupoTipoAnalisis.Size = new System.Drawing.Size(154, 88);
-			this.GrupoTipoAnalisis.TabIndex = 26;
-			this.GrupoTipoAnalisis.TabStop = false;
-			this.GrupoTipoAnalisis.Text = "Tipo";
-			// 
-			// RadioRecuento
-			// 
-			this.RadioRecuento.AutoSize = true;
-			this.RadioRecuento.Location = new System.Drawing.Point(10, 63);
-			this.RadioRecuento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.RadioRecuento.Name = "RadioRecuento";
-			this.RadioRecuento.Size = new System.Drawing.Size(72, 17);
-			this.RadioRecuento.TabIndex = 3;
-			this.RadioRecuento.TabStop = true;
-			this.RadioRecuento.Text = "Recuento";
-			this.RadioRecuento.UseVisualStyleBackColor = true;
-			// 
-			// RadioMarginal
-			// 
-			this.RadioMarginal.AutoSize = true;
-			this.RadioMarginal.Location = new System.Drawing.Point(10, 42);
-			this.RadioMarginal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.RadioMarginal.Name = "RadioMarginal";
-			this.RadioMarginal.Size = new System.Drawing.Size(142, 17);
-			this.RadioMarginal.TabIndex = 1;
-			this.RadioMarginal.TabStop = true;
-			this.RadioMarginal.Text = "Recuento (con Marginal)";
-			this.RadioMarginal.UseVisualStyleBackColor = true;
-			// 
-			// RadioBusqueda
-			// 
-			this.RadioBusqueda.AutoSize = true;
-			this.RadioBusqueda.Location = new System.Drawing.Point(10, 21);
-			this.RadioBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.RadioBusqueda.Name = "RadioBusqueda";
-			this.RadioBusqueda.Size = new System.Drawing.Size(73, 17);
-			this.RadioBusqueda.TabIndex = 0;
-			this.RadioBusqueda.TabStop = true;
-			this.RadioBusqueda.Text = "Busqueda";
-			this.RadioBusqueda.UseVisualStyleBackColor = true;
-			// 
-			// grupoClaseMuestra
-			// 
-			this.grupoClaseMuestra.Controls.Add(this.radioOtra);
-			this.grupoClaseMuestra.Controls.Add(this.radioSuperficie);
-			this.grupoClaseMuestra.Controls.Add(this.radioAmbiente);
-			this.grupoClaseMuestra.Controls.Add(this.radioOperario);
-			this.grupoClaseMuestra.Controls.Add(this.radioProducto);
-			this.grupoClaseMuestra.Location = new System.Drawing.Point(178, 99);
-			this.grupoClaseMuestra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.grupoClaseMuestra.Name = "grupoClaseMuestra";
-			this.grupoClaseMuestra.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.grupoClaseMuestra.Size = new System.Drawing.Size(154, 88);
-			this.grupoClaseMuestra.TabIndex = 27;
-			this.grupoClaseMuestra.TabStop = false;
-			this.grupoClaseMuestra.Text = "Clase";
-			// 
-			// radioOtra
-			// 
-			this.radioOtra.AutoSize = true;
-			this.radioOtra.Location = new System.Drawing.Point(86, 45);
-			this.radioOtra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.radioOtra.Name = "radioOtra";
-			this.radioOtra.Size = new System.Drawing.Size(45, 17);
-			this.radioOtra.TabIndex = 4;
-			this.radioOtra.TabStop = true;
-			this.radioOtra.Text = "Otra";
-			this.radioOtra.UseVisualStyleBackColor = true;
-			// 
-			// radioSuperficie
-			// 
-			this.radioSuperficie.AutoSize = true;
-			this.radioSuperficie.Location = new System.Drawing.Point(13, 61);
-			this.radioSuperficie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.radioSuperficie.Name = "radioSuperficie";
-			this.radioSuperficie.Size = new System.Drawing.Size(72, 17);
-			this.radioSuperficie.TabIndex = 3;
-			this.radioSuperficie.TabStop = true;
-			this.radioSuperficie.Text = "Superficie";
-			this.radioSuperficie.UseVisualStyleBackColor = true;
-			// 
-			// radioAmbiente
-			// 
-			this.radioAmbiente.AutoSize = true;
-			this.radioAmbiente.Location = new System.Drawing.Point(13, 41);
-			this.radioAmbiente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.radioAmbiente.Name = "radioAmbiente";
-			this.radioAmbiente.Size = new System.Drawing.Size(69, 17);
-			this.radioAmbiente.TabIndex = 1;
-			this.radioAmbiente.TabStop = true;
-			this.radioAmbiente.Text = "Ambiente";
-			this.radioAmbiente.UseVisualStyleBackColor = true;
-			// 
-			// radioOperario
-			// 
-			this.radioOperario.AutoSize = true;
-			this.radioOperario.Location = new System.Drawing.Point(86, 24);
-			this.radioOperario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.radioOperario.Name = "radioOperario";
-			this.radioOperario.Size = new System.Drawing.Size(65, 17);
-			this.radioOperario.TabIndex = 2;
-			this.radioOperario.TabStop = true;
-			this.radioOperario.Text = "Operario";
-			this.radioOperario.UseVisualStyleBackColor = true;
-			// 
-			// radioProducto
-			// 
-			this.radioProducto.AutoSize = true;
-			this.radioProducto.Location = new System.Drawing.Point(13, 24);
-			this.radioProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-			this.radioProducto.Name = "radioProducto";
-			this.radioProducto.Size = new System.Drawing.Size(68, 17);
-			this.radioProducto.TabIndex = 0;
-			this.radioProducto.TabStop = true;
-			this.radioProducto.Text = "Producto";
-			this.radioProducto.UseVisualStyleBackColor = true;
-			// 
-			// NuevoEnsayo
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(352, 302);
-			this.Controls.Add(this.grupoClaseMuestra);
-			this.Controls.Add(this.GrupoTipoAnalisis);
-			this.Controls.Add(this.btnCancelar);
-			this.Controls.Add(this.btnGuardar);
-			this.Controls.Add(this.txtMetodo);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.txtNombre);
-			this.Controls.Add(this.lblNombre);
-			this.MaximizeBox = false;
-			this.MaximumSize = new System.Drawing.Size(368, 340);
-			this.MinimumSize = new System.Drawing.Size(368, 340);
-			this.Name = "NuevoEnsayo";
-			this.Text = "Nuevo Ensayo";
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NuevaEspecificacionEnsayoFormFormClosing);
-			this.GrupoTipoAnalisis.ResumeLayout(false);
-			this.GrupoTipoAnalisis.PerformLayout();
-			this.grupoClaseMuestra.ResumeLayout(false);
-			this.grupoClaseMuestra.PerformLayout();
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtMetodo = new System.Windows.Forms.TextBox();
+            this.GrupoTipoAnalisis = new System.Windows.Forms.GroupBox();
+            this.RadioRecuento = new System.Windows.Forms.RadioButton();
+            this.RadioMarginal = new System.Windows.Forms.RadioButton();
+            this.RadioBusqueda = new System.Windows.Forms.RadioButton();
+            this.grupoClaseMuestra = new System.Windows.Forms.GroupBox();
+            this.radioOtra = new System.Windows.Forms.RadioButton();
+            this.radioSuperficie = new System.Windows.Forms.RadioButton();
+            this.radioAmbiente = new System.Windows.Forms.RadioButton();
+            this.radioOperario = new System.Windows.Forms.RadioButton();
+            this.radioProducto = new System.Windows.Forms.RadioButton();
+            this.panelInferiorControles = new System.Windows.Forms.Panel();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.GrupoTipoAnalisis.SuspendLayout();
+            this.grupoClaseMuestra.SuspendLayout();
+            this.panelInferiorControles.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(24, 39);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(419, 22);
+            this.txtNombre.TabIndex = 8;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.Location = new System.Drawing.Point(25, 18);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(133, 16);
+            this.lblNombre.TabIndex = 7;
+            this.lblNombre.Text = "Nombre";
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(28, 73);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(133, 17);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Metodo";
+            // 
+            // txtMetodo
+            // 
+            this.txtMetodo.Location = new System.Drawing.Point(25, 94);
+            this.txtMetodo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMetodo.Name = "txtMetodo";
+            this.txtMetodo.Size = new System.Drawing.Size(417, 22);
+            this.txtMetodo.TabIndex = 8;
+            // 
+            // GrupoTipoAnalisis
+            // 
+            this.GrupoTipoAnalisis.Controls.Add(this.RadioRecuento);
+            this.GrupoTipoAnalisis.Controls.Add(this.RadioMarginal);
+            this.GrupoTipoAnalisis.Controls.Add(this.RadioBusqueda);
+            this.GrupoTipoAnalisis.Location = new System.Drawing.Point(27, 122);
+            this.GrupoTipoAnalisis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GrupoTipoAnalisis.Name = "GrupoTipoAnalisis";
+            this.GrupoTipoAnalisis.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GrupoTipoAnalisis.Size = new System.Drawing.Size(205, 108);
+            this.GrupoTipoAnalisis.TabIndex = 26;
+            this.GrupoTipoAnalisis.TabStop = false;
+            this.GrupoTipoAnalisis.Text = "Tipo";
+            // 
+            // RadioRecuento
+            // 
+            this.RadioRecuento.AutoSize = true;
+            this.RadioRecuento.Location = new System.Drawing.Point(13, 78);
+            this.RadioRecuento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RadioRecuento.Name = "RadioRecuento";
+            this.RadioRecuento.Size = new System.Drawing.Size(90, 21);
+            this.RadioRecuento.TabIndex = 3;
+            this.RadioRecuento.TabStop = true;
+            this.RadioRecuento.Text = "Recuento";
+            this.RadioRecuento.UseVisualStyleBackColor = true;
+            // 
+            // RadioMarginal
+            // 
+            this.RadioMarginal.AutoSize = true;
+            this.RadioMarginal.Location = new System.Drawing.Point(13, 52);
+            this.RadioMarginal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RadioMarginal.Name = "RadioMarginal";
+            this.RadioMarginal.Size = new System.Drawing.Size(185, 21);
+            this.RadioMarginal.TabIndex = 1;
+            this.RadioMarginal.TabStop = true;
+            this.RadioMarginal.Text = "Recuento (con Marginal)";
+            this.RadioMarginal.UseVisualStyleBackColor = true;
+            // 
+            // RadioBusqueda
+            // 
+            this.RadioBusqueda.AutoSize = true;
+            this.RadioBusqueda.Location = new System.Drawing.Point(13, 26);
+            this.RadioBusqueda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RadioBusqueda.Name = "RadioBusqueda";
+            this.RadioBusqueda.Size = new System.Drawing.Size(93, 21);
+            this.RadioBusqueda.TabIndex = 0;
+            this.RadioBusqueda.TabStop = true;
+            this.RadioBusqueda.Text = "Busqueda";
+            this.RadioBusqueda.UseVisualStyleBackColor = true;
+            // 
+            // grupoClaseMuestra
+            // 
+            this.grupoClaseMuestra.Controls.Add(this.radioOtra);
+            this.grupoClaseMuestra.Controls.Add(this.radioSuperficie);
+            this.grupoClaseMuestra.Controls.Add(this.radioAmbiente);
+            this.grupoClaseMuestra.Controls.Add(this.radioOperario);
+            this.grupoClaseMuestra.Controls.Add(this.radioProducto);
+            this.grupoClaseMuestra.Location = new System.Drawing.Point(237, 122);
+            this.grupoClaseMuestra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grupoClaseMuestra.Name = "grupoClaseMuestra";
+            this.grupoClaseMuestra.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grupoClaseMuestra.Size = new System.Drawing.Size(205, 108);
+            this.grupoClaseMuestra.TabIndex = 27;
+            this.grupoClaseMuestra.TabStop = false;
+            this.grupoClaseMuestra.Text = "Clase";
+            // 
+            // radioOtra
+            // 
+            this.radioOtra.AutoSize = true;
+            this.radioOtra.Location = new System.Drawing.Point(115, 55);
+            this.radioOtra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioOtra.Name = "radioOtra";
+            this.radioOtra.Size = new System.Drawing.Size(57, 21);
+            this.radioOtra.TabIndex = 4;
+            this.radioOtra.TabStop = true;
+            this.radioOtra.Text = "Otra";
+            this.radioOtra.UseVisualStyleBackColor = true;
+            // 
+            // radioSuperficie
+            // 
+            this.radioSuperficie.AutoSize = true;
+            this.radioSuperficie.Location = new System.Drawing.Point(17, 75);
+            this.radioSuperficie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioSuperficie.Name = "radioSuperficie";
+            this.radioSuperficie.Size = new System.Drawing.Size(92, 21);
+            this.radioSuperficie.TabIndex = 3;
+            this.radioSuperficie.TabStop = true;
+            this.radioSuperficie.Text = "Superficie";
+            this.radioSuperficie.UseVisualStyleBackColor = true;
+            // 
+            // radioAmbiente
+            // 
+            this.radioAmbiente.AutoSize = true;
+            this.radioAmbiente.Location = new System.Drawing.Point(17, 50);
+            this.radioAmbiente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioAmbiente.Name = "radioAmbiente";
+            this.radioAmbiente.Size = new System.Drawing.Size(88, 21);
+            this.radioAmbiente.TabIndex = 1;
+            this.radioAmbiente.TabStop = true;
+            this.radioAmbiente.Text = "Ambiente";
+            this.radioAmbiente.UseVisualStyleBackColor = true;
+            // 
+            // radioOperario
+            // 
+            this.radioOperario.AutoSize = true;
+            this.radioOperario.Location = new System.Drawing.Point(115, 30);
+            this.radioOperario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioOperario.Name = "radioOperario";
+            this.radioOperario.Size = new System.Drawing.Size(85, 21);
+            this.radioOperario.TabIndex = 2;
+            this.radioOperario.TabStop = true;
+            this.radioOperario.Text = "Operario";
+            this.radioOperario.UseVisualStyleBackColor = true;
+            // 
+            // radioProducto
+            // 
+            this.radioProducto.AutoSize = true;
+            this.radioProducto.Location = new System.Drawing.Point(17, 30);
+            this.radioProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioProducto.Name = "radioProducto";
+            this.radioProducto.Size = new System.Drawing.Size(86, 21);
+            this.radioProducto.TabIndex = 0;
+            this.radioProducto.TabStop = true;
+            this.radioProducto.Text = "Producto";
+            this.radioProducto.UseVisualStyleBackColor = true;
+            // 
+            // panelInferiorControles
+            // 
+            this.panelInferiorControles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.panelInferiorControles.Controls.Add(this.btnGuardar);
+            this.panelInferiorControles.Controls.Add(this.btnCancelar);
+            this.panelInferiorControles.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInferiorControles.Location = new System.Drawing.Point(0, 293);
+            this.panelInferiorControles.Name = "panelInferiorControles";
+            this.panelInferiorControles.Size = new System.Drawing.Size(467, 68);
+            this.panelInferiorControles.TabIndex = 52;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.YellowGreen;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.DarkGreen;
+            this.btnGuardar.Location = new System.Drawing.Point(303, 19);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(140, 36);
+            this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.BtnGuardarClick);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.LightCoral;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Maroon;
+            this.btnCancelar.Location = new System.Drawing.Point(25, 19);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(140, 36);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelarClick);
+            // 
+            // NuevoEnsayo
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(467, 361);
+            this.Controls.Add(this.panelInferiorControles);
+            this.Controls.Add(this.grupoClaseMuestra);
+            this.Controls.Add(this.GrupoTipoAnalisis);
+            this.Controls.Add(this.txtMetodo);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.lblNombre);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(485, 408);
+            this.MinimumSize = new System.Drawing.Size(485, 408);
+            this.Name = "NuevoEnsayo";
+            this.Text = "Nuevo Ensayo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NuevaEspecificacionEnsayoFormFormClosing);
+            this.GrupoTipoAnalisis.ResumeLayout(false);
+            this.GrupoTipoAnalisis.PerformLayout();
+            this.grupoClaseMuestra.ResumeLayout(false);
+            this.grupoClaseMuestra.PerformLayout();
+            this.panelInferiorControles.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
@@ -276,5 +306,8 @@ namespace FrigLab.View.Ensayos
         private System.Windows.Forms.RadioButton radioAmbiente;
         private System.Windows.Forms.RadioButton radioOperario;
         private System.Windows.Forms.RadioButton radioProducto;
+        private System.Windows.Forms.Panel panelInferiorControles;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
