@@ -75,7 +75,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(35, 66);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(301, 22);
             this.txtNombre.TabIndex = 12;
@@ -138,6 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(371, 311);
             this.Controls.Add(this.panelInferiorControles);
             this.Controls.Add(this.GrupoTipoLab);

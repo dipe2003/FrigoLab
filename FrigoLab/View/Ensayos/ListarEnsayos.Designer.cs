@@ -49,6 +49,7 @@ namespace FrigLab.View.Ensayos
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grupoAcciones = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -80,9 +81,9 @@ namespace FrigLab.View.Ensayos
             this.grupoAcciones.Controls.Add(this.btnEliminar);
             this.grupoAcciones.Controls.Add(this.btnEditar);
             this.grupoAcciones.Location = new System.Drawing.Point(601, 6);
-            this.grupoAcciones.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grupoAcciones.Margin = new System.Windows.Forms.Padding(4);
             this.grupoAcciones.Name = "grupoAcciones";
-            this.grupoAcciones.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grupoAcciones.Padding = new System.Windows.Forms.Padding(4);
             this.grupoAcciones.Size = new System.Drawing.Size(171, 155);
             this.grupoAcciones.TabIndex = 8;
             this.grupoAcciones.TabStop = false;
@@ -94,7 +95,7 @@ namespace FrigLab.View.Ensayos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEliminar.Enabled = false;
             this.btnEliminar.Location = new System.Drawing.Point(25, 92);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(117, 44);
             this.btnEliminar.TabIndex = 1;
@@ -108,7 +109,7 @@ namespace FrigLab.View.Ensayos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEditar.Enabled = false;
             this.btnEditar.Location = new System.Drawing.Point(25, 41);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(117, 39);
             this.btnEditar.TabIndex = 0;
@@ -122,9 +123,9 @@ namespace FrigLab.View.Ensayos
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grupoFiltros.Controls.Add(this.grupoBuscar);
             this.grupoFiltros.Location = new System.Drawing.Point(19, 6);
-            this.grupoFiltros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grupoFiltros.Margin = new System.Windows.Forms.Padding(4);
             this.grupoFiltros.Name = "grupoFiltros";
-            this.grupoFiltros.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grupoFiltros.Padding = new System.Windows.Forms.Padding(4);
             this.grupoFiltros.Size = new System.Drawing.Size(579, 155);
             this.grupoFiltros.TabIndex = 7;
             this.grupoFiltros.TabStop = false;
@@ -259,7 +260,7 @@ namespace FrigLab.View.Ensayos
             // btnQuitarFiltroNombre
             // 
             this.btnQuitarFiltroNombre.Location = new System.Drawing.Point(428, 82);
-            this.btnQuitarFiltroNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuitarFiltroNombre.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuitarFiltroNombre.Name = "btnQuitarFiltroNombre";
             this.btnQuitarFiltroNombre.Size = new System.Drawing.Size(117, 38);
             this.btnQuitarFiltroNombre.TabIndex = 1;
@@ -290,30 +291,34 @@ namespace FrigLab.View.Ensayos
             this.tablaDatos.AllowUserToAddRows = false;
             this.tablaDatos.AllowUserToDeleteRows = false;
             this.tablaDatos.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.tablaDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.tablaDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tablaDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tablaDatos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.tablaDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.tablaDatos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            this.tablaDatos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tablaDatos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.tablaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tablaDatos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaDatos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaDatos.DefaultCellStyle = dataGridViewCellStyle3;
             this.tablaDatos.EnableHeadersVisualStyles = false;
             this.tablaDatos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
             this.tablaDatos.Location = new System.Drawing.Point(19, 169);
@@ -323,12 +328,12 @@ namespace FrigLab.View.Ensayos
             this.tablaDatos.ReadOnly = true;
             this.tablaDatos.RowHeadersVisible = false;
             this.tablaDatos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.tablaDatos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.tablaDatos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.tablaDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablaDatos.Size = new System.Drawing.Size(753, 291);
             this.tablaDatos.TabIndex = 9;
@@ -339,11 +344,12 @@ namespace FrigLab.View.Ensayos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(791, 482);
             this.Controls.Add(this.tablaDatos);
             this.Controls.Add(this.grupoAcciones);
             this.Controls.Add(this.grupoFiltros);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(778, 513);
             this.Name = "ListarEnsayos";

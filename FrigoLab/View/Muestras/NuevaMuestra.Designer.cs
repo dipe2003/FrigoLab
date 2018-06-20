@@ -140,6 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(392, 361);
             this.Controls.Add(this.panelInferiorControles);
             this.Controls.Add(this.chkListAreas);

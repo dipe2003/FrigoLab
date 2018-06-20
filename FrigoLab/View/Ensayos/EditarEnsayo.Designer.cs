@@ -48,7 +48,7 @@
             // txtMetodo
             // 
             this.txtMetodo.Location = new System.Drawing.Point(35, 101);
-            this.txtMetodo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMetodo.Margin = new System.Windows.Forms.Padding(4);
             this.txtMetodo.Name = "txtMetodo";
             this.txtMetodo.Size = new System.Drawing.Size(409, 22);
             this.txtMetodo.TabIndex = 15;
@@ -65,7 +65,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(35, 46);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(409, 22);
             this.txtNombre.TabIndex = 16;
@@ -254,6 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(467, 361);
             this.Controls.Add(this.panelInferiorControles);
             this.Controls.Add(this.grupoClaseMuestra);

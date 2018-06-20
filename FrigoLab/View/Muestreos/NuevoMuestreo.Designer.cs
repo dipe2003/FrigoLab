@@ -23,13 +23,17 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grupoRequisitosAnalisis = new System.Windows.Forms.GroupBox();
+            this.tablaDatos2 = new System.Windows.Forms.DataGridView();
             this.btnAgregarAnalisis = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.cboLaboratorios = new System.Windows.Forms.ComboBox();
             this.cboAnalisis = new System.Windows.Forms.ComboBox();
-            this.tablaDatos2 = new System.Windows.Forms.DataGridView();
             this.grupoMuestreo = new System.Windows.Forms.GroupBox();
             this.pickerFechaMuestreo = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -93,12 +97,12 @@
             // 
             // grupoRequisitosAnalisis
             // 
+            this.grupoRequisitosAnalisis.Controls.Add(this.tablaDatos2);
             this.grupoRequisitosAnalisis.Controls.Add(this.btnAgregarAnalisis);
             this.grupoRequisitosAnalisis.Controls.Add(this.label11);
             this.grupoRequisitosAnalisis.Controls.Add(this.label10);
             this.grupoRequisitosAnalisis.Controls.Add(this.cboLaboratorios);
             this.grupoRequisitosAnalisis.Controls.Add(this.cboAnalisis);
-            this.grupoRequisitosAnalisis.Controls.Add(this.tablaDatos2);
             this.grupoRequisitosAnalisis.Location = new System.Drawing.Point(12, 283);
             this.grupoRequisitosAnalisis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grupoRequisitosAnalisis.Name = "grupoRequisitosAnalisis";
@@ -107,6 +111,58 @@
             this.grupoRequisitosAnalisis.TabIndex = 37;
             this.grupoRequisitosAnalisis.TabStop = false;
             this.grupoRequisitosAnalisis.Text = "Analisis";
+            // 
+            // tablaDatos2
+            // 
+            this.tablaDatos2.AllowUserToAddRows = false;
+            this.tablaDatos2.AllowUserToDeleteRows = false;
+            this.tablaDatos2.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.tablaDatos2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tablaDatos2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tablaDatos2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tablaDatos2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tablaDatos2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            this.tablaDatos2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tablaDatos2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaDatos2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tablaDatos2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tablaDatos2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.tablaDatos2.EnableHeadersVisualStyles = false;
+            this.tablaDatos2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.tablaDatos2.Location = new System.Drawing.Point(12, 21);
+            this.tablaDatos2.Margin = new System.Windows.Forms.Padding(4);
+            this.tablaDatos2.MultiSelect = false;
+            this.tablaDatos2.Name = "tablaDatos2";
+            this.tablaDatos2.ReadOnly = true;
+            this.tablaDatos2.RowHeadersVisible = false;
+            this.tablaDatos2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.tablaDatos2.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.tablaDatos2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.tablaDatos2.Size = new System.Drawing.Size(581, 160);
+            this.tablaDatos2.TabIndex = 41;
+            this.tablaDatos2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaDatos_CellClick);
             // 
             // btnAgregarAnalisis
             // 
@@ -162,29 +218,6 @@
             this.cboAnalisis.Size = new System.Drawing.Size(348, 24);
             this.cboAnalisis.TabIndex = 12;
             this.cboAnalisis.SelectedValueChanged += new System.EventHandler(this.CboAnalisisSelectedValueChanged);
-            // 
-            // tablaDatos2
-            // 
-            this.tablaDatos2.AllowUserToAddRows = false;
-            this.tablaDatos2.AllowUserToDeleteRows = false;
-            this.tablaDatos2.AllowUserToOrderColumns = true;
-            this.tablaDatos2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tablaDatos2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tablaDatos2.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.tablaDatos2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.tablaDatos2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaDatos2.Location = new System.Drawing.Point(11, 22);
-            this.tablaDatos2.Margin = new System.Windows.Forms.Padding(4);
-            this.tablaDatos2.MultiSelect = false;
-            this.tablaDatos2.Name = "tablaDatos2";
-            this.tablaDatos2.ReadOnly = true;
-            this.tablaDatos2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.tablaDatos2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tablaDatos2.Size = new System.Drawing.Size(577, 176);
-            this.tablaDatos2.TabIndex = 11;
-            this.tablaDatos2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaDatos_CellClick);
             // 
             // grupoMuestreo
             // 
@@ -726,6 +759,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1005, 591);
             this.Controls.Add(this.panelInferiorControles);
             this.Controls.Add(this.grupoRequisitosAnalisis);
@@ -769,7 +803,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cboLaboratorios;
         private System.Windows.Forms.ComboBox cboAnalisis;
-        private System.Windows.Forms.DataGridView tablaDatos2;
         private System.Windows.Forms.GroupBox grupoMuestreo;
         private System.Windows.Forms.DateTimePicker pickerFechaMuestreo;
         private System.Windows.Forms.Label label1;
@@ -818,5 +851,6 @@
         private System.Windows.Forms.Panel panelInferiorControles;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridView tablaDatos2;
     }
 }
