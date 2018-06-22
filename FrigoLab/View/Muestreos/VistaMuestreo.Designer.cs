@@ -29,7 +29,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grupoRequisitosAnalisis = new System.Windows.Forms.GroupBox();
             this.tablaDatos = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.grupoMuestreo = new System.Windows.Forms.GroupBox();
             this.panelOperario = new System.Windows.Forms.Panel();
             this.txtPadron = new System.Windows.Forms.TextBox();
@@ -64,6 +63,7 @@
             this.txtIdentificacion = new System.Windows.Forms.TextBox();
             this.txtClaseMuestra = new System.Windows.Forms.TextBox();
             this.lblEstado = new System.Windows.Forms.Label();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.grupoRequisitosAnalisis.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).BeginInit();
             this.grupoMuestreo.SuspendLayout();
@@ -136,18 +136,6 @@
             this.tablaDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablaDatos.Size = new System.Drawing.Size(964, 204);
             this.tablaDatos.TabIndex = 7;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(845, 542);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(140, 36);
-            this.btnCancelar.TabIndex = 42;
-            this.btnCancelar.Text = "Cerrar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
             // grupoMuestreo
             // 
@@ -539,15 +527,33 @@
             this.lblEstado.Text = "Estado";
             this.lblEstado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(160)))), ((int)(((byte)(187)))));
+            this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.btnCerrar.Location = new System.Drawing.Point(857, 541);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(117, 38);
+            this.btnCerrar.TabIndex = 45;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
             // VistaMuestreo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1008, 602);
+            this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblEstado);
             this.Controls.Add(this.grupoMuestreo);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.grupoRequisitosAnalisis);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
@@ -571,7 +577,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grupoRequisitosAnalisis;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox grupoMuestreo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -607,5 +612,6 @@
         private System.Windows.Forms.Panel panelProducto;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.DataGridView tablaDatos;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }

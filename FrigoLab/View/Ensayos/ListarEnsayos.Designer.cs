@@ -15,13 +15,10 @@ namespace FrigLab.View.Ensayos
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
 		private System.Windows.Forms.GroupBox grupoAcciones;
-		private System.Windows.Forms.Button btnEliminar;
-		private System.Windows.Forms.Button btnEditar;
 		private System.Windows.Forms.GroupBox grupoFiltros;
 		private System.Windows.Forms.GroupBox grupoBuscar;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Button btnQuitarFiltroNombre;
 		private System.Windows.Forms.TextBox txtBuscarMetodo;
 		private System.Windows.Forms.TextBox txtBuscarNombre;
 		
@@ -51,8 +48,6 @@ namespace FrigLab.View.Ensayos
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grupoAcciones = new System.Windows.Forms.GroupBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
             this.grupoFiltros = new System.Windows.Forms.GroupBox();
             this.grupoBuscar = new System.Windows.Forms.GroupBox();
             this.grupoClaseMuestra = new System.Windows.Forms.GroupBox();
@@ -64,10 +59,12 @@ namespace FrigLab.View.Ensayos
             this.radioProducto = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnQuitarFiltroNombre = new System.Windows.Forms.Button();
             this.txtBuscarMetodo = new System.Windows.Forms.TextBox();
             this.txtBuscarNombre = new System.Windows.Forms.TextBox();
             this.tablaDatos = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnBorrarFiltros = new System.Windows.Forms.Button();
             this.grupoAcciones.SuspendLayout();
             this.grupoFiltros.SuspendLayout();
             this.grupoBuscar.SuspendLayout();
@@ -80,6 +77,7 @@ namespace FrigLab.View.Ensayos
             this.grupoAcciones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.grupoAcciones.Controls.Add(this.btnEliminar);
             this.grupoAcciones.Controls.Add(this.btnEditar);
+            this.grupoAcciones.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grupoAcciones.Location = new System.Drawing.Point(601, 6);
             this.grupoAcciones.Margin = new System.Windows.Forms.Padding(4);
             this.grupoAcciones.Name = "grupoAcciones";
@@ -89,39 +87,12 @@ namespace FrigLab.View.Ensayos
             this.grupoAcciones.TabStop = false;
             this.grupoAcciones.Text = "Acciones";
             // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.Enabled = false;
-            this.btnEliminar.Location = new System.Drawing.Point(25, 92);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(117, 44);
-            this.btnEliminar.TabIndex = 1;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminarClick);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditar.Enabled = false;
-            this.btnEditar.Location = new System.Drawing.Point(25, 41);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(117, 39);
-            this.btnEditar.TabIndex = 0;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
-            // 
             // grupoFiltros
             // 
             this.grupoFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grupoFiltros.Controls.Add(this.grupoBuscar);
+            this.grupoFiltros.Font = new System.Drawing.Font("Century Gothic", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grupoFiltros.Location = new System.Drawing.Point(19, 6);
             this.grupoFiltros.Margin = new System.Windows.Forms.Padding(4);
             this.grupoFiltros.Name = "grupoFiltros";
@@ -135,10 +106,10 @@ namespace FrigLab.View.Ensayos
             // 
             this.grupoBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grupoBuscar.Controls.Add(this.btnBorrarFiltros);
             this.grupoBuscar.Controls.Add(this.grupoClaseMuestra);
             this.grupoBuscar.Controls.Add(this.label2);
             this.grupoBuscar.Controls.Add(this.label1);
-            this.grupoBuscar.Controls.Add(this.btnQuitarFiltroNombre);
             this.grupoBuscar.Controls.Add(this.txtBuscarMetodo);
             this.grupoBuscar.Controls.Add(this.txtBuscarNombre);
             this.grupoBuscar.Location = new System.Drawing.Point(7, 22);
@@ -173,7 +144,7 @@ namespace FrigLab.View.Ensayos
             this.radioTodas.Location = new System.Drawing.Point(108, 70);
             this.radioTodas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioTodas.Name = "radioTodas";
-            this.radioTodas.Size = new System.Drawing.Size(69, 21);
+            this.radioTodas.Size = new System.Drawing.Size(66, 21);
             this.radioTodas.TabIndex = 5;
             this.radioTodas.TabStop = true;
             this.radioTodas.Text = "Todas";
@@ -185,7 +156,7 @@ namespace FrigLab.View.Ensayos
             this.radioOtra.Location = new System.Drawing.Point(108, 46);
             this.radioOtra.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioOtra.Name = "radioOtra";
-            this.radioOtra.Size = new System.Drawing.Size(57, 21);
+            this.radioOtra.Size = new System.Drawing.Size(58, 21);
             this.radioOtra.TabIndex = 4;
             this.radioOtra.TabStop = true;
             this.radioOtra.Text = "Otra";
@@ -197,7 +168,7 @@ namespace FrigLab.View.Ensayos
             this.radioSuperficie.Location = new System.Drawing.Point(108, 20);
             this.radioSuperficie.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioSuperficie.Name = "radioSuperficie";
-            this.radioSuperficie.Size = new System.Drawing.Size(92, 21);
+            this.radioSuperficie.Size = new System.Drawing.Size(90, 21);
             this.radioSuperficie.TabIndex = 3;
             this.radioSuperficie.TabStop = true;
             this.radioSuperficie.Text = "Superficie";
@@ -209,7 +180,7 @@ namespace FrigLab.View.Ensayos
             this.radioAmbiente.Location = new System.Drawing.Point(17, 46);
             this.radioAmbiente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioAmbiente.Name = "radioAmbiente";
-            this.radioAmbiente.Size = new System.Drawing.Size(88, 21);
+            this.radioAmbiente.Size = new System.Drawing.Size(92, 21);
             this.radioAmbiente.TabIndex = 1;
             this.radioAmbiente.TabStop = true;
             this.radioAmbiente.Text = "Ambiente";
@@ -221,7 +192,7 @@ namespace FrigLab.View.Ensayos
             this.radioOperario.Location = new System.Drawing.Point(17, 70);
             this.radioOperario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioOperario.Name = "radioOperario";
-            this.radioOperario.Size = new System.Drawing.Size(85, 21);
+            this.radioOperario.Size = new System.Drawing.Size(86, 21);
             this.radioOperario.TabIndex = 2;
             this.radioOperario.TabStop = true;
             this.radioOperario.Text = "Operario";
@@ -233,7 +204,7 @@ namespace FrigLab.View.Ensayos
             this.radioProducto.Location = new System.Drawing.Point(17, 20);
             this.radioProducto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioProducto.Name = "radioProducto";
-            this.radioProducto.Size = new System.Drawing.Size(86, 21);
+            this.radioProducto.Size = new System.Drawing.Size(89, 21);
             this.radioProducto.TabIndex = 0;
             this.radioProducto.TabStop = true;
             this.radioProducto.Text = "Producto";
@@ -256,17 +227,6 @@ namespace FrigLab.View.Ensayos
             this.label1.Size = new System.Drawing.Size(133, 17);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nombre";
-            // 
-            // btnQuitarFiltroNombre
-            // 
-            this.btnQuitarFiltroNombre.Location = new System.Drawing.Point(428, 82);
-            this.btnQuitarFiltroNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.btnQuitarFiltroNombre.Name = "btnQuitarFiltroNombre";
-            this.btnQuitarFiltroNombre.Size = new System.Drawing.Size(117, 38);
-            this.btnQuitarFiltroNombre.TabIndex = 1;
-            this.btnQuitarFiltroNombre.Text = "Borrar";
-            this.btnQuitarFiltroNombre.UseVisualStyleBackColor = true;
-            this.btnQuitarFiltroNombre.Click += new System.EventHandler(this.BtnQuitarFiltroBusquedasClick);
             // 
             // txtBuscarMetodo
             // 
@@ -340,6 +300,60 @@ namespace FrigLab.View.Ensayos
             this.tablaDatos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.TablaDatosRowEnter);
             this.tablaDatos.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TablaDatosMouseDown);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(160)))), ((int)(((byte)(187)))));
+            this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.btnEliminar.Location = new System.Drawing.Point(25, 93);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(117, 38);
+            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.BtnEliminarClick);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(160)))), ((int)(((byte)(187)))));
+            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.btnEditar.Location = new System.Drawing.Point(25, 34);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(117, 38);
+            this.btnEditar.TabIndex = 17;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.BtnEditar_Click);
+            // 
+            // btnBorrarFiltros
+            // 
+            this.btnBorrarFiltros.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorrarFiltros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(160)))), ((int)(((byte)(187)))));
+            this.btnBorrarFiltros.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.btnBorrarFiltros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrarFiltros.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarFiltros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(57)))), ((int)(((byte)(85)))));
+            this.btnBorrarFiltros.Location = new System.Drawing.Point(428, 72);
+            this.btnBorrarFiltros.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBorrarFiltros.Name = "btnBorrarFiltros";
+            this.btnBorrarFiltros.Size = new System.Drawing.Size(117, 38);
+            this.btnBorrarFiltros.TabIndex = 29;
+            this.btnBorrarFiltros.Text = "Borrar";
+            this.btnBorrarFiltros.UseVisualStyleBackColor = false;
+            this.btnBorrarFiltros.Click += new System.EventHandler(this.BtnQuitarFiltroBusquedasClick);
+            // 
             // ListarEnsayos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -374,5 +388,8 @@ namespace FrigLab.View.Ensayos
         private System.Windows.Forms.RadioButton radioProducto;
         private System.Windows.Forms.RadioButton radioTodas;
         private System.Windows.Forms.DataGridView tablaDatos;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnBorrarFiltros;
     }
 }

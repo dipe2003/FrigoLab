@@ -43,7 +43,7 @@ namespace FrigLab {
 
         private void buttonNuevaArea_Click(object sender, EventArgs e) {
             CambiarVisibilidadPaneles(formPaneles);
-            Form nuevaAreaForm = NuevaArea.getInstancia();
+            Form nuevaAreaForm = NuevaArea.GetInstancia();
             MostrarFormulario(nuevaAreaForm, true);
         }
 

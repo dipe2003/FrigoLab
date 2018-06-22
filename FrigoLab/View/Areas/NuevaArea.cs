@@ -20,13 +20,13 @@ namespace FrigLab.View.Areas {
 
 		private ControladorAreas cAreas = new ControladorAreas();
 
-        static NuevaArea instancia;
+        private static NuevaArea instancia;
 
 		private NuevaArea() {
 			InitializeComponent();
 		}
 
-        public static NuevaArea getInstancia() {
+        public static NuevaArea GetInstancia() {
             if(instancia==null) {
                 instancia = new NuevaArea();
             }

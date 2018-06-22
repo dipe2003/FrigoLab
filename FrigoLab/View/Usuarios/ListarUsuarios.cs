@@ -223,5 +223,9 @@ namespace FrigLab.View.Usuarios {
 			base.Refresh();
 			ActualizarRegistros();
 		}
-	}
+
+        private void btnEliminar_Click(object sender, EventArgs e) {
+
+        }
+    }
 }
