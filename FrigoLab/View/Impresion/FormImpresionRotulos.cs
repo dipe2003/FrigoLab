@@ -17,6 +17,12 @@ namespace FrigoLab.View.Rotulos {
         private PrintDocument printDocument = new PrintDocument();
         private Muestreo muestreoParaImprimir;
         private Pool poolDeMuestreo;
+        private int numeroCopias;
+
+        // propiedades del papel
+        int altoPapel = 0;
+        int anchoPapel = 0;
+        int altoRectangulo = 0;
 
         private ControladorPooles cPool = new ControladorPooles();
 
@@ -24,7 +30,7 @@ namespace FrigoLab.View.Rotulos {
             InitializeComponent();
 
             if((muestreoSeleccionado as Individual).Pool != null) {
-                poolDeMuestreo = CargarMuestreo((muestreoSeleccionado as Individual).Pool.MuestreoId) as Pool;
+                poolDeMuestreo = CargarPool((muestreoSeleccionado as Individual).Pool.MuestreoId) as Pool;
             }
             muestreoParaImprimir = muestreoSeleccionado;
 
@@ -42,7 +48,7 @@ namespace FrigoLab.View.Rotulos {
             printDialog.PrinterSettings = printPreviewControl.Document.PrinterSettings;
         }
 
-        private Muestreo CargarMuestreo(int id) {
+        private Muestreo CargarPool(int id) {
             return muestreoParaImprimir = cPool.ObtenerPool(id);
         }
 
@@ -50,6 +56,18 @@ namespace FrigoLab.View.Rotulos {
             printDocument.PrintPage +=PrintDocument_PrintPage;
             labelImpresoraSeleccionada.Text = printPreviewControl.Document.PrinterSettings.PrinterName;
             this.Icon = FrigLab.Properties.Resources.icono_imprimir;
+        }
+
+        private void CalcularPropiedadesPapel() {
+            if(printDocument.PrinterSettings.DefaultPageSettings.Landscape) {
+                anchoPapel = printDocument.PrinterSettings.DefaultPageSettings.PaperSize.Height;
+                altoPapel = printDocument.PrinterSettings.DefaultPageSettings.PaperSize.Width;
+            } else {
+                altoPapel = printDocument.PrinterSettings.DefaultPageSettings.PaperSize.Height;
+                anchoPapel = printDocument.PrinterSettings.DefaultPageSettings.PaperSize.Width;
+            }
+            // el alto del papel se divide en 4 sectores
+            altoRectangulo = altoPapel/4;
         }
 
         /// <summary>
@@ -60,87 +78,183 @@ namespace FrigoLab.View.Rotulos {
         /// <param name="e"></param>
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e) {
             try {
-                StringBuilder strTexto = new StringBuilder();
-                DateTime fechaMuestreo = ((muestreoParaImprimir as Individual).FechaHoraDeMuestreo);
-                strTexto.Append(fechaMuestreo.Year.ToString())
-                    .Append(fechaMuestreo.Month.ToString())
-                    .Append(fechaMuestreo.Day.ToString());
-                strTexto.Append(muestreoParaImprimir.MuestreoId);
-                // recuadro exterior
-                e.Graphics.DrawRectangle(Pens.Black, new Rectangle { Height=400, Width=400 });
-                // codigo
-                e.Graphics.DrawString(strTexto.ToString(), new Font("Code 128", 48, FontStyle.Regular), Brushes.Black, 10, 10);
-                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, 45, 75);
-                // Nombre
-                strTexto.Clear();
-                strTexto.Append((muestreoParaImprimir as Individual).Muestra.EspecificacionDeMuestra.NombreDeEspecificacionDeMuestra)
-                    .Append(" ")
-                    .Append((muestreoParaImprimir as Individual).Muestra.IdentificacionDeMuestra);
-                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.Black, 150, 25);
-                // Sector
-                e.Graphics.DrawRectangle(Pens.Black, 0, 100, 400, 100);
-                strTexto.Clear();
-                strTexto.Append((muestreoParaImprimir as Individual).Muestra.Area.NombreDeArea);
-                e.Graphics.DrawString("Sector:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, 25, 100);
-                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, 90, 100);
-                // Fecha de Muestreo
-                strTexto.Clear();
-                strTexto.Append((muestreoParaImprimir as Individual).FechaHoraDeMuestreo.ToShortDateString());
-                e.Graphics.DrawString("Fecha Muestreo:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, 25, 125);
-                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, 190, 125);
-                //[SOLO PARA MUESTREO DE TIPO PRODUCTO]
-                // Fecha de Produccion y Faena
-                if((muestreoParaImprimir as Individual).Muestra.EspecificacionDeMuestra.ClaseDeMuestra == FrigLab.Model.Dominio.Enumeraciones.Muestras.EnumClaseMuestra.Producto) {
-                    strTexto.Clear();
-                    strTexto.Append(((muestreoParaImprimir as Individual).Muestra as Producto).FechaDeProduccion.ToShortDateString());
-                    e.Graphics.DrawString("Fecha Produccion:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, 25, 150);
-                    e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, 190, 150);
+                // dibujar limites de rotulo
+                CalcularPropiedadesPapel();
+                DibujarRectangulos(e);
 
-                    strTexto.Clear();
-                    strTexto.Append(((muestreoParaImprimir as Individual).Muestra as Producto).FechaDeFaena.ToShortDateString());
-                    e.Graphics.DrawString("Fecha Faena:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, 25, 175);
-                    e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, 190, 175);
-                }
-                // Observaciones
-                if(!string.IsNullOrEmpty((muestreoParaImprimir as Individual).ObservacionesDeMuestreo)) {
-                    // recuadro observaciones
-                    e.Graphics.DrawRectangle(Pens.Black, 0, 200, 400, 100);
-                    strTexto.Clear();
-                    strTexto.Append((muestreoParaImprimir as Individual).ObservacionesDeMuestreo);
-                    e.Graphics.DrawString("Observaciones:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, 25, 200);
-                    e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, 25, 220);
-                }
-                // Otros datos
-                e.Graphics.DrawRectangle(Pens.Black, 0, 300, 400, 100);
+                // Datos de identificacion
+                DibuarDatosIdentificacion(e);
+                DibujarDatosSectorFechas(e);
+
+                // Datos del muestreos, si es pool identificacion de pool, si es muestra identificacoin de la muestra
                 if(poolDeMuestreo != null) {
-                    strTexto.Clear();
-                    strTexto.Append(poolDeMuestreo.DescripcionDePool)
-                        .Append(" ")
-                         .Append(poolDeMuestreo.FechaCreacionDePool.Date.ToShortDateString())
-                         .Append(": ")
-                         .Append((poolDeMuestreo.MuestreosDePool.Count.ToString()))
-                        .Append(" muestras");
-                    e.Graphics.DrawString("Pool:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, 25, 300);
-                    e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, 25, 320);
+                    DibujarAreaPoolMuestra(e);
                 } else {
-                    // Numero de muestra
-                    strTexto.Clear();
-                    strTexto.Append((muestreoParaImprimir as Individual).NumeroDeMuestreo.ToString());
-                    e.Graphics.DrawString("Muestra Nº:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, 25, 300);
-                    e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, 175, 300);
-
-                    // Muestreador
-                    strTexto.Clear();
-                    strTexto.Append((muestreoParaImprimir as Individual).Usuario.UsuarioId.ToString())
-                        .Append(" | ")
-                        .Append((muestreoParaImprimir as Individual).Usuario.NombreCompleto);
-                    e.Graphics.DrawString("Muestreado por:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, 25, 320);
-                    e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, 175, 322);
+                    DibujarAreaMuestra(e);
+                }
+                
+                // Comprobar si existen observaciones
+                if(!string.IsNullOrEmpty((muestreoParaImprimir as Individual).ObservacionesDeMuestreo)) {
+                    DibujarAreaObservaciones(e);
                 }
 
+                // Comprobar si se asignaron analisis
+                if(muestreoParaImprimir.AnalisisDelMuestreo.Any()) {
+                    DibujarAreaAnalisis(e);
+                }
             } catch(Exception ex) { }
 
         }
+
+        #region Metodos Dibujo
+        /// <summary>
+        /// Dibuja las areas donde se imprimiran los datos del muestreo.
+        /// Cada area se delimita segun el tamanio del papel seleccionado.
+        /// </summary>
+        /// <param name="e"></param>
+        private void DibujarRectangulos(PrintPageEventArgs e) {
+            // recuadro Sector y Fechas
+            e.Graphics.DrawLine(Pens.Black, new Point { X = 0, Y=altoRectangulo }, new Point { X=anchoPapel, Y=altoRectangulo });
+            e.Graphics.DrawLine(Pens.Black, new Point { X = 0, Y=altoRectangulo*2 }, new Point { X=anchoPapel, Y=altoRectangulo*2 });
+
+            // recuadro observaciones
+            e.Graphics.DrawLine(Pens.Black, new Point { X = 0, Y=altoRectangulo*3 }, new Point { X=anchoPapel, Y=altoRectangulo*3 });
+        }
+
+        /// <summary>
+        /// Dibuja los datos correspondientes a la identificacion de la muesrtra.
+        /// Fecha de muestreo, código y nombre de la muestra 
+        /// </summary>
+        /// <param name="e"></param>
+        private void DibuarDatosIdentificacion(PrintPageEventArgs e) {
+            StringBuilder strTexto = new StringBuilder();
+            DateTime fechaMuestreo = ((muestreoParaImprimir as Individual).FechaHoraDeMuestreo);
+            strTexto.Append(fechaMuestreo.Year.ToString())
+                .Append(fechaMuestreo.Month.ToString())
+                .Append(fechaMuestreo.Day.ToString());
+            strTexto.Append(muestreoParaImprimir.MuestreoId);
+
+            // codigo
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Code 128", 48, FontStyle.Regular), Brushes.Black, new PointF {X= Convert.ToInt16(anchoPapel*0.01), Y= Convert.ToInt16(altoPapel*0.01) });
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.05), Y= Convert.ToInt16(altoPapel*0.01)+70 });
+
+            // Nombre
+            strTexto.Clear();
+            strTexto.Append((muestreoParaImprimir as Individual).Muestra.EspecificacionDeMuestra.NombreDeEspecificacionDeMuestra)
+                .Append(" ")
+                .Append((muestreoParaImprimir as Individual).Muestra.IdentificacionDeMuestra);
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.05)+150, Y= Convert.ToInt16(altoPapel*0.01)+25 });
+        }
+
+        /// <summary>
+        /// Dibuja los datos correspondientes a los datos del muestreo.
+        /// Sector, fecha de faena, fecha de produccion.
+        /// </summary>
+        /// <param name="e"></param>
+        private void DibujarDatosSectorFechas(PrintPageEventArgs e) {
+            StringBuilder strTexto = new StringBuilder();
+            // Sector
+            strTexto.Append((muestreoParaImprimir as Individual).Muestra.Area.NombreDeArea);
+            e.Graphics.DrawString("Sector:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo);
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01)+160, Convert.ToInt16(altoPapel*0.01)+altoRectangulo);
+            
+            // Fecha de Muestreo
+            strTexto.Clear();
+            strTexto.Append((muestreoParaImprimir as Individual).FechaHoraDeMuestreo.ToShortDateString());
+            e.Graphics.DrawString("Fecha Muestreo:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo+25);
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01)+160, Convert.ToInt16(altoPapel*0.01)+altoRectangulo+25);
+
+            //[SOLO PARA MUESTREO DE TIPO: PRODUCTO]
+            // Fecha de Produccion y Faena
+            if((muestreoParaImprimir as Individual).Muestra.EspecificacionDeMuestra.ClaseDeMuestra == FrigLab.Model.Dominio.Enumeraciones.Muestras.EnumClaseMuestra.Producto) {
+                strTexto.Clear();
+                strTexto.Append(((muestreoParaImprimir as Individual).Muestra as Producto).FechaDeProduccion.ToShortDateString());
+                e.Graphics.DrawString("Fecha Produccion:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo+50);
+                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01)+160, Convert.ToInt16(altoPapel*0.01)+altoRectangulo+50);
+
+                strTexto.Clear();
+                strTexto.Append(((muestreoParaImprimir as Individual).Muestra as Producto).FechaDeFaena.ToShortDateString());
+                e.Graphics.DrawString("Fecha Faena:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo+75);
+                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01)+160, Convert.ToInt16(altoPapel*0.01)+altoRectangulo+75);
+            }
+        }
+
+        /// <summary>
+        /// Dibuja los datos del pool de muestreo.
+        /// Nombre del pool, fecha y total de muestras.
+        /// </summary>
+        /// <param name="e"></param>
+        private void DibujarAreaPoolMuestra(PrintPageEventArgs e) {
+            StringBuilder strTexto = new StringBuilder();
+                strTexto.Clear();
+                strTexto.Append(poolDeMuestreo.DescripcionDePool)
+                    .Append(" ")
+                     .Append(poolDeMuestreo.FechaCreacionDePool.Date.ToShortDateString())
+                     .Append(": ")
+                     .Append((poolDeMuestreo.MuestreosDePool.Count.ToString()))
+                    .Append(" muestras");
+                e.Graphics.DrawString("Pool:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo*2);
+                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01)+60, Convert.ToInt16(altoPapel*0.01)+altoRectangulo*2);
+        }
+
+        /// <summary>
+        /// Dibuja los datos de la muestra individual.
+        /// Numero de muestra y usuario muestreador.
+        /// </summary>
+        /// <param name="e"></param>
+        private void DibujarAreaMuestra(PrintPageEventArgs e) {
+            StringBuilder strTexto = new StringBuilder();
+            // Numero de muestra
+            strTexto.Clear();
+            strTexto.Append((muestreoParaImprimir as Individual).NumeroDeMuestreo.ToString());
+            e.Graphics.DrawString("Muestra Nº:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo*2);
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01)+90, Convert.ToInt16(altoPapel*0.01)+altoRectangulo*2);
+
+            // Muestreador
+            strTexto.Clear();
+            strTexto.Append((muestreoParaImprimir as Individual).Usuario.UsuarioId.ToString())
+                .Append(" | ")
+                .Append((muestreoParaImprimir as Individual).Usuario.NombreCompleto);
+            e.Graphics.DrawString("Muestreado por:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo*2+25);
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01)+120, Convert.ToInt16(altoPapel*0.01)+altoRectangulo*2+25);
+        }
+
+        /// <summary>
+        /// Dibujar los datos de las observaciones del muestreo.
+        /// </summary>
+        /// <param name="e"></param>
+        private void DibujarAreaObservaciones(PrintPageEventArgs e) {
+            StringBuilder strTexto = new StringBuilder();
+            if(!string.IsNullOrEmpty((muestreoParaImprimir as Individual).ObservacionesDeMuestreo)) {
+                strTexto.Clear();
+                strTexto.Append((muestreoParaImprimir as Individual).ObservacionesDeMuestreo);
+                e.Graphics.DrawString("Observaciones:", new Font("Arial", 9, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo*3);
+                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 8, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo*3+15);
+            }
+        }
+
+        /// <summary>
+        /// Dibujar los datos de los analisis asociados el muestreo seleccionado.
+        /// </summary>
+        /// <param name="e"></param>
+        private void DibujarAreaAnalisis(PrintPageEventArgs e) {
+            StringBuilder strTexto = new StringBuilder();
+            if(muestreoParaImprimir.AnalisisDelMuestreo.Any()) {
+                strTexto.Clear();
+                foreach(var analisis in muestreoParaImprimir.AnalisisDelMuestreo) {
+                    strTexto.Append(analisis.Ensayo.NombreDeEnsayo)
+                        .Append(" (")
+                        .Append(analisis.Ensayo.GetLimiteVigente().Requisito.NombreDeRequisito)
+                        .Append("). ");
+                }
+                e.Graphics.DrawString("Analisis:", new Font("Arial", 9, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo*3+50);
+                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 8, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo*3+65);
+            }
+        }
+
+        #endregion
+
+        #region Metodos Configuracion de pagina
 
         private void buttonConfigPagina_Click(object sender, EventArgs e) {
             if(pageSetupDialog.ShowDialog() == DialogResult.OK) {
@@ -158,9 +272,13 @@ namespace FrigoLab.View.Rotulos {
                 printPreviewControl.InvalidatePreview();
             }
         }
+        #endregion
+
+        #region Controles de la interfaz
 
         private void buttonImprimir_Click(object sender, EventArgs e) {
             try {
+                printDocument.PrinterSettings.Copies = (short)numeroCopias;
                 printDocument.Print();
             } catch(InvalidPrinterException printerException) {
                 MessageBox.Show("No se pudo imprimir. Existe un problema con la impresora.");
@@ -179,5 +297,10 @@ namespace FrigoLab.View.Rotulos {
         private void buttonCancelar_Click(object sender, EventArgs e) {
             this.Close();
         }
+
+        private void numericUpDownCopias_ValueChanged(object sender, EventArgs e) {
+            numeroCopias = (int)(sender as NumericUpDown).Value; 
+        }
+        #endregion
     }
 }

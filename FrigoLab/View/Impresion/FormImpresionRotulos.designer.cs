@@ -215,6 +215,7 @@
             this.numericUpDownCopias.Name = "numericUpDownCopias";
             this.numericUpDownCopias.Size = new System.Drawing.Size(120, 22);
             this.numericUpDownCopias.TabIndex = 1;
+            this.numericUpDownCopias.ValueChanged += new System.EventHandler(this.numericUpDownCopias_ValueChanged);
             // 
             // panelPrintPreviewControl
             // 

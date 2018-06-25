@@ -72,7 +72,6 @@ namespace FrigLab.Model.Dominio.Clases.Ensayos {
             }
             return false;
         }
-
         
         public bool ContieneAnalisis(Analisis analisis){
 			return this.AnalisisDelEnsayo.Any(a => a.AnalisisId == analisis.AnalisisId);
