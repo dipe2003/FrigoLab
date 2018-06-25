@@ -551,6 +551,7 @@ namespace FrigLab.View.Muestreos {
                     if(SesionDeUsuario.PermisoUsuario() == EnumPermisoUsuario.Administrador ||
                         SesionDeUsuario.PermisoUsuario() == EnumPermisoUsuario.Verificador ||
                         SesionDeUsuario.PermisoUsuario() == EnumPermisoUsuario.Monitor) {
+                        ctxMenuStrip.Items.Add(new ToolStripSeparator());
                         ctxMenuStrip.Items.Add("&Editar", Properties.Resources.imagen_editar, btnEditar_Click);
                         ctxMenuStrip.Items.Add("E&liminar", Properties.Resources.imagen_eliminar, btnEliminar_Click);
                     }

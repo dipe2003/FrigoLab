@@ -354,6 +354,7 @@
             this.tablaDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablaDatos.Size = new System.Drawing.Size(487, 302);
             this.tablaDatos.TabIndex = 53;
+            this.tablaDatos.SelectionChanged += new System.EventHandler(this.tablaDatos_SelectionChanged);
             // 
             // tablaMuestreosAgregados
             // 
@@ -405,6 +406,7 @@
             this.tablaMuestreosAgregados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablaMuestreosAgregados.Size = new System.Drawing.Size(487, 302);
             this.tablaMuestreosAgregados.TabIndex = 54;
+            this.tablaMuestreosAgregados.SelectionChanged += new System.EventHandler(this.tablaMuestreosAgregados_SelectionChanged);
             // 
             // NuevoPool
             // 

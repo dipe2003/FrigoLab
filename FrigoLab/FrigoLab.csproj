@@ -242,6 +242,12 @@
     </Compile>
     <Compile Include="View\ICerrar.cs" />
     <Compile Include="View\IListaPublica.cs" />
+    <Compile Include="View\Impresion\FormImpresionRotulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Impresion\FormImpresionRotulos.designer.cs">
+      <DependentUpon>FormImpresionRotulos.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Muestras\EditarMuestra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -428,6 +434,9 @@
     <EmbeddedResource Include="View\Ensayos\NuevoLaboratorio.resx">
       <DependentUpon>NuevoLaboratorio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Impresion\FormImpresionRotulos.resx">
+      <DependentUpon>FormImpresionRotulos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Muestras\EditarMuestra.resx">
       <DependentUpon>EditarMuestra.cs</DependentUpon>
     </EmbeddedResource>
@@ -539,6 +548,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\imagen_acceso_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_imprimir_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_imprimir_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono_imprimir.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

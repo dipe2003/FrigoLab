@@ -57,7 +57,6 @@ namespace FrigLab.Model.Logica.Muestreos {
 
 		#endregion
 
-		
 
 		#region	Muestreo
 

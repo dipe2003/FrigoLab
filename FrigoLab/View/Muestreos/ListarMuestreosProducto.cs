@@ -14,6 +14,7 @@ using FrigLab.Model.Dominio.Enumeraciones.Muestras;
 using FrigLab.Model.Dominio.Enumeraciones.Usuarios;
 using FrigLab.Model.Logica.Muestreos;
 using FrigLab.Model.Sesion;
+using FrigoLab.View.Rotulos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -337,6 +338,15 @@ namespace FrigLab.View.Muestreos {
 			}
 		}
 
+        private void BtnImprimirRotulosClick(object sender, EventArgs e) {
+            if(muestreoSeleccionado != null) {
+                Form impresion = new FormImpresionRotulos(muestreoSeleccionado);
+                impresion.MdiParent = this.MdiParent;
+                impresion.ShowDialog();
+            } else {
+                MessageBox.Show("No hay muestreo seleccionado");
+            }
+        }
         #endregion
 
         #region	Filtros
@@ -526,11 +536,13 @@ namespace FrigLab.View.Muestreos {
 			if(!seleccion) {
 				ctxMenuStrip.Items.Add("No hay acciones disponibles", Properties.Resources.imagen_no_disponible);
 			} else {
-				ctxMenuStrip.Items.Add("&Ver", Properties.Resources.imagen_ver_detalle, new EventHandler(BtnVerMuestreoClick));
+				ctxMenuStrip.Items.Add("&Ver", Properties.Resources.imagen_ver_detalle, BtnVerMuestreoClick);
+                ctxMenuStrip.Items.Add("&Imprimir Rotulo", Properties.Resources.imagen_imprimir_48, BtnImprimirRotulosClick);
                 if(SesionDeUsuario.PermisoUsuario() != EnumPermisoUsuario.Visitante) {
                     if(SesionDeUsuario.PermisoUsuario() == EnumPermisoUsuario.Administrador ||
                         SesionDeUsuario.PermisoUsuario() == EnumPermisoUsuario.Verificador||
                         SesionDeUsuario.PermisoUsuario() == EnumPermisoUsuario.Monitor) {
+                        ctxMenuStrip.Items.Add(new ToolStripSeparator());
                         ctxMenuStrip.Items.Add("&Editar", Properties.Resources.imagen_editar, btnEditar_Click);
                         ctxMenuStrip.Items.Add("E&liminar", Properties.Resources.imagen_eliminar, btnEliminar_Click);
                     }

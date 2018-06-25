@@ -61,6 +61,16 @@ namespace FrigLab.Properties {
         }
         
         /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+        /// </summary>
+        internal static System.Drawing.Icon icono_imprimir {
+            get {
+                object obj = ResourceManager.GetObject("icono_imprimir", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap imagen_acceso_100 {
@@ -126,6 +136,16 @@ namespace FrigLab.Properties {
         internal static System.Drawing.Bitmap imagen_grupo_usuarios_48 {
             get {
                 object obj = ResourceManager.GetObject("imagen_grupo_usuarios_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagen_imprimir_48 {
+            get {
+                object obj = ResourceManager.GetObject("imagen_imprimir_48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
