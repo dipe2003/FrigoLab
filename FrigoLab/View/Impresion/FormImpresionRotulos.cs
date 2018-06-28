@@ -2,14 +2,10 @@
 using FrigLab.Model.Dominio.Clases.Muestreos;
 using FrigLab.Model.Logica.Muestreos;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FrigoLab.View.Rotulos {
@@ -23,6 +19,17 @@ namespace FrigoLab.View.Rotulos {
         int altoPapel = 0;
         int anchoPapel = 0;
         int altoRectangulo = 0;
+
+        // tamaño de fuentes
+        private int textoCodigoBarras = 48;
+        private int textoNormal = 10;
+
+        private int textoSubtitulo = 9;
+        private int textoPequenio = 8;
+
+        private int desplazamientoTexto = 0;
+        private int margenIzquierdo = 0;
+        private int margenSuperior = 0;
 
         private ControladorPooles cPool = new ControladorPooles();
 
@@ -58,6 +65,7 @@ namespace FrigoLab.View.Rotulos {
             this.Icon = FrigLab.Properties.Resources.icono_imprimir;
         }
 
+        #region Metodos para variables dependientes del tamaño del papel seleccionado
         private void CalcularPropiedadesPapel() {
             if(printDocument.PrinterSettings.DefaultPageSettings.Landscape) {
                 anchoPapel = printDocument.PrinterSettings.DefaultPageSettings.PaperSize.Height;
@@ -68,7 +76,21 @@ namespace FrigoLab.View.Rotulos {
             }
             // el alto del papel se divide en 4 sectores
             altoRectangulo = altoPapel/4;
+            desplazamientoTexto = Convert.ToInt16(altoRectangulo * 0.05);
+            margenIzquierdo = Convert.ToInt16(anchoPapel*0.01);
+            margenSuperior = Convert.ToInt16(altoPapel*0.01);
         }
+
+        private void CalcularFuentes() {
+            // tamaño de fuentes
+            textoCodigoBarras = 48 + Convert.ToInt16(altoRectangulo * 0.08);
+            textoNormal = 10 + Convert.ToInt16(altoRectangulo * 0.01);
+
+            textoSubtitulo = 9 + Convert.ToInt16(altoRectangulo * 0.01);
+            textoPequenio = 8 + Convert.ToInt16(altoRectangulo * 0.01);
+        }
+
+        #endregion
 
         /// <summary>
         /// Evento que crea el documento que se enviara a imprimir.
@@ -80,6 +102,7 @@ namespace FrigoLab.View.Rotulos {
             try {
                 // dibujar limites de rotulo
                 CalcularPropiedadesPapel();
+                CalcularFuentes();
                 DibujarRectangulos(e);
 
                 // Datos de identificacion
@@ -92,7 +115,7 @@ namespace FrigoLab.View.Rotulos {
                 } else {
                     DibujarAreaMuestra(e);
                 }
-                
+
                 // Comprobar si existen observaciones
                 if(!string.IsNullOrEmpty((muestreoParaImprimir as Individual).ObservacionesDeMuestreo)) {
                     DibujarAreaObservaciones(e);
@@ -135,15 +158,14 @@ namespace FrigoLab.View.Rotulos {
             strTexto.Append(muestreoParaImprimir.MuestreoId);
 
             // codigo
-            e.Graphics.DrawString(strTexto.ToString(), new Font("Code 128", 48, FontStyle.Regular), Brushes.Black, new PointF {X= Convert.ToInt16(anchoPapel*0.01), Y= Convert.ToInt16(altoPapel*0.01) });
-            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.05), Y= Convert.ToInt16(altoPapel*0.01)+70 });
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Code 128", textoCodigoBarras, FontStyle.Regular), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.01), Y= Convert.ToInt16(altoPapel*0.01) });
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Regular), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.05)+150+ Convert.ToInt16(altoRectangulo * 0.08), Y= Convert.ToInt16(altoPapel*0.01)+10 });
 
             // Nombre
             strTexto.Clear();
-            strTexto.Append((muestreoParaImprimir as Individual).Muestra.EspecificacionDeMuestra.NombreDeEspecificacionDeMuestra)
-                .Append(" ")
+            strTexto.AppendLine((muestreoParaImprimir as Individual).Muestra.EspecificacionDeMuestra.NombreDeEspecificacionDeMuestra)
                 .Append((muestreoParaImprimir as Individual).Muestra.IdentificacionDeMuestra);
-            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.05)+150, Y= Convert.ToInt16(altoPapel*0.01)+25 });
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Bold), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.05)+150+ Convert.ToInt16(altoRectangulo * 0.08), Y= Convert.ToInt16(altoPapel*0.01)+30 });
         }
 
         /// <summary>
@@ -155,27 +177,27 @@ namespace FrigoLab.View.Rotulos {
             StringBuilder strTexto = new StringBuilder();
             // Sector
             strTexto.Append((muestreoParaImprimir as Individual).Muestra.Area.NombreDeArea);
-            e.Graphics.DrawString("Sector:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo);
-            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01)+160, Convert.ToInt16(altoPapel*0.01)+altoRectangulo);
-            
+            e.Graphics.DrawString("Sector:", new Font("Arial", textoNormal, FontStyle.Bold), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo);
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Regular), Brushes.Black, margenIzquierdo+160 + desplazamientoTexto, margenSuperior+altoRectangulo);
+
             // Fecha de Muestreo
             strTexto.Clear();
             strTexto.Append((muestreoParaImprimir as Individual).FechaHoraDeMuestreo.ToShortDateString());
-            e.Graphics.DrawString("Fecha Muestreo:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo+25);
-            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01)+160, Convert.ToInt16(altoPapel*0.01)+altoRectangulo+25);
+            e.Graphics.DrawString("Fecha Muestreo:", new Font("Arial", textoNormal, FontStyle.Bold), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo+25);
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Regular), Brushes.Black, margenIzquierdo+160+ desplazamientoTexto, margenSuperior+altoRectangulo+25);
 
             //[SOLO PARA MUESTREO DE TIPO: PRODUCTO]
             // Fecha de Produccion y Faena
             if((muestreoParaImprimir as Individual).Muestra.EspecificacionDeMuestra.ClaseDeMuestra == FrigLab.Model.Dominio.Enumeraciones.Muestras.EnumClaseMuestra.Producto) {
                 strTexto.Clear();
                 strTexto.Append(((muestreoParaImprimir as Individual).Muestra as Producto).FechaDeProduccion.ToShortDateString());
-                e.Graphics.DrawString("Fecha Produccion:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo+50);
-                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01)+160, Convert.ToInt16(altoPapel*0.01)+altoRectangulo+50);
+                e.Graphics.DrawString("Fecha Produccion:", new Font("Arial", textoNormal, FontStyle.Bold), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo+50);
+                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Regular), Brushes.Black, margenIzquierdo+160+ desplazamientoTexto, margenSuperior+altoRectangulo+50);
 
                 strTexto.Clear();
                 strTexto.Append(((muestreoParaImprimir as Individual).Muestra as Producto).FechaDeFaena.ToShortDateString());
-                e.Graphics.DrawString("Fecha Faena:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo+75);
-                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01)+160, Convert.ToInt16(altoPapel*0.01)+altoRectangulo+75);
+                e.Graphics.DrawString("Fecha Faena:", new Font("Arial", textoNormal, FontStyle.Bold), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo+75);
+                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Regular), Brushes.Black, margenIzquierdo +160+ desplazamientoTexto, margenSuperior+altoRectangulo+75);
             }
         }
 
@@ -186,15 +208,15 @@ namespace FrigoLab.View.Rotulos {
         /// <param name="e"></param>
         private void DibujarAreaPoolMuestra(PrintPageEventArgs e) {
             StringBuilder strTexto = new StringBuilder();
-                strTexto.Clear();
-                strTexto.Append(poolDeMuestreo.DescripcionDePool)
-                    .Append(" ")
-                     .Append(poolDeMuestreo.FechaCreacionDePool.Date.ToShortDateString())
-                     .Append(": ")
-                     .Append((poolDeMuestreo.MuestreosDePool.Count.ToString()))
-                    .Append(" muestras");
-                e.Graphics.DrawString("Pool:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo*2);
-                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01)+60, Convert.ToInt16(altoPapel*0.01)+altoRectangulo*2);
+            strTexto.Clear();
+            strTexto.Append(poolDeMuestreo.DescripcionDePool)
+                .Append(" ")
+                 .Append(poolDeMuestreo.FechaCreacionDePool.Date.ToShortDateString())
+                 .Append(": ")
+                 .Append((poolDeMuestreo.MuestreosDePool.Count.ToString()))
+                .Append(" muestras");
+            e.Graphics.DrawString("Pool:", new Font("Arial", textoNormal, FontStyle.Bold), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo*2);
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Regular), Brushes.Black, margenIzquierdo+60 +desplazamientoTexto, margenSuperior+altoRectangulo*2);
         }
 
         /// <summary>
@@ -207,16 +229,16 @@ namespace FrigoLab.View.Rotulos {
             // Numero de muestra
             strTexto.Clear();
             strTexto.Append((muestreoParaImprimir as Individual).NumeroDeMuestreo.ToString());
-            e.Graphics.DrawString("Muestra Nº:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo*2);
-            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01)+90, Convert.ToInt16(altoPapel*0.01)+altoRectangulo*2);
+            e.Graphics.DrawString("Muestra Nº:", new Font("Arial", textoNormal, FontStyle.Bold), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo*2);
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Regular), Brushes.Black, margenIzquierdo + 90 +desplazamientoTexto, margenSuperior+altoRectangulo*2);
 
             // Muestreador
             strTexto.Clear();
             strTexto.Append((muestreoParaImprimir as Individual).Usuario.UsuarioId.ToString())
                 .Append(" | ")
                 .Append((muestreoParaImprimir as Individual).Usuario.NombreCompleto);
-            e.Graphics.DrawString("Muestreado por:", new Font("Arial", 10, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo*2+25);
-            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 10, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01)+120, Convert.ToInt16(altoPapel*0.01)+altoRectangulo*2+25);
+            e.Graphics.DrawString("Muestreado por:", new Font("Arial", textoNormal, FontStyle.Bold), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo*2+25);
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Regular), Brushes.Black, margenIzquierdo +120 +desplazamientoTexto, margenSuperior+altoRectangulo*2+25);
         }
 
         /// <summary>
@@ -228,8 +250,8 @@ namespace FrigoLab.View.Rotulos {
             if(!string.IsNullOrEmpty((muestreoParaImprimir as Individual).ObservacionesDeMuestreo)) {
                 strTexto.Clear();
                 strTexto.Append((muestreoParaImprimir as Individual).ObservacionesDeMuestreo);
-                e.Graphics.DrawString("Observaciones:", new Font("Arial", 9, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo*3);
-                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 8, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo*3+15);
+                e.Graphics.DrawString("Observaciones:", new Font("Arial", textoSubtitulo, FontStyle.Bold), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo*3);
+                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoPequenio, FontStyle.Regular), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo*3+15);
             }
         }
 
@@ -247,8 +269,8 @@ namespace FrigoLab.View.Rotulos {
                         .Append(analisis.Ensayo.GetLimiteVigente().Requisito.NombreDeRequisito)
                         .Append("). ");
                 }
-                e.Graphics.DrawString("Analisis:", new Font("Arial", 9, FontStyle.Bold), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo*3+50);
-                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", 8, FontStyle.Regular), Brushes.Black, Convert.ToInt16(anchoPapel*0.01), Convert.ToInt16(altoPapel*0.01)+altoRectangulo*3+65);
+                e.Graphics.DrawString("Analisis:", new Font("Arial", textoSubtitulo, FontStyle.Bold), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo*3+50);
+                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoPequenio, FontStyle.Regular), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo*3+65);
             }
         }
 
@@ -299,7 +321,7 @@ namespace FrigoLab.View.Rotulos {
         }
 
         private void numericUpDownCopias_ValueChanged(object sender, EventArgs e) {
-            numeroCopias = (int)(sender as NumericUpDown).Value; 
+            numeroCopias = (int)(sender as NumericUpDown).Value;
         }
         #endregion
     }
