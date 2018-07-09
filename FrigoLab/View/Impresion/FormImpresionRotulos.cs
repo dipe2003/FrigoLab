@@ -159,13 +159,13 @@ namespace FrigoLab.View.Rotulos {
 
             // codigo
             e.Graphics.DrawString(strTexto.ToString(), new Font("Code 128", textoCodigoBarras, FontStyle.Regular), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.01), Y= Convert.ToInt16(altoPapel*0.01) });
-            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Regular), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.05)+150+ Convert.ToInt16(altoRectangulo * 0.08), Y= Convert.ToInt16(altoPapel*0.01)+10 });
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Regular), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.12)+150+ Convert.ToInt16(altoRectangulo * 0.08), Y= Convert.ToInt16(altoPapel*0.01)+10 });
 
             // Nombre
             strTexto.Clear();
             strTexto.AppendLine((muestreoParaImprimir as Individual).Muestra.EspecificacionDeMuestra.NombreDeEspecificacionDeMuestra)
                 .Append((muestreoParaImprimir as Individual).Muestra.IdentificacionDeMuestra);
-            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Bold), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.05)+150+ Convert.ToInt16(altoRectangulo * 0.08), Y= Convert.ToInt16(altoPapel*0.01)+30 });
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Bold), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.12)+150+ Convert.ToInt16(altoRectangulo * 0.08), Y= Convert.ToInt16(altoPapel*0.01)+30 });
         }
 
         /// <summary>
@@ -262,15 +262,24 @@ namespace FrigoLab.View.Rotulos {
         private void DibujarAreaAnalisis(PrintPageEventArgs e) {
             StringBuilder strTexto = new StringBuilder();
             if(muestreoParaImprimir.AnalisisDelMuestreo.Any()) {
-                strTexto.Clear();
+                int cantidad = 1;
+                int margen = 50;
+                // titulo Analisis
+                e.Graphics.DrawString("Analisis:", new Font("Arial", textoSubtitulo, FontStyle.Bold), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo*3+50);
                 foreach(var analisis in muestreoParaImprimir.AnalisisDelMuestreo) {
+                strTexto.Clear();
                     strTexto.Append(analisis.Ensayo.NombreDeEnsayo)
                         .Append(" (")
                         .Append(analisis.Ensayo.GetLimiteVigente().Requisito.NombreDeRequisito)
                         .Append("). ");
+                    if(cantidad%2==0) {
+                        margen += 15;
+                    }
+                    // analisis
+                    e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoPequenio, FontStyle.Regular), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo*3+margen);
+
+                    cantidad++;
                 }
-                e.Graphics.DrawString("Analisis:", new Font("Arial", textoSubtitulo, FontStyle.Bold), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo*3+50);
-                e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoPequenio, FontStyle.Regular), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo*3+65);
             }
         }
 

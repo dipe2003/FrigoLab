@@ -214,7 +214,7 @@ namespace FrigLab.View.Muestreos {
 				if((muestreo as Individual).Pool != null) {
 					pool.Append((muestreo as Individual).Pool.DescripcionDePool);
 					pool.Append(" | ");
-					pool.Append((muestreo as Individual).Pool.FechaCreacionDePool.Date);
+					pool.Append((muestreo as Individual).Pool.FechaCreacionDePool.Date.ToShortDateString());
 				}
 				tabla.Rows.Add(muestreo.MuestreoId,
 				               (m as Producto).FechaDeFaena.Date,
