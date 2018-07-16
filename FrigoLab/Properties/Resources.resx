@@ -855,4 +855,7 @@
   <data name="icono_imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono_imprimir.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icono_buscar_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono_buscar_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

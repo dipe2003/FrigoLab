@@ -1,6 +1,7 @@
 ﻿using FrigLab.Model.Dominio.Enumeraciones.Muestras;
 using FrigLab.Model.Sesion;
 using FrigLab.View.Areas;
+using FrigLab.View.Buscar;
 using FrigLab.View.Ensayos;
 using FrigLab.View.Muestras;
 using FrigLab.View.Muestreos;
@@ -333,6 +334,10 @@ namespace FrigLab {
                 }
             }
         }
-        
+
+        private void buttonBuscarCodigo_Click(object sender, EventArgs e) {
+            Form buscarCodigo = BuscarCodigo.GetInstancia();
+            MostrarFormulario(buscarCodigo, true);
+        }
     }
 }

@@ -84,6 +84,7 @@ namespace FrigLab {
             this.buttonNuevoSuperficie = new System.Windows.Forms.Button();
             this.buttonNuevoAmbiente = new System.Windows.Forms.Button();
             this.buttonNuevoProducto = new System.Windows.Forms.Button();
+            this.buttonBuscarCodigo = new System.Windows.Forms.Button();
             this.panelSuperior.SuspendLayout();
             this.panelSubmenuMuestras.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLateralIzquierdoSubmenuMuestras)).BeginInit();
@@ -116,6 +117,7 @@ namespace FrigLab {
             this.panelSuperior.Controls.Add(this.buttonAreas);
             this.panelSuperior.Controls.Add(this.buttonLaboratorio);
             this.panelSuperior.Controls.Add(this.buttonSesion);
+            this.panelSuperior.Controls.Add(this.buttonBuscarCodigo);
             this.panelSuperior.Controls.Add(this.buttonUsuarios);
             this.panelSuperior.Controls.Add(this.buttonMuestreos);
             this.panelSuperior.Controls.Add(this.buttonMuestras);
@@ -1083,6 +1085,27 @@ namespace FrigLab {
             this.buttonNuevoProducto.UseVisualStyleBackColor = true;
             this.buttonNuevoProducto.Click += new System.EventHandler(this.buttonNuevoProducto_Click);
             // 
+            // buttonBuscarCodigo
+            // 
+            this.buttonBuscarCodigo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonBuscarCodigo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonBuscarCodigo.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(167)))), ((int)(((byte)(183)))));
+            this.buttonBuscarCodigo.FlatAppearance.BorderSize = 0;
+            this.buttonBuscarCodigo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(113)))), ((int)(((byte)(153)))));
+            this.buttonBuscarCodigo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.buttonBuscarCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBuscarCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBuscarCodigo.ForeColor = System.Drawing.Color.White;
+            this.buttonBuscarCodigo.Image = global::FrigLab.Properties.Resources.icono_buscar_32;
+            this.buttonBuscarCodigo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBuscarCodigo.Location = new System.Drawing.Point(903, 3);
+            this.buttonBuscarCodigo.Name = "buttonBuscarCodigo";
+            this.buttonBuscarCodigo.Size = new System.Drawing.Size(49, 69);
+            this.buttonBuscarCodigo.TabIndex = 2;
+            this.buttonBuscarCodigo.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.buttonBuscarCodigo.UseVisualStyleBackColor = true;
+            this.buttonBuscarCodigo.Click += new System.EventHandler(this.buttonBuscarCodigo_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1228,6 +1251,7 @@ namespace FrigLab {
         private System.Windows.Forms.Button buttonListarOtrosMuestreos;
         private System.Windows.Forms.Button buttonListarMuestreosAmbientales;
         private System.Windows.Forms.Button buttonListarMuestreoProducto;
+        private System.Windows.Forms.Button buttonBuscarCodigo;
     }
 }
 

@@ -150,22 +150,29 @@ namespace FrigoLab.View.Rotulos {
         /// </summary>
         /// <param name="e"></param>
         private void DibuarDatosIdentificacion(PrintPageEventArgs e) {
+            DateTime fechaMuestreo = ((muestreoParaImprimir as Individual).FechaHoraDeMuestreo);            
+            string textoFechaMuestreo = String.Format("{0:yy/MM/dd}", fechaMuestreo);
+            string[] datosFecha = textoFechaMuestreo.Split('/');
             StringBuilder strTexto = new StringBuilder();
-            DateTime fechaMuestreo = ((muestreoParaImprimir as Individual).FechaHoraDeMuestreo);
-            strTexto.Append(fechaMuestreo.Year.ToString())
-                .Append(fechaMuestreo.Month.ToString())
-                .Append(fechaMuestreo.Day.ToString());
+            // Codigo: AA/M/D/CLASEMUESTRA/IDMUESTREO
+            // AA/M/D
+            strTexto.Append(datosFecha[0])
+                .Append(datosFecha[1])
+                .Append(datosFecha[2]);
+            // Clase de Muestra: entero que corresponde al enumerado
+            strTexto.Append((int)(muestreoParaImprimir.Muestra.EspecificacionDeMuestra.ClaseDeMuestra));
+            // id del muestreo
             strTexto.Append(muestreoParaImprimir.MuestreoId);
 
             // codigo
             e.Graphics.DrawString(strTexto.ToString(), new Font("Code 128", textoCodigoBarras, FontStyle.Regular), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.01), Y= Convert.ToInt16(altoPapel*0.01) });
-            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Regular), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.12)+150+ Convert.ToInt16(altoRectangulo * 0.08), Y= Convert.ToInt16(altoPapel*0.01)+10 });
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Regular), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.12)+170+ Convert.ToInt16(altoRectangulo * 0.08), Y= Convert.ToInt16(altoPapel*0.01)+10 });
 
             // Nombre
             strTexto.Clear();
             strTexto.AppendLine((muestreoParaImprimir as Individual).Muestra.EspecificacionDeMuestra.NombreDeEspecificacionDeMuestra)
                 .Append((muestreoParaImprimir as Individual).Muestra.IdentificacionDeMuestra);
-            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Bold), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.12)+150+ Convert.ToInt16(altoRectangulo * 0.08), Y= Convert.ToInt16(altoPapel*0.01)+30 });
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Bold), Brushes.Black, new PointF { X= Convert.ToInt16(anchoPapel*0.12)+170+ Convert.ToInt16(altoRectangulo * 0.08), Y= Convert.ToInt16(altoPapel*0.01)+30 });
         }
 
         /// <summary>
@@ -238,7 +245,7 @@ namespace FrigoLab.View.Rotulos {
                 .Append(" | ")
                 .Append((muestreoParaImprimir as Individual).Usuario.NombreCompleto);
             e.Graphics.DrawString("Muestreado por:", new Font("Arial", textoNormal, FontStyle.Bold), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo*2+25);
-            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Regular), Brushes.Black, margenIzquierdo +120 +desplazamientoTexto, margenSuperior+altoRectangulo*2+25);
+            e.Graphics.DrawString(strTexto.ToString(), new Font("Arial", textoNormal, FontStyle.Regular), Brushes.Black, margenIzquierdo +150 +desplazamientoTexto, margenSuperior+altoRectangulo*2+25);
         }
 
         /// <summary>
@@ -265,7 +272,9 @@ namespace FrigoLab.View.Rotulos {
                 int cantidad = 1;
                 int margen = 50;
                 // titulo Analisis
-                e.Graphics.DrawString("Analisis:", new Font("Arial", textoSubtitulo, FontStyle.Bold), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo*3+50);
+                e.Graphics.DrawString("Analisis:", new Font("Arial", textoSubtitulo, FontStyle.Bold), Brushes.Black, margenIzquierdo, margenSuperior+altoRectangulo*3+margen);
+                // espacio luego de titulo
+                margen +=15;
                 foreach(var analisis in muestreoParaImprimir.AnalisisDelMuestreo) {
                 strTexto.Clear();
                     strTexto.Append(analisis.Ensayo.NombreDeEnsayo)
