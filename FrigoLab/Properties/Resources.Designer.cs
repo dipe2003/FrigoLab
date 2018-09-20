@@ -63,6 +63,16 @@ namespace FrigLab.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Close_Window_24px {
+            get {
+                object obj = ResourceManager.GetObject("Close_Window_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icono_buscar_32 {
             get {
                 object obj = ResourceManager.GetObject("icono_buscar_32", resourceCulture);
@@ -346,6 +356,36 @@ namespace FrigLab.Properties {
         internal static System.Drawing.Bitmap LateralAzul {
             get {
                 object obj = ResourceManager.GetObject("LateralAzul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Maximize_Window_24px {
+            get {
+                object obj = ResourceManager.GetObject("Maximize_Window_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Minimize_Window_24px {
+            get {
+                object obj = ResourceManager.GetObject("Minimize_Window_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Restore_Window_24px {
+            get {
+                object obj = ResourceManager.GetObject("Restore_Window_24px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

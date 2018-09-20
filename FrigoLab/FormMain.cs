@@ -1,5 +1,6 @@
 ﻿using FrigLab.Model.Dominio.Enumeraciones.Muestras;
 using FrigLab.Model.Sesion;
+using FrigLab.Properties;
 using FrigLab.View.Areas;
 using FrigLab.View.Buscar;
 using FrigLab.View.Ensayos;
@@ -339,5 +340,40 @@ namespace FrigLab {
             Form buscarCodigo = BuscarCodigo.GetInstancia();
             MostrarFormulario(buscarCodigo, true);
         }
+
+        private void pictureBoxCerrarVentana_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void pictureBoxMaximizaVentana_Click(object sender, EventArgs e) {
+            if(this.WindowState == FormWindowState.Maximized) {
+                this.pictureBoxMaximizaVentana.Image = Resources.Maximize_Window_24px;
+                this.WindowState = FormWindowState.Normal;
+            } else {
+                this.WindowState = FormWindowState.Maximized;
+                this.pictureBoxMaximizaVentana.Image = Resources.Restore_Window_24px;
+            }
+        }
+
+        private void pictureBoxMinimizarVentana_Click(object sender, EventArgs e) {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        #region Hacer formulario movible
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void PanelBarraTitulo_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e) {
+            if(e.Button == MouseButtons.Left) {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+        #endregion
     }
 }

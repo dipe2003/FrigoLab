@@ -45,36 +45,38 @@
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(232, 21);
+            this.lblUsuario.Location = new System.Drawing.Point(174, 17);
+            this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(68, 19);
+            this.lblUsuario.Size = new System.Drawing.Size(57, 17);
             this.lblUsuario.TabIndex = 4;
             this.lblUsuario.Text = "Usuario";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(267, 51);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsuario.Location = new System.Drawing.Point(200, 41);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(207, 22);
+            this.txtUsuario.Size = new System.Drawing.Size(156, 20);
             this.txtUsuario.TabIndex = 0;
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(232, 110);
+            this.lblPassword.Location = new System.Drawing.Point(174, 89);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(87, 19);
+            this.lblPassword.Size = new System.Drawing.Size(70, 17);
             this.lblPassword.TabIndex = 5;
             this.lblPassword.Text = "Password";
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(267, 140);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPass.Location = new System.Drawing.Point(200, 114);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(207, 22);
+            this.txtPass.Size = new System.Drawing.Size(156, 20);
             this.txtPass.TabIndex = 1;
             this.txtPass.UseSystemPasswordChar = true;
             // 
@@ -87,10 +89,9 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Maroon;
-            this.btnCancelar.Location = new System.Drawing.Point(232, 16);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancelar.Location = new System.Drawing.Point(174, 13);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(116, 36);
+            this.btnCancelar.Size = new System.Drawing.Size(87, 29);
             this.btnCancelar.TabIndex = 49;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -105,12 +106,11 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.DarkGreen;
-            this.btnGuardar.Location = new System.Drawing.Point(358, 16);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Location = new System.Drawing.Point(268, 13);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(116, 36);
+            this.btnGuardar.Size = new System.Drawing.Size(87, 29);
             this.btnGuardar.TabIndex = 48;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "Ingresar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
@@ -120,9 +120,10 @@
             this.panelInferiorControles.Controls.Add(this.btnCancelar);
             this.panelInferiorControles.Controls.Add(this.btnGuardar);
             this.panelInferiorControles.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelInferiorControles.Location = new System.Drawing.Point(0, 215);
+            this.panelInferiorControles.Location = new System.Drawing.Point(0, 175);
+            this.panelInferiorControles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelInferiorControles.Name = "panelInferiorControles";
-            this.panelInferiorControles.Size = new System.Drawing.Size(492, 68);
+            this.panelInferiorControles.Size = new System.Drawing.Size(369, 55);
             this.panelInferiorControles.TabIndex = 50;
             // 
             // panel1
@@ -131,27 +132,28 @@
             this.panel1.Controls.Add(this.pictureBoxLogin);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(190, 215);
+            this.panel1.Size = new System.Drawing.Size(142, 175);
             this.panel1.TabIndex = 51;
             // 
             // pictureBoxLogin
             // 
             this.pictureBoxLogin.BackgroundImage = global::FrigLab.Properties.Resources.imagen_acceso_100;
             this.pictureBoxLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxLogin.Location = new System.Drawing.Point(37, 51);
+            this.pictureBoxLogin.Location = new System.Drawing.Point(28, 41);
+            this.pictureBoxLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxLogin.Name = "pictureBoxLogin";
-            this.pictureBoxLogin.Size = new System.Drawing.Size(128, 124);
+            this.pictureBoxLogin.Size = new System.Drawing.Size(96, 101);
             this.pictureBoxLogin.TabIndex = 0;
             this.pictureBoxLogin.TabStop = false;
             // 
             // imgPassword
             // 
             this.imgPassword.Image = global::FrigLab.Properties.Resources.imagen_password;
-            this.imgPassword.Location = new System.Drawing.Point(232, 140);
-            this.imgPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.imgPassword.Location = new System.Drawing.Point(174, 114);
             this.imgPassword.Name = "imgPassword";
-            this.imgPassword.Size = new System.Drawing.Size(28, 25);
+            this.imgPassword.Size = new System.Drawing.Size(21, 20);
             this.imgPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgPassword.TabIndex = 6;
             this.imgPassword.TabStop = false;
@@ -159,20 +161,19 @@
             // imgUsuario
             // 
             this.imgUsuario.Image = global::FrigLab.Properties.Resources.imagen_usuario;
-            this.imgUsuario.Location = new System.Drawing.Point(232, 51);
-            this.imgUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.imgUsuario.Location = new System.Drawing.Point(174, 41);
             this.imgUsuario.Name = "imgUsuario";
-            this.imgUsuario.Size = new System.Drawing.Size(28, 25);
+            this.imgUsuario.Size = new System.Drawing.Size(21, 20);
             this.imgUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgUsuario.TabIndex = 6;
             this.imgUsuario.TabStop = false;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(239)))));
-            this.ClientSize = new System.Drawing.Size(492, 283);
+            this.ClientSize = new System.Drawing.Size(369, 230);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelInferiorControles);
@@ -183,7 +184,7 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblUsuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.Opacity = 0.9D;

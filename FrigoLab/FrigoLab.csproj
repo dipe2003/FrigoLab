@@ -570,5 +570,17 @@
   <ItemGroup>
     <None Include="Resources\icono_buscar_32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close Window_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maximize Window_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize Window_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restore Window_24px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
